@@ -1,0 +1,58 @@
+.login-header-div {
+  width: 29vw;
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 12px;
+  margin-top: 8vh;
+  border-right: 6px solid rgb(51, 140, 51);
+}
+.login-form {
+  padding-left: 7px;
+  padding-bottom: 18px;
+}
+.login-heading {
+  margin-bottom: 0;
+}
+.input-fields-login {
+  width: 27vw;
+  height: 5vh;
+}
+.login-btn {
+  font-size: 1rem;
+  height: 7vh;
+  width: 27.6vw;
+  border: 1px solid white;
+  border-radius: 6px;
+  color: white;
+  background-color: rgb(50, 154, 50);
+}
+.login-btn:hover {
+  cursor: pointer;
+  background-color: green;
+}
+.account-des-login {
+  font-size: 0.9rem;
+  padding-top: 3px;
+}
+.register-link {
+  color: blue;
+}
+hr {
+  margin-bottom: 3vh;
+  margin-left: -0.5vw;
+}
+.register-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.register-sec{
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+}
+.forgott-pass{
+    color: blue;
+}
+.forgott-pass:hover{
+    cursor: pointer;
+}

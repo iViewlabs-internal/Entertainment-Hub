@@ -1,0 +1,55 @@
+.nav-head-div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-left-div{
+    width: 50vw;
+}
+.nav-right-div{
+    width: 50vw;
+}
+.about-signup{
+    margin-right: 3vw;
+}
+.nav-right-inner-div{
+     display: flex;
+     justify-content: flex-end;
+}
+.nav-logo-heading{
+    color: white;
+}
+.right-para{
+    color: white;
+    padding-top: 0.6vh;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.right-para:hover{
+    color: rgb(50, 144, 50);
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: underline;
+}
+.middle-containt-div{
+    display: flex;
+    justify-content: space-between;
+}
+.left-container-div{
+    margin-top: 10vh;
+}
+.containt-des{
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+}
+.para-des{
+    color: white;
+    font-size: larger;
+    font-weight: 500;
+    padding-left: 6vw;
+    margin-top: -4vh;
+}
+.span-des{
+    padding-left: 2.9vw;
+}
