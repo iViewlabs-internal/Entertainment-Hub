@@ -8,11 +8,11 @@ const Navbar = () => {
         <Container>
           <div className="nav-head-div">
             <div className="nav-left-div">
-              <h2 className="nav-logo-heading">Entertainment-HUB</h2>
+              <h2 className="nav-logo-heading">Entertainment-<span className="hub-span">HUB</span></h2>
             </div>
             <div className="nav-right-div">
               <div className="nav-right-inner-div">
-                <p className="right-para about-signup">About</p>
+                <p className="right-para about-signup">FAQ's</p>
                 <p className="right-para about-signup">Sign Up</p>
                 <p className="right-para">Login</p>
               </div>

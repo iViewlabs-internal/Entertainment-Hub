@@ -4,7 +4,7 @@
 
 # Project Description
 
-  In this website user should to sign up first. after getting successfuly sign up user can login with his credencials. after login user will see home page of the website where Tranding movies and tv-series will be. after clicking any one of them a dismisable model will pops up where user can see the description of the movie/tv-series, budget, rating , casts and a button for watching the trailer of the perticular movie/tv-series. that button will redirect user to youtube. moreover there will be indipendent pages for perticular category like movies, tv-series where only selected categories item will be. and a search page for searching the movie/tv-series.
+  In this website user should to sign up first. after getting successfuly sign up user can login with his credencials. after login user will see home page of the website where Trending movies and tv-series will be. after clicking any one of them a dismisable model will pops up where user can see the description of the movie/tv-series, budget, rating , casts and a button for watching the trailer of the perticular movie/tv-series. that button will redirect user to youtube. moreover there will be indipendent pages for perticular category like movies, tv-series where only selected categories item will be. and a search page for searching the movie/tv-series.
 
 # installation and project setup
 

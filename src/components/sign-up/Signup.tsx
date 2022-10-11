@@ -32,7 +32,7 @@ const validationSchema = Yup.object()
   })
   .required();
 
-const Signup = () => {
+const Signup = (props:any) => {
   const {
     register,
     handleSubmit,
@@ -124,7 +124,7 @@ const Signup = () => {
               </button>
             </div>
             <div className="login-sec">
-                <span className="account-des">Already have an account ? <span className="login-link">Login</span></span>
+                <span className="account-des">Already have an account ? <span className="login-link" onClick={()=>props.handleUpState()}>Login</span></span>
             </div>
           </form>
         </div>
