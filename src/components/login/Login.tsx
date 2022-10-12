@@ -20,7 +20,7 @@ type Inputs = {
   })
   .required();
 
-const Login = () => {
+const Login = (props:any) => {
     const {
         register,
         handleSubmit,
@@ -50,7 +50,7 @@ const Login = () => {
                 type="text"
                 placeholder="Your Username"
                 {...register("username")}
-                className="input-fields-login"
+                className="input-fields-login inpt-login-one"
               />
               <div className="invalid-feedback">{errors.username?.message}</div>
 
@@ -76,8 +76,8 @@ const Login = () => {
               </button>
             </div>
             <div className="register-sec">
-                <span className="forgott-pass">Forgott Password?</span><br/>
-                <span className="account-des-login">Don't have any account ? <span className="register-link">Register</span></span>
+                <p className="forgott-pass">Forgot Password?</p>
+                <span className="account-des-login">Don't have any account ? <span className="register-link" onClick={props.handleUpState}>Register</span></span>
             </div>
           </form>
         </div>

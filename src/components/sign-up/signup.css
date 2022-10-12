@@ -4,7 +4,7 @@
     border: 2px solid white;
     border-radius: 12px;
     margin-top: 6vh;
-    border-left: 6px solid rgb(51, 140, 51);
+    /* border-left: 6px solid rgb(51, 140, 51); */
 }
 .invalid-feedback{
     color: red;
