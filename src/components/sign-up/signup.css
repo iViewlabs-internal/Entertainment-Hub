@@ -1,10 +1,16 @@
 .signup-header-div{
-    width: 30vw;
-    background-color: white;
-    border: 2px solid white;
-    border-radius: 12px;
+    /* background-color: white; */
+    /* border: 2px solid white; */
+    /* border-radius: 12px; */
     margin-top: 6vh;
     /* border-left: 6px solid rgb(51, 140, 51); */
+    display: flex;
+    justify-content: space-evenly;
+    /* align-self: center; */
+}
+.register-img{
+    height: 70vh;
+    width: 40vw;
 }
 .invalid-feedback{
     color: red;
@@ -15,25 +21,27 @@
     padding-bottom: 12px;
 }
 .input-fields{
-    width: 28vw;
-    height: 5vh;
+    width: 50vw;
+    height: 6.2vh;
 }
 .signup-btn{
-    font-size: 1rem;
-    height: 7vh;
-    width:28.6vw;
+    font-size: 1.5rem;
+    height: 8.5vh;
+    width:50.5vw;
     border: 1px solid white;
     border-radius: 6px;
     color:white;
-    background-color: rgb(50, 154, 50);
+    margin-top: 2vh;
+    background-color: #1976d2;
 }
 .signup-btn:hover{
     cursor: pointer;
-    background-color: green;
+    background-color: #1668ba;
 }
 .login-sec{
     display: flex;
     justify-content: center;
+    margin-top: 1vh
 }
 .account-des{
  font-size: 0.9rem;

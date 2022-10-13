@@ -1,7 +1,6 @@
 .footer-head-div{
-    background-color: rgb(234, 225, 225);
+    background-color: rgb(193, 179, 179);
     color: black;
-    height: 50vh;
 }
 .footer-inner-first{
     display: flex;
@@ -56,4 +55,24 @@ flex-direction: column;
      justify-content: center;
      align-items: center;
      color: white;
+}
+
+@media screen and (min-width: 200px) and (max-width: 600px) {
+    .footer-inner-first{
+        flex-direction: column;
+       /*  margin-left: 15vw; */
+    }
+    .para-div-footer , .inner-footer-div-sec , .header-parent-div , .header-inner-div-second{
+        width: auto;
+    }
+    .header-inner-div-second{
+        justify-content: flex-start;
+    }
+    .items{
+        margin-left: 10vw;
+    }
+
+    .header-inner-div-first{
+        justify-content: space-evenly;
+    }
 }

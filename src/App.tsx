@@ -1,6 +1,6 @@
 import { BrowserRouter , Routes , Route } from "react-router-dom";
-import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/home/Home";
+import Trending from "./pages/trending/Trending";
 
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
       <BrowserRouter>
                <Routes>
             <Route path="/" element={<Home/>}/>
+            <Route path="/trending" element={<Trending/>}/>
          </Routes>
       </BrowserRouter>
     </>

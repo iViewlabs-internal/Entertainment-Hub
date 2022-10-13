@@ -1,21 +1,44 @@
 import { Container } from "@mui/material";
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 import Login from "../../components/login/Login";
 import Navbar from "../../components/navbar/Navbar";
 import Signup from "../../components/sign-up/Signup";
-import Footer from "../../components/footer/Footer"
+import Footer from "../../components/footer/Footer";
+import Button from "@mui/material/Button";
+
+import Dialog from "@mui/material/Dialog";
+import ListItemText from "@mui/material/ListItemText";
+import ListItem from "@mui/material/ListItem";
+import List from "@mui/material/List";
+import Divider from "@mui/material/Divider";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import CloseIcon from "@mui/icons-material/Close";
+import Slide from "@mui/material/Slide";
+import { TransitionProps } from "@mui/material/transitions";
+
 import "./home.css";
+const Transition = forwardRef(function Transition(
+  props: TransitionProps & {
+    children: React.ReactElement;
+  },
+  ref: React.Ref<unknown>
+) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 const Home = () => {
   const [tempState, setTempState] = useState(false);
-  const [upState,setUpState] = useState(false);
+  const [upState, setUpState] = useState(false);
 
-  const handleUpState=()=>{
-   setUpState(true);
-  }
-  const handleDownState=()=>{
+  const handleUpState = () => {
+    setUpState(true);
+  };
+  const handleDownState = () => {
     setUpState(false);
-  }
+  };
   const q1 = () => {
     if (tempState === false) {
       document.getElementById("ans-1")!.style.display = "block";
@@ -100,27 +123,129 @@ const Home = () => {
       setTempState(false);
     }
   };
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const [open2, setOpen2] = useState(false);
+
+  const handleClickOpen2 = () => {
+    setOpen2(true);
+  };
+
+  const handleClose2 = () => {
+    setOpen2(false);
+  };
   return (
     <>
       <div className="home-parent-div">
-        <Navbar />
-        <Container>
-          <div className="middle-containt-div">
-            <div className="left-container-div">
-              <h1 className="containt-des">
-                Unlimited movies, TV
-                <br />
-                <span className="span-des">shows and more.</span>
-              </h1>
-              <p className="para-des">Watch anywhere. Cancel anytime.</p>
+        <div className="container-div">
+          <Container>
+            <div className="nav-head-div">
+              <div className="nav-left-div">
+                <h2 className="nav-logo-heading">
+                  Entertainment-<span className="hub-span">HUB</span>
+                </h2>
+              </div>
+              <div className="nav-right-div">
+                <div className="nav-right-inner-div">
+                  <p className="right-para">
+                    <a href="#about-containt-div" className="anchor-para">
+                      FAQ's
+                    </a>
+                  </p>
+                  <p className="right-para right-para-about">About</p>
+                  {/* <p className="right-para about-signup">Sign Up</p>
+                <p className="right-para">Login</p> */}
+                </div>
+              </div>
             </div>
-            <div>
-               {
-                  upState === false ?
-                  <Signup handleUpState={handleUpState}/>
-                  :
-              <Login handleUpState={handleDownState}/>
-               }
+          </Container>
+        </div>{" "}
+        <Container>
+          <div className="main-div-top">
+            <div className="middle-containt-div">
+              <div className="left-container-div">
+                <h1 className="containt-des">
+                  Unlimited movies, TV
+                  <br />
+                  <span className="span-des">shows and more.</span>
+                </h1>
+                <p className="para-des">Watch anywhere. Cancel anytime.</p>
+                <p className="para-ready">
+                  Ready to watch? Sign Up for free or Already a Member Then Just
+                  Login.
+                </p>
+              </div>
+              <div className="row-division-btn">
+                <button className="login-btn-home" onClick={handleClickOpen2}>
+                  Login
+                </button>
+                <p className="span-or">OR</p>
+                <button className="signup-btn-home" onClick={handleClickOpen}>
+                  Sign Up
+                </button>
+              </div>
+              <Dialog
+                fullScreen
+                open={open}
+                onClose={handleClose}
+                TransitionComponent={Transition}
+              >
+                <AppBar sx={{ position: "relative" }}>
+                  <Toolbar>
+                    <Typography
+                      sx={{ ml: 2, flex: 1 }}
+                      variant="h6"
+                      component="div"
+                    >
+                      Register
+                    </Typography>
+                    <IconButton
+                      edge="start"
+                      color="inherit"
+                      onClick={handleClose}
+                      aria-label="close"
+                    >
+                      <CloseIcon />
+                    </IconButton>
+                  </Toolbar>
+                </AppBar>
+                <Signup handleClickOpen2={handleClickOpen2} />
+              </Dialog>
+              <Dialog
+                fullScreen
+                open={open2}
+                onClose={handleClose2}
+                TransitionComponent={Transition}
+              >
+                <AppBar sx={{ position: "relative" }}>
+                  <Toolbar>
+                    <Typography
+                      sx={{ ml: 2, flex: 1 }}
+                      variant="h6"
+                      component="div"
+                    >
+                      Login
+                    </Typography>
+                    <IconButton
+                      edge="start"
+                      color="inherit"
+                      onClick={handleClose2}
+                      aria-label="close"
+                    >
+                      <CloseIcon />
+                    </IconButton>
+                  </Toolbar>
+                </AppBar>
+                <Login handleClickOpen={handleClickOpen} />
+              </Dialog>
             </div>
           </div>
         </Container>
@@ -170,7 +295,7 @@ const Home = () => {
       <hr className="hr-middle" />
       <div className="about-containt-div">
         <Container>
-          <div className="about-containt-div">
+          <div className="about-containt-div" id="about-containt-div">
             <div className="inner-top-head">
               <h1>Frequently Asked Questions</h1>
             </div>
@@ -272,7 +397,7 @@ const Home = () => {
           </div>
         </Container>
       </div>
-      <hr className="hr-middle" />
+      {/* <hr className="hr-middle" /> */}
       <Footer />
     </>
   );

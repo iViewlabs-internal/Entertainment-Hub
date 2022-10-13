@@ -1,0 +1,14 @@
+.container-items{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(81, 81, 105);
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-bottom: 4vh;
+    padding-top: 3vh;
+}
+.top-trending-div{
+    display: flex;
+    justify-content: center;
+    color: white;
+}

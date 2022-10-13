@@ -2,6 +2,7 @@ import "./signup.css";
 import * as Yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useNavigate } from "react-router-dom";
 
 type Inputs = {
   username: string;
@@ -33,6 +34,7 @@ const validationSchema = Yup.object()
   .required();
 
 const Signup = (props:any) => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -49,15 +51,16 @@ const Signup = (props:any) => {
       password: data.password,
     };
     localStorage.setItem("register", JSON.stringify(register));
-   console.log(register)
+    window.location.href = "/"
   };
 
   return (
     <>
       <div className="signup-header-div">
+        <div>
+          <img className="register-img" src="https://images.unsplash.com/photo-1543599538-a6c4f6cc5c05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="register demo"/>
+        </div>
         <div className="register-form">
-            <h3 className="register-heading">Register</h3>
-             <hr/>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div>
               <input
@@ -124,7 +127,7 @@ const Signup = (props:any) => {
               </button>
             </div>
             <div className="login-sec">
-                <span className="account-des">Already have an account ? <span className="login-link" onClick={()=>props.handleUpState()}>Login</span></span>
+                <span className="account-des">Already have an account ? <span className="login-link" onClick={props.handleClickOpen2}>Login</span></span>
             </div>
           </form>
         </div>
