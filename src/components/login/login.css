@@ -1,13 +1,11 @@
 .login-header-div {
   margin-top: 8vh;
 }
-.login-lock{
+.login-lock {
   width: 40vw;
   height: 60vh;
 }
 .login-form {
-  /* padding-left: 7px; */
-  /* padding-bottom: 18px; */
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -23,22 +21,21 @@
   margin-top: 1.5vh;
   font-size: 1.2rem;
   height: 8vh;
-  width: 45.6vw;
+  width: 46.6vw;
   border: 1px solid white;
   border-radius: 6px;
   color: white;
-  background-color: #1976d2;
+  background-color: #0a325a;
 }
-.inpt-login-one{
+.inpt-login-one {
   margin-top: 1.8vh;
 }
 .login-btn:hover {
   cursor: pointer;
-  background-color: #1d69b5;
+  background-color: #184878;
 }
 .account-des-login {
   font-size: 0.9rem;
-  /* padding-top: 3px; */
 }
 .register-link {
   color: blue;
@@ -51,15 +48,47 @@ hr {
   text-decoration: underline;
   cursor: pointer;
 }
-.register-sec{
-    margin-top: 2vh;
-    display: flex;
-    justify-content: space-between;
+.register-sec {
+  margin-top: 2vh;
+  display: flex;
+  justify-content: space-between;
 }
-.forgott-pass{
-    color: blue;
-    margin-top: 0.1vh;
+.forgott-pass {
+  color: blue;
+  margin-top: 0.1vh;
 }
-.forgott-pass:hover{
-    cursor: pointer;
+.forgott-pass:hover {
+  cursor: pointer;
 }
+.css-10ghrmp-MuiPaper-root-MuiAppBar-root{
+    background-color: #0a325a !important;
+}
+
+ @media screen and (min-width: 200px) and (max-width: 600px) {
+   .login-header-div{
+     display:flex;
+    justify-content: center;
+  }
+  .img-div-lock {
+    display: none;
+  }
+  .input-fields-login {
+    width: 100%;
+  }
+  .inpt-login-one{
+    margin-top: 1vh;
+  }
+  .login-btn {
+    width: 103%;
+    margin-top: 0%;
+    height: 8vh;
+  }
+ }
+     @media screen and (min-width: 601px) and (max-width: 900px) {
+      .login-lock{
+        height: 45vh;
+      }
+      .login-btn{
+        margin-top: 1vh;
+      }
+     }

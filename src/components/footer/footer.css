@@ -50,7 +50,7 @@ flex-direction: column;
     padding-top: 1vh;
 }
 .bottom-footer-header{
-     background-color: rgb(39 37 37);
+     background-color: #2d313a;
      display: flex;
      justify-content: center;
      align-items: center;
@@ -60,7 +60,6 @@ flex-direction: column;
 @media screen and (min-width: 200px) and (max-width: 600px) {
     .footer-inner-first{
         flex-direction: column;
-       /*  margin-left: 15vw; */
     }
     .para-div-footer , .inner-footer-div-sec , .header-parent-div , .header-inner-div-second{
         width: auto;

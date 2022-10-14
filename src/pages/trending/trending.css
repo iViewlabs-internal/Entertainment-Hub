@@ -1,8 +1,5 @@
 .container-items{
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(81, 81, 105);
-    justify-content: space-around;
+    background-color: rgb(80, 80, 84);
     flex-wrap: wrap;
     padding-bottom: 4vh;
     padding-top: 3vh;
@@ -11,4 +8,89 @@
     display: flex;
     justify-content: center;
     color: white;
+    margin-bottom: 2%;
 }
+.css-1lwbda4-MuiStack-root{
+    justify-content: center !important;
+    flex-direction: row !important;
+    margin-top: 4% !important;
+    margin-bottom: 1.5% !important;
+    color: white !important;
+}
+ul > li > button{
+    color: white !important;
+    font-size: 1rem !important;
+}
+@media screen and (min-width: 200px) and (max-width: 300px) {
+    .top-trending-div > h1{
+        font-size: 1.4rem;
+    }
+    .container-items{
+        padding-left: 7vw;
+        padding-right: 7vw;
+    }
+}
+@media screen and (min-width: 301px) and (max-width: 350px) {
+    .top-trending-div > h1{
+        font-size: 1.4rem;
+    }
+    .container-items{
+        padding-left: 4vw;
+        padding-right: 4vw;
+    }
+}
+@media screen and (min-width: 351px) and (max-width: 400px) {
+    .top-trending-div > h1{
+        font-size: 1.4rem;
+    }
+    .container-items{
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+}
+@media screen and (min-width: 401px) and (max-width: 450px) {
+    .top-trending-div > h1{
+        font-size: 1.4rem;
+    }
+    .container-items{
+        padding-left: 12vw;
+        padding-right: 12vw;
+    }
+}
+@media screen and (min-width: 451px) and (max-width: 500px) {
+    .top-trending-div > h1{
+        font-size: 1.4rem;
+    }
+    .container-items{
+        padding-left: 14vw;
+        padding-right: 14vw;
+    }
+}
+@media screen and (min-width: 501px) and (max-width: 600px) {
+    .top-trending-div > h1{
+        font-size: 1.4rem;
+    }
+    .container-items{
+        padding-left: 20vw;
+        padding-right: 20vw;
+    }
+}
+@media screen and (min-width: 680px) and (max-width: 850px) {
+    .container-items{
+        padding-left: 7vw;
+        padding-right: 7vw;
+    }
+}
+@media screen and (min-width: 851px) and (max-width: 900px) {
+    .container-items{
+        padding-left: 12vw;
+        padding-right: 12vw;
+    }
+}
+@media screen and (min-width: 1050px) and (max-width: 1199px) {
+    .container-items{
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+}
+

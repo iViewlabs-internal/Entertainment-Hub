@@ -1,16 +1,9 @@
 import { Container } from "@mui/material";
 import { forwardRef, useState } from "react";
 import Login from "../../components/login/Login";
-import Navbar from "../../components/navbar/Navbar";
 import Signup from "../../components/sign-up/Signup";
 import Footer from "../../components/footer/Footer";
-import Button from "@mui/material/Button";
-
 import Dialog from "@mui/material/Dialog";
-import ListItemText from "@mui/material/ListItemText";
-import ListItem from "@mui/material/ListItem";
-import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -31,14 +24,12 @@ const Transition = forwardRef(function Transition(
 
 const Home = () => {
   const [tempState, setTempState] = useState(false);
-  const [upState, setUpState] = useState(false);
-
-  const handleUpState = () => {
-    setUpState(true);
-  };
-  const handleDownState = () => {
-    setUpState(false);
-  };
+  const [state1, setState1] = useState(false)
+  const [state2, setState2] = useState(false)
+  const [state3, setState3] = useState(false)
+  const [state4, setState4] = useState(false)
+  const [state5, setState5] = useState(false)
+  const [state6, setState6] = useState(false)
   const q1 = () => {
     if (tempState === false) {
       document.getElementById("ans-1")!.style.display = "block";
@@ -48,11 +39,13 @@ const Home = () => {
       document.getElementById("ans-5")!.style.display = "none";
       document.getElementById("ans-6")!.style.display = "none";
       setTempState(true);
+      setState1(true);
     } else {
       document.getElementById("ans-1")!.style.display = "none";
       setTempState(false);
+      setState1(false);
     }
-  };
+  }; 
   const q2 = () => {
     if (tempState === false) {
       document.getElementById("ans-2")!.style.display = "block";
@@ -62,8 +55,10 @@ const Home = () => {
       document.getElementById("ans-5")!.style.display = "none";
       document.getElementById("ans-6")!.style.display = "none";
       setTempState(true);
+      setState2(true);
     } else {
       document.getElementById("ans-2")!.style.display = "none";
+      setState2(false);
       setTempState(false);
     }
   };
@@ -76,9 +71,11 @@ const Home = () => {
       document.getElementById("ans-5")!.style.display = "none";
       document.getElementById("ans-6")!.style.display = "none";
       setTempState(true);
+      setState3(true);
     } else {
       document.getElementById("ans-3")!.style.display = "none";
       setTempState(false);
+      setState3(false);
     }
   };
   const q4 = () => {
@@ -90,9 +87,11 @@ const Home = () => {
       document.getElementById("ans-5")!.style.display = "none";
       document.getElementById("ans-6")!.style.display = "none";
       setTempState(true);
+      setState4(true);
     } else {
       document.getElementById("ans-4")!.style.display = "none";
       setTempState(false);
+      setState4(false);
     }
   };
   const q5 = () => {
@@ -104,15 +103,18 @@ const Home = () => {
       document.getElementById("ans-1")!.style.display = "none";
       document.getElementById("ans-6")!.style.display = "none";
       setTempState(true);
+      setState5(true);
     } else {
       document.getElementById("ans-5")!.style.display = "none";
       setTempState(false);
+      setState5(false);
     }
   };
   const q6 = () => {
     if (tempState === false) {
       document.getElementById("ans-6")!.style.display = "block";
       setTempState(true);
+      setState6(true);
       document.getElementById("ans-2")!.style.display = "none";
       document.getElementById("ans-3")!.style.display = "none";
       document.getElementById("ans-4")!.style.display = "none";
@@ -120,6 +122,7 @@ const Home = () => {
       document.getElementById("ans-1")!.style.display = "none";
     } else {
       document.getElementById("ans-6")!.style.display = "none";
+      setState6(false);
       setTempState(false);
     }
   };
@@ -145,6 +148,7 @@ const Home = () => {
   return (
     <>
       <div className="home-parent-div">
+        <img className="temp" src="https://assets.nflxext.com/ffe/siteui/vlv3/afc06103-4d6a-4236-b496-34b671a7e9ba/383fc36a-aa04-4dfd-95a0-a4b71bc21eed/IN-en-20221003-popsignuptwoweeks-perspective_alpha_website_large.jpg"/>
         <div className="container-div">
           <Container>
             <div className="nav-head-div">
@@ -161,8 +165,6 @@ const Home = () => {
                     </a>
                   </p>
                   <p className="right-para right-para-about">About</p>
-                  {/* <p className="right-para about-signup">Sign Up</p>
-                <p className="right-para">Login</p> */}
                 </div>
               </div>
             </div>
@@ -302,7 +304,7 @@ const Home = () => {
             <div className="inner-about">
               <div className="heading-btn" onClick={q1}>
                 <h3 className="heading-faq">-What is Entertainment-HUB?</h3>
-                {tempState === false ? (
+                {state1 === false ? (
                   <i className="fa-solid fa-plus fa-2x"></i>
                 ) : (
                   <i className="fa-solid fa-xmark fa-2x"></i>
@@ -318,7 +320,7 @@ const Home = () => {
               </p>
               <div className="heading-btn" onClick={q2}>
                 <h3 className="heading-faq">-How do i cancel?</h3>
-                {tempState === false ? (
+                {state2 === false ? (
                   <i className="fa-solid fa-plus fa-2x"></i>
                 ) : (
                   <i className="fa-solid fa-xmark fa-2x"></i>
@@ -332,7 +334,7 @@ const Home = () => {
               </p>
               <div className="heading-btn" onClick={q3}>
                 <h3 className="heading-faq">-How much does It's Cost?</h3>
-                {tempState === false ? (
+                {state3 === false ? (
                   <i className="fa-solid fa-plus fa-2x"></i>
                 ) : (
                   <i className="fa-solid fa-xmark fa-2x"></i>
@@ -346,7 +348,7 @@ const Home = () => {
               </p>
               <div className="heading-btn" onClick={q4}>
                 <h3 className="heading-faq">-Where i can whatch?</h3>
-                {tempState === false ? (
+                {state4 === false ? (
                   <i className="fa-solid fa-plus fa-2x"></i>
                 ) : (
                   <i className="fa-solid fa-xmark fa-2x"></i>
@@ -365,7 +367,7 @@ const Home = () => {
                 <h3 className="heading-faq">
                   -What i can watch on Entertainment-Hub
                 </h3>
-                {tempState === false ? (
+                {state5 === false ? (
                   <i className="fa-solid fa-plus fa-2x"></i>
                 ) : (
                   <i className="fa-solid fa-xmark fa-2x"></i>
@@ -381,7 +383,7 @@ const Home = () => {
                 <h3 className="heading-faq">
                   -Is Entertainment-Hub good for kids?
                 </h3>
-                {tempState === false ? (
+                {state6 === false ? (
                   <i className="fa-solid fa-plus fa-2x"></i>
                 ) : (
                   <i className="fa-solid fa-xmark fa-2x"></i>
@@ -397,7 +399,6 @@ const Home = () => {
           </div>
         </Container>
       </div>
-      {/* <hr className="hr-middle" /> */}
       <Footer />
     </>
   );

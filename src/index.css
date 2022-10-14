@@ -14,3 +14,31 @@ code {
 input{
   padding-left: 1vw;
 }
+body{
+  overflow-x: hidden !important;
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 7px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #1e4e7e;
+  color: white;
+  cursor: pointer;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #0a325a;
+}
+html {
+  scroll-behavior: smooth;
+}

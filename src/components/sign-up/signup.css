@@ -1,12 +1,7 @@
 .signup-header-div{
-    /* background-color: white; */
-    /* border: 2px solid white; */
-    /* border-radius: 12px; */
     margin-top: 6vh;
-    /* border-left: 6px solid rgb(51, 140, 51); */
     display: flex;
     justify-content: space-evenly;
-    /* align-self: center; */
 }
 .register-img{
     height: 70vh;
@@ -32,11 +27,11 @@
     border-radius: 6px;
     color:white;
     margin-top: 2vh;
-    background-color: #1976d2;
+    background-color: #0a325a;
 }
 .signup-btn:hover{
     cursor: pointer;
-    background-color: #1668ba;
+    background-color: #184572;
 }
 .login-sec{
     display: flex;
@@ -60,4 +55,37 @@ hr{
 .login-link:hover{
     text-decoration: underline;
     cursor: pointer;
+}
+@media screen and (min-width: 200px) and (max-width: 600px) {
+    .signup-header-div{
+        display: inline;
+        justify-content: flex-start;
+        margin-left: 9vw;
+        margin-right: 5vw;
+        width: 100%;
+    }
+    .last-inpt{
+        margin-right: 0.5vh;
+    }
+    .input-fields{
+        width: 80%;
+        height: 6vh;
+    }
+    .signup-btn{
+        width: 82%;
+        margin-top: 0%;
+        height: 8vh;
+    }
+    .register-form{
+        padding-left: 0;
+    }
+    .register-img-div{
+        display: none;
+    }
+    .account-des{
+        font-size: initial;
+    }
+    .login-sec{
+        margin-left: -10vw;
+    }
 }

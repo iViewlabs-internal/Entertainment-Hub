@@ -49,7 +49,7 @@ const Login = (props: any) => {
   return (
     <div className="login-header-div">
       <div className="login-form">
-        <div>
+        <div className="img-div-lock">
           <img
             className="login-lock"
             src="https://images.unsplash.com/photo-1509822929063-6b6cfc9b42f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
@@ -57,48 +57,51 @@ const Login = (props: any) => {
           />
         </div>
         <div>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div>
-            <input
-              type="text"
-              placeholder="Your Username"
-              {...register("username")}
-              className="input-fields-login inpt-login-one"
-            />
-            <div className="invalid-feedback">{errors.username?.message}</div>
-
-            <br />
-          </div>
-          <div>
-            <input
-              type="password"
-              placeholder="Your Password"
-              {...register("password")}
-              className="input-fields-login"
-            />
-
-            <div className="invalid-feedback">{errors.password?.message}</div>
-            <br />
-          </div>
-          <div>
-            <button type="submit" className="login-btn">
-              Login
-            </button>
-          </div>
-          <div className="register-sec">
+          <form onSubmit={handleSubmit(onSubmit)} className="form-class">
             <div>
-          <span className="account-des-login">
-              Don't have any account ?{" "}
-              <span className="register-link" onClick={props.handleClickOpen}>
-                Register
-              </span>
-            </span>
+              <input
+                type="text"
+                placeholder="Your Username"
+                {...register("username")}
+                className="input-fields-login inpt-login-one"
+              />
+              <div className="invalid-feedback">{errors.username?.message}</div>
+
+              <br />
             </div>
             <div>
-            <p className="forgott-pass">Forgot Password?</p>
+              <input
+                type="password"
+                placeholder="Your Password"
+                {...register("password")}
+                className="input-fields-login"
+              />
+
+              <div className="invalid-feedback">{errors.password?.message}</div>
+              <br />
             </div>
-          </div>
-        </form>
+            <div>
+              <button type="submit" className="login-btn">
+                Login
+              </button>
+            </div>
+            <div className="register-sec">
+              <div>
+                <span className="account-des-login">
+                  Don't have any account ?{" "}
+                  <span
+                    className="register-link"
+                    onClick={props.handleClickOpen}
+                  >
+                    Register
+                  </span>
+                </span>
+              </div>
+              <div>
+                <p className="forgott-pass">Forgot Password?</p>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>

@@ -43,8 +43,8 @@ const Footer = () => {
               </div>
               <div className="right-font-icon-div">
                 {/* <div className="items">Device</div> */}
-                <div className="items">+23 - 567-890</div>
-                <div className="items">company@gmail.com</div>
+                <div className="items">7697150410</div>
+                <div className="items">sagar.jhode@iviewlabs.net</div>
               </div>
             </div>
           </div>

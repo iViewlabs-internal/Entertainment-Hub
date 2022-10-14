@@ -4,30 +4,31 @@ import Content from "../../components/content/Content";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 import MyPagination from "../../components/pagination/MyPagination";
-import "./trending.css";
+import "./movies.css";
 
 const mykey = process.env.REACT_APP_USER_API_KEY;
-let numOfPages = 10;
-const Trending = () => {
-  const [page, setPage] = useState(1);
-  const [data, setData] = useState<any[]>([]);
-  useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/trending/all/day?api_key=${mykey}&page=${page}`
-    )
-      .then((res) => res.json())
-      .then((items) => {
-        setData(items.results);
-      });
-    window.scroll(0, 0);
-  }, [page]);
+const Movies = () => {
+    const [page, setPage] = useState(1);
+    const [data, setData] = useState<any[]>([]);
+    const numOfPages = 500
+    useEffect(() => {
+      fetch(
+        `https://api.themoviedb.org/3/discover/movie?api_key=${mykey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}`
+      )
+        .then((res) => res.json())
+        .then((items) => {
+          setData(items.results);
+        });
+      window.scroll(0, 0);
+    }, [page]);
+
   return (
-    <>
-      <Navbar />
-      <div className="container-items">
+   <>
+   <Navbar/>
+   <div className="container-items">
         <Container>
           <div className="top-trending-div">
-            <h1>Top Trendings of The Day</h1>
+            <h1>Movies</h1>
           </div>
           <Grid container spacing={2} alignItems="stretch">
             {data &&
@@ -43,11 +44,11 @@ const Trending = () => {
               })}
           </Grid>
         </Container>
-            <MyPagination setPage={setPage} numOfPages={numOfPages}/>
+            <MyPagination setPage={setPage} numOfPages={numOfPages} />
       </div>
       <Footer />
-    </>
+   </>
   );
-};
+}
 
-export default Trending;
+export default Movies;
