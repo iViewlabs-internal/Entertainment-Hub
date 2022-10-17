@@ -1,11 +1,87 @@
+.nav-head-div{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.nav-left-div{
+  width: 50vw;
+}
+.nav-right-div{
+  width: 50vw;
+}
+.about-signup{
+  margin-right: 3vw;
+}
+.right-para-about{
+  margin-left: 2vw
+}
+.anchor-para{
+  text-decoration: none;
+  color: white;
+}
+.nav-right-inner-div{
+   display: flex;
+   justify-content: flex-end;
+}
+.nav-logo-heading{
+  color: white;
+}
+.hub-span{
+  color: white;
+}
+.right-para{
+  color: white;
+  padding-top: 0.6vh;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.right-para:hover{
+  cursor: pointer;
+  border: 1px solid white;
+  background-color: rgb(4, 4, 4);
+  color: white;
+  border-radius: 8px;
+  padding: 1vh 1vw;
+}
+.middle-containt-div{
+  display: flex;
+  justify-content: space-between;
+}
+.left-container-div{
+  margin-top: 8vh;
+}
+.containt-des{
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+}
+.para-des{
+  color: white;
+  font-size: larger;
+  font-weight: 500;
+  padding-left: 7vw;
+  margin-top: -4vh;
+}
+.span-des{
+  padding-left: 3.6vw;
+}
+/* ......... */
+.temp{
+  height: 100vh;
+  width: 100%;
+  z-index: -1; 
+  position: absolute;
+   -webkit-filter: blur(1.4px); /* Safari 6.0 - 9.0 */
+  filter: blur(1.4px); 
+}
 .home-parent-div {
-  background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/afc06103-4d6a-4236-b496-34b671a7e9ba/383fc36a-aa04-4dfd-95a0-a4b71bc21eed/IN-en-20221003-popsignuptwoweeks-perspective_alpha_website_large.jpg");
-  height: 105vh;
-  z-index: -1;
-  /* -webkit-filter: brightness(70%);  */
+  height: 100vh;
+  width: 100%;
 }
 .middle-sec-div {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: black;
   color: white;
   padding-bottom: 5vh;
@@ -14,11 +90,60 @@
     color: white;
     z-index: 1;
 }
-.middle-containte-div {
+.span-or{
+  color: rgb(252, 252, 233);
+  font-size: 1.4rem;
+  margin: 0.4rem;
+}
+.para-ready{
+  color: white;
+  font-weight: 500;
+}
+.middle-containt-div {
   display: flex;
   flex-direction: column;
-  padding-left: 2.5vw;
-  margin-top: 20vh;
+  justify-content: center;
+}
+.row-division-btn{
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+   margin-top: 3vh;
+}
+.signup-btn-home{
+  width: 100%;
+  height: 7.5vh;
+  font-weight: 600;
+  color: white;
+  background-color: #0a325a;
+  border: 1px solid white;
+  border-radius: 8px;
+  font-size: 1.2rem;
+}
+.signup-btn-home:hover{
+  cursor: pointer;
+  background-color: #174778;
+  color: white;
+}
+.login-btn-home:hover{
+  cursor: pointer;
+  background-color: #174778;
+}
+.login-btn-home{
+  font-size: 1.2rem;
+  width: 100%;
+  height: 7.5vh;
+  font-weight: 600;
+  color: white;
+  background-color: #0a325a;
+  border: 1px solid white;
+  border-radius: 8px;
+}
+.main-div-top{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .desktop-img {
   height: 55vh;
@@ -46,7 +171,7 @@
 }
 .bottom-containt-div {
   display: flex;
-  background-color: rgb(234, 225, 225);
+  background-color: rgb(193, 179, 179);
   color: black;
   padding-bottom: 5vh;
 }
@@ -95,22 +220,7 @@
   margin-left: 18vw;
   margin-top: 5vh;
 }
-#ans-1 {
-  display: none;
-}
-#ans-2 {
-  display: none;
-}
-#ans-3 {
-  display: none;
-}
-#ans-4 {
-  display: none;
-}
-#ans-5 {
-  display: none;
-}
-#ans-6 {
+#ans-1 , #ans-2 , #ans-3 , #ans-4 , #ans-5 , #ans-6{
   display: none;
 }
 .para-faq-ans {
@@ -137,4 +247,125 @@
 }
 .heading-faq:hover {
   cursor: pointer;
+}
+@media screen and (min-width: 200px) and (max-width: 600px) {
+        .nav-logo-heading{
+          font-size: 1.2rem;
+        }
+        .para-des{
+          margin-top: 0%;
+        }
+        .containt-des{
+          margin-left: 10vw;
+          font-size: 1.7rem;
+        }
+        .home-parent-div {
+          height: auto;
+          z-index: -1;
+        }
+        .signup-btn-home{
+          margin-bottom: 4vh;
+        }
+          .middle-sec-div{
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            padding-bottom: 0;
+          }
+          .dumy-picture{
+            height: 35vh;
+            margin-left: -15vw;
+            margin-right: 0;
+          }
+          .bottom-left-div {
+            width: auto;
+            margin-left: 3vw;
+            margin-top: 1vh;
+          }
+          .middle-containte-div{
+            margin-left: 10vw;
+            margin-top: 3vh;
+          }
+          .bottom-containt-div{
+            flex-direction: column-reverse;
+            padding-bottom: 2vh;
+          }
+          .streaming-picture{
+            height: 32vh;
+            width: 75vw;
+            margin-left: 43vw;
+          }
+          .bottom-left-div > h1{
+            font-size: 1.5rem;
+          }
+          .inner-top-head > h1{
+            font-size: 1.5rem
+          }
+          .inner-about{
+            width: auto;
+          }
+          .inner-about > .heading-btn{
+            margin-left: -15vw;
+            margin-right: 2vw;
+          }
+          .inner-about > .para-faq-ans{
+            margin-right: 2vw;
+            margin-left: -15vw;
+          }
+          .left-container-div{
+            margin-top: 3vh;
+            display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+          }
+          .footer-inner-first{
+            margin-left: 2vw;
+            margin-right: 2vw;
+            padding-top: 0;
+          }
+          .para-des{
+            margin-bottom: 0%;
+          }
+          .para-ready{
+            margin-top: 0.6%;
+            margin-bottom: 0%;
+            margin-left: 6vw;
+          }
+}
+
+@media screen and (min-width: 200px) and (max-width: 400px) {
+  .dumy-picture{
+    width: 50vw;
+    margin-left: 0.1vw;
+  }
+  .bottom-left-div{
+    margin-left: 6vw;
+  }
+}
+@media screen and (min-width: 401px) and (max-width: 500px) {
+  .middle-containte-div{
+    margin-left: 10vw;
+  }
+  .bottom-left-div{
+    margin-left: 6vw;
+  }
+  .dumy-picture{
+    width: 50vw;
+    margin-left: 1vw;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 600px) {
+  .dumy-picture{
+    margin-left: 0vw;
+  }
+  .bottom-left-div{
+    margin-left: 12vw;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 700px) {
+  .streaming-picture{
+    height: 35vh;
+    margin-left: 4vw;
+  }
 }

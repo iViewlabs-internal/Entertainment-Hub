@@ -1,21 +1,35 @@
 import { Container } from "@mui/material";
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 import Login from "../../components/login/Login";
-import Navbar from "../../components/navbar/Navbar";
 import Signup from "../../components/sign-up/Signup";
-import Footer from "../../components/footer/Footer"
+import Footer from "../../components/footer/Footer";
+import Dialog from "@mui/material/Dialog";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import CloseIcon from "@mui/icons-material/Close";
+import Slide from "@mui/material/Slide";
+import { TransitionProps } from "@mui/material/transitions";
+
 import "./home.css";
+const Transition = forwardRef(function Transition(
+  props: TransitionProps & {
+    children: React.ReactElement;
+  },
+  ref: React.Ref<unknown>
+) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 const Home = () => {
   const [tempState, setTempState] = useState(false);
-  const [upState,setUpState] = useState(false);
-
-  const handleUpState=()=>{
-   setUpState(true);
-  }
-  const handleDownState=()=>{
-    setUpState(false);
-  }
+  const [state1, setState1] = useState(false)
+  const [state2, setState2] = useState(false)
+  const [state3, setState3] = useState(false)
+  const [state4, setState4] = useState(false)
+  const [state5, setState5] = useState(false)
+  const [state6, setState6] = useState(false)
   const q1 = () => {
     if (tempState === false) {
       document.getElementById("ans-1")!.style.display = "block";
@@ -25,11 +39,13 @@ const Home = () => {
       document.getElementById("ans-5")!.style.display = "none";
       document.getElementById("ans-6")!.style.display = "none";
       setTempState(true);
+      setState1(true);
     } else {
       document.getElementById("ans-1")!.style.display = "none";
       setTempState(false);
+      setState1(false);
     }
-  };
+  }; 
   const q2 = () => {
     if (tempState === false) {
       document.getElementById("ans-2")!.style.display = "block";
@@ -39,8 +55,10 @@ const Home = () => {
       document.getElementById("ans-5")!.style.display = "none";
       document.getElementById("ans-6")!.style.display = "none";
       setTempState(true);
+      setState2(true);
     } else {
       document.getElementById("ans-2")!.style.display = "none";
+      setState2(false);
       setTempState(false);
     }
   };
@@ -53,9 +71,11 @@ const Home = () => {
       document.getElementById("ans-5")!.style.display = "none";
       document.getElementById("ans-6")!.style.display = "none";
       setTempState(true);
+      setState3(true);
     } else {
       document.getElementById("ans-3")!.style.display = "none";
       setTempState(false);
+      setState3(false);
     }
   };
   const q4 = () => {
@@ -67,9 +87,11 @@ const Home = () => {
       document.getElementById("ans-5")!.style.display = "none";
       document.getElementById("ans-6")!.style.display = "none";
       setTempState(true);
+      setState4(true);
     } else {
       document.getElementById("ans-4")!.style.display = "none";
       setTempState(false);
+      setState4(false);
     }
   };
   const q5 = () => {
@@ -81,15 +103,18 @@ const Home = () => {
       document.getElementById("ans-1")!.style.display = "none";
       document.getElementById("ans-6")!.style.display = "none";
       setTempState(true);
+      setState5(true);
     } else {
       document.getElementById("ans-5")!.style.display = "none";
       setTempState(false);
+      setState5(false);
     }
   };
   const q6 = () => {
     if (tempState === false) {
       document.getElementById("ans-6")!.style.display = "block";
       setTempState(true);
+      setState6(true);
       document.getElementById("ans-2")!.style.display = "none";
       document.getElementById("ans-3")!.style.display = "none";
       document.getElementById("ans-4")!.style.display = "none";
@@ -97,30 +122,132 @@ const Home = () => {
       document.getElementById("ans-1")!.style.display = "none";
     } else {
       document.getElementById("ans-6")!.style.display = "none";
+      setState6(false);
       setTempState(false);
     }
+  };
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const [open2, setOpen2] = useState(false);
+
+  const handleClickOpen2 = () => {
+    setOpen2(true);
+  };
+
+  const handleClose2 = () => {
+    setOpen2(false);
   };
   return (
     <>
       <div className="home-parent-div">
-        <Navbar />
-        <Container>
-          <div className="middle-containt-div">
-            <div className="left-container-div">
-              <h1 className="containt-des">
-                Unlimited movies, TV
-                <br />
-                <span className="span-des">shows and more.</span>
-              </h1>
-              <p className="para-des">Watch anywhere. Cancel anytime.</p>
+        <img className="temp" src="https://assets.nflxext.com/ffe/siteui/vlv3/afc06103-4d6a-4236-b496-34b671a7e9ba/383fc36a-aa04-4dfd-95a0-a4b71bc21eed/IN-en-20221003-popsignuptwoweeks-perspective_alpha_website_large.jpg"/>
+        <div className="container-div">
+          <Container>
+            <div className="nav-head-div">
+              <div className="nav-left-div">
+                <h2 className="nav-logo-heading">
+                  Entertainment-<span className="hub-span">HUB</span>
+                </h2>
+              </div>
+              <div className="nav-right-div">
+                <div className="nav-right-inner-div">
+                  <p className="right-para">
+                    <a href="#about-containt-div" className="anchor-para">
+                      FAQ's
+                    </a>
+                  </p>
+                  <p className="right-para right-para-about">About</p>
+                </div>
+              </div>
             </div>
-            <div>
-               {
-                  upState === false ?
-                  <Signup handleUpState={handleUpState}/>
-                  :
-              <Login handleUpState={handleDownState}/>
-               }
+          </Container>
+        </div>{" "}
+        <Container>
+          <div className="main-div-top">
+            <div className="middle-containt-div">
+              <div className="left-container-div">
+                <h1 className="containt-des">
+                  Unlimited movies, TV
+                  <br />
+                  <span className="span-des">shows and more.</span>
+                </h1>
+                <p className="para-des">Watch anywhere. Cancel anytime.</p>
+                <p className="para-ready">
+                  Ready to watch? Sign Up for free or Already a Member Then Just
+                  Login.
+                </p>
+              </div>
+              <div className="row-division-btn">
+                <button className="login-btn-home" onClick={handleClickOpen2}>
+                  Login
+                </button>
+                <p className="span-or">OR</p>
+                <button className="signup-btn-home" onClick={handleClickOpen}>
+                  Sign Up
+                </button>
+              </div>
+              <Dialog
+                fullScreen
+                open={open}
+                onClose={handleClose}
+                TransitionComponent={Transition}
+              >
+                <AppBar sx={{ position: "relative" }}>
+                  <Toolbar>
+                    <Typography
+                      sx={{ ml: 2, flex: 1 }}
+                      variant="h6"
+                      component="div"
+                    >
+                      Register
+                    </Typography>
+                    <IconButton
+                      edge="start"
+                      color="inherit"
+                      onClick={handleClose}
+                      aria-label="close"
+                    >
+                      <CloseIcon />
+                    </IconButton>
+                  </Toolbar>
+                </AppBar>
+                <Signup handleClickOpen2={handleClickOpen2} />
+              </Dialog>
+              <Dialog
+                fullScreen
+                open={open2}
+                onClose={handleClose2}
+                TransitionComponent={Transition}
+              >
+                <AppBar sx={{ position: "relative" }}>
+                  <Toolbar>
+                    <Typography
+                      sx={{ ml: 2, flex: 1 }}
+                      variant="h6"
+                      component="div"
+                    >
+                      Login
+                    </Typography>
+                    <IconButton
+                      edge="start"
+                      color="inherit"
+                      onClick={handleClose2}
+                      aria-label="close"
+                    >
+                      <CloseIcon />
+                    </IconButton>
+                  </Toolbar>
+                </AppBar>
+                <Login handleClickOpen={handleClickOpen} />
+              </Dialog>
             </div>
           </div>
         </Container>
@@ -170,14 +297,14 @@ const Home = () => {
       <hr className="hr-middle" />
       <div className="about-containt-div">
         <Container>
-          <div className="about-containt-div">
+          <div className="about-containt-div" id="about-containt-div">
             <div className="inner-top-head">
               <h1>Frequently Asked Questions</h1>
             </div>
             <div className="inner-about">
               <div className="heading-btn" onClick={q1}>
                 <h3 className="heading-faq">-What is Entertainment-HUB?</h3>
-                {tempState === false ? (
+                {state1 === false ? (
                   <i className="fa-solid fa-plus fa-2x"></i>
                 ) : (
                   <i className="fa-solid fa-xmark fa-2x"></i>
@@ -193,7 +320,7 @@ const Home = () => {
               </p>
               <div className="heading-btn" onClick={q2}>
                 <h3 className="heading-faq">-How do i cancel?</h3>
-                {tempState === false ? (
+                {state2 === false ? (
                   <i className="fa-solid fa-plus fa-2x"></i>
                 ) : (
                   <i className="fa-solid fa-xmark fa-2x"></i>
@@ -207,7 +334,7 @@ const Home = () => {
               </p>
               <div className="heading-btn" onClick={q3}>
                 <h3 className="heading-faq">-How much does It's Cost?</h3>
-                {tempState === false ? (
+                {state3 === false ? (
                   <i className="fa-solid fa-plus fa-2x"></i>
                 ) : (
                   <i className="fa-solid fa-xmark fa-2x"></i>
@@ -221,7 +348,7 @@ const Home = () => {
               </p>
               <div className="heading-btn" onClick={q4}>
                 <h3 className="heading-faq">-Where i can whatch?</h3>
-                {tempState === false ? (
+                {state4 === false ? (
                   <i className="fa-solid fa-plus fa-2x"></i>
                 ) : (
                   <i className="fa-solid fa-xmark fa-2x"></i>
@@ -240,7 +367,7 @@ const Home = () => {
                 <h3 className="heading-faq">
                   -What i can watch on Entertainment-Hub
                 </h3>
-                {tempState === false ? (
+                {state5 === false ? (
                   <i className="fa-solid fa-plus fa-2x"></i>
                 ) : (
                   <i className="fa-solid fa-xmark fa-2x"></i>
@@ -256,7 +383,7 @@ const Home = () => {
                 <h3 className="heading-faq">
                   -Is Entertainment-Hub good for kids?
                 </h3>
-                {tempState === false ? (
+                {state6 === false ? (
                   <i className="fa-solid fa-plus fa-2x"></i>
                 ) : (
                   <i className="fa-solid fa-xmark fa-2x"></i>
@@ -272,7 +399,6 @@ const Home = () => {
           </div>
         </Container>
       </div>
-      <hr className="hr-middle" />
       <Footer />
     </>
   );

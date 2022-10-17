@@ -31,9 +31,9 @@ const Footer = () => {
             </div>
             <div className="header-inner-div-second">
               <div className="inner-second-header">
-                <div>
+                {/* <div>
                   <i className="fa-solid fa-mobile-screen font-icon-middle"></i>
-                </div>
+                </div> */}
                 <div>
                   <i className="fa-solid fa-mobile font-icon-middle"></i>
                 </div>
@@ -42,9 +42,9 @@ const Footer = () => {
                 </div>
               </div>
               <div className="right-font-icon-div">
-                <div className="items">Device</div>
-                <div className="items">+23 - 567-890</div>
-                <div className="items">company@gmail.com</div>
+                {/* <div className="items">Device</div> */}
+                <div className="items">7697150410</div>
+                <div className="items">sagar.jhode@iviewlabs.net</div>
               </div>
             </div>
           </div>

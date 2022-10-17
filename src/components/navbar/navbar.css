@@ -1,60 +1,22 @@
-.nav-head-div{
-    width: 100%;
+.header-nav-top{
     display: flex;
-    justify-content: space-between;
-}
-.nav-left-div{
-    width: 50vw;
-}
-.nav-right-div{
-    width: 50vw;
-}
-.about-signup{
-    margin-right: 3vw;
-}
-.nav-right-inner-div{
-     display: flex;
-     justify-content: flex-end;
-}
-.nav-logo-heading{
+    justify-content: space-around;
+    background-color: #2d313a;
     color: white;
 }
-.hub-span{
-    color: white;
+.same-nav-divs{
+    width: 33.33%;
 }
-.right-para{
-    color: white;
-    padding-top: 0.6vh;
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-.right-para:hover{
+i:hover{
     cursor: pointer;
-    border: 1px solid white;
-    background-color: green;
-    color: white;
-    border-radius: 8px;
-    padding: 1vh 1vw;
 }
-.middle-containt-div{
+.search-header-div{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
 }
-.left-container-div{
-    margin-top: 10vh;
-}
-.containt-des{
-    color: white;
-    font-size: 3rem;
-    font-weight: bold;
-}
-.para-des{
-    color: white;
-    font-size: larger;
-    font-weight: 500;
-    padding-left: 6vw;
-    margin-top: -4vh;
-}
-.span-des{
-    padding-left: 2.9vw;
+.profile-div{
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
