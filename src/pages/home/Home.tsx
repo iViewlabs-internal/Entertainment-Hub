@@ -148,7 +148,7 @@ const Home = () => {
   return (
     <>
       <div className="home-parent-div">
-        <img className="temp" src="https://assets.nflxext.com/ffe/siteui/vlv3/afc06103-4d6a-4236-b496-34b671a7e9ba/383fc36a-aa04-4dfd-95a0-a4b71bc21eed/IN-en-20221003-popsignuptwoweeks-perspective_alpha_website_large.jpg"/>
+        <img className="temp" src="https://assets.nflxext.com/ffe/siteui/vlv3/afc06103-4d6a-4236-b496-34b671a7e9ba/383fc36a-aa04-4dfd-95a0-a4b71bc21eed/IN-en-20221003-popsignuptwoweeks-perspective_alpha_website_large.jpg" alt="background"/>
         <div className="container-div">
           <Container>
             <div className="nav-head-div">
@@ -260,7 +260,7 @@ const Home = () => {
               <img
                 className="dumy-picture"
                 src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg"
-                alt="dumy picture"
+                alt="dumy"
               />
             </div>
             <div className="middle-containte-div">
@@ -288,7 +288,7 @@ const Home = () => {
               <img
                 className="streaming-picture"
                 src="https://images.unsplash.com/photo-1615986201152-7686a4867f30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c3RyZWFtaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
-                alt="dumy picture"
+                alt="dumy"
               />
             </div>
           </div>

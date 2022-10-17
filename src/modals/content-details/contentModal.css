@@ -1,0 +1,86 @@
+.modal-header-div {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+  background-color: rgb(70 94 139);
+}
+.modal-item-img {
+  border: 2px solid rgb(147, 143, 143);
+  border-radius: 12px;
+  width: auto;
+}
+.modal-inner-right {
+  display: flex;
+  width: auto;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 4vw;
+  overflow: hidden;
+}
+.item-overview {
+  border: 3px solid rgb(48, 45, 45);
+  border-radius: 12px;
+}
+.overview-para {
+  font-size: 1.2rem;
+  padding-left: 8px;
+  padding-right: 5px;
+  color: white;
+}
+.anchor-video {
+  text-decoration: none;
+  color: white;
+  font-size: large;
+  font-weight: 500;
+  width: 100%;
+}
+.btn-video {
+  background-color: #f50057;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding-top: 1vh;
+  padding-bottom: 2vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.btn-video:hover {
+  cursor: pointer;
+}
+.youtube-icon {
+  color: white;
+  padding-right: 1vw;
+}
+
+@media screen and (min-width: 100px) and (max-width: 700px) {
+  .modal-header-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem;
+    background-color: #223e7e;
+  }
+  .modal-inner-right {
+    margin-left: 0;
+  }
+}
+@media screen and (min-width: 100px) and (max-width: 400px) {
+    .modal-item-img{
+        width: 73vw;
+        height: 50vh;
+    }
+}
+@media screen and (min-width: 401px) and (max-width: 500px) {
+    .modal-item-img{
+        width: 78vw;
+        height: 50vh;
+    }
+}
+@media screen and (min-width: 501px) and (max-width: 699px) {
+    .modal-item-img{
+        width: 84.8vw;
+        height:55vh;
+    }
+}

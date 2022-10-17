@@ -32,7 +32,8 @@
 .para-containt-div{
     display: flex;
     flex-direction: column;
-    padding-left: 1.2vw;
+    justify-content: flex-start;
+    margin-left: 2.4vw;
 }
 .para-content-title{
     color: white;
@@ -41,13 +42,10 @@
     margin: 0;
 }
 .inner-para-containt-div{
-    display: flex;
-    justify-content: center;
     margin-top: 1vh;
 }
 .inner-para-containt{
     display: flex;
-    justify-content: center;
     margin-bottom: 1vh;
     color: white;
 }
@@ -60,4 +58,9 @@
     background-color: #414141;
     border: 3px solid rgb(32, 103, 82);
     border-radius: 12px;
+}
+@media screen and (min-width: 100px) and (max-width: 600px) {
+    .para-containt-div{
+        margin-left: 9vw;
+    }
 }

@@ -34,10 +34,16 @@ const Trending = () => {
               data.map((val: any) => {
                 return (
                   <Content
+                    id={val.id}
+                    key={val.id}
                     title={val.title ? val.title : val.name}
                     date={val.first_air_date}
                     poster={val.poster_path}
                     mediaType={val.media_type}
+                    release_date={val.release_date}
+                    overview={val.overview}
+                    first_air_date={val.first_air_date}
+                    vote_average={val.vote_average}
                   />
                 );
               })}

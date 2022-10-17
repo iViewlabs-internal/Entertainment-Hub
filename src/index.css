@@ -39,6 +39,6 @@ body{
 #myBtn:hover {
   background-color: #0a325a;
 }
-html {
+*{
   scroll-behavior: smooth;
 }
