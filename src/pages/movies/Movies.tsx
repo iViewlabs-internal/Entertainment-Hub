@@ -35,10 +35,13 @@ const Movies = () => {
               data.map((val: any) => {
                 return (
                   <Content
+                    key={val.id}
+                    id={val.id}
                     title={val.title ? val.title : val.name}
-                    date={val.first_air_date}
+                    release_date={val.release_date}
                     poster={val.poster_path}
-                    mediaType={val.media_type}
+                    mediaType="movie"
+                    overview={val.overview}
                   />
                 );
               })}
