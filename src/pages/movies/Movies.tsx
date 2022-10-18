@@ -42,6 +42,7 @@ const Movies = () => {
                     poster={val.poster_path}
                     mediaType="movie"
                     overview={val.overview}
+                    vote_average={val.vote_average}
                   />
                 );
               })}

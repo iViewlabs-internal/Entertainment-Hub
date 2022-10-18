@@ -1,25 +1,51 @@
 .container-items{
-    background-color: rgb(166, 186, 223);
-    flex-wrap: wrap;
+    background-color: rgb(227, 232, 240);
+    /* flex-wrap: wrap; */
     padding-bottom: 4vh;
     padding-top: 3vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
 }
 .top-trending-div{
     display: flex;
     justify-content: center;
-    color: white;
+    color: rgb(10, 10, 10);
     margin-bottom: 2%;
 }
-.css-1lwbda4-MuiStack-root{
-    justify-content: center !important;
-    flex-direction: row !important;
-    margin-top: 4% !important;
-    margin-bottom: 1.5% !important;
-    color: white !important;
+/* .top-trending-div{
+	-webkit-animation: color_change 3s infinite alternate;
+	-moz-animation: color_change 3s infinite alternate;
+	-ms-animation: color_change 3s infinite alternate;
+	-o-animation: color_change 3s infinite alternate;
+	animation: color_change 3s infinite alternate;
 }
-ul > li > button{
-    color: white !important;
-    font-size: 1rem !important;
+@-webkit-keyframes color_change {
+	from { color: blue; }
+	to { color: red; }
+}
+@-moz-keyframes color_change {
+	from { color: blue; }
+	to { color: red; }
+}
+@-ms-keyframes color_change {
+	from { color: blue; }
+	to { color: red; }
+}
+@-o-keyframes color_change {
+	from { color: blue; }
+	to { color: red; }
+}
+@keyframes color_change {
+	from { color: blue; }
+	to { color: red; }
+} */
+.css-mhc70k-MuiGrid-root>.MuiGrid-item{
+    display: flex !important;
+    justify-content: center !important;
+    padding-left: 0 !important;
 }
 @media screen and (min-width: 200px) and (max-width: 300px) {
     .top-trending-div > h1{
@@ -93,4 +119,3 @@ ul > li > button{
         padding-right: 10vw;
     }
 }
-
