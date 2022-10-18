@@ -13,15 +13,11 @@
     text-decoration: none;
   }
   .carouselItem__txt:hover{
-      color: rgb(47, 27, 165);
+      color: rgb(11, 20, 120);
   }
   .carouselItem__img {
     border-radius: 10px;
-    margin-bottom: 5px;
     box-shadow: 0px 0px 5px black;
-    height: 23vh;
-    /* width: 20vw; */
+    height: 22vh;
+    width: 7.5vw;
   }
-  /* .alice-carousel__wrapper{
-    width: 100vw !important;
-  } */

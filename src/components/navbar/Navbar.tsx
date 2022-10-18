@@ -49,9 +49,11 @@ const Navbar = () => {
            <i className="fa-solid fa-film fa-2x" id="movies-item"></i>
            </div>
            </Link>
+           <Link to="/tv-series" style={{color:"white"}}>
            <div>
            <i className="fa-solid fa-tv fa-2x" id="tv-series-item"></i>
            </div>
+           </Link>
            <div>
            <i className="fa-solid fa-magnifying-glass fa-2x" id="search-item" ></i>
            </div>

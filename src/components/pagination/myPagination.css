@@ -1,0 +1,11 @@
+.css-1lwbda4-MuiStack-root{
+    justify-content: center !important;
+    flex-direction: row !important;
+    margin-top: 4% !important;
+    margin-bottom: 1.5% !important;
+    color: white !important;
+}
+ul > li > button{
+    color: rgb(0, 0, 0) !important;
+    font-size: 1rem !important;
+}
