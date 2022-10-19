@@ -2,6 +2,7 @@ import { Container, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import Content from "../../components/content/Content";
 import Footer from "../../components/footer/Footer";
+import Loader from "../../components/loader/Loader";
 import Navbar from "../../components/navbar/Navbar";
 import MyPagination from "../../components/pagination/MyPagination";
 import "./movies.css";
@@ -9,15 +10,17 @@ import "./movies.css";
 const mykey = process.env.REACT_APP_USER_API_KEY;
 const Movies = () => {
     const [page, setPage] = useState(1);
+    const [loading,setLoading] = useState(true);
     const [data, setData] = useState<any[]>([]);
     const numOfPages = 500
     useEffect(() => {
       fetch(
-        `https://api.themoviedb.org/3/discover/movie?api_key=${mykey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}`
+      `https://api.themoviedb.org/3/discover/movie?api_key=${mykey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}`
       )
         .then((res) => res.json())
         .then((items) => {
           setData(items.results);
+          setLoading(false);
         });
       window.scroll(0, 0);
     }, [page]);
@@ -30,6 +33,9 @@ const Movies = () => {
           <div className="top-trending-div">
             <h1>Movies</h1>
           </div>
+          {
+            loading ? <Loader/>:
+          
           <Grid container spacing={2} alignItems="stretch">
             {data &&
               data.map((val: any) => {
@@ -47,8 +53,11 @@ const Movies = () => {
                 );
               })}
           </Grid>
+}
         </Container>
-            <MyPagination setPage={setPage} numOfPages={numOfPages} />
+            {loading === false && (
+          <MyPagination setPage={setPage} numOfPages={numOfPages} />
+        )}
       </div>
       <Footer />
    </>
