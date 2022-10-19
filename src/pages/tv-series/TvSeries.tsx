@@ -2,11 +2,13 @@ import { Container, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import Content from "../../components/content/Content";
 import Footer from "../../components/footer/Footer";
+import Loader from "../../components/loader/Loader";
 import Navbar from "../../components/navbar/Navbar";
 import MyPagination from "../../components/pagination/MyPagination";
 
 const mykey = process.env.REACT_APP_USER_API_KEY;
 const TvSeries = () => {
+  const [loading,setLoading] = useState(true);
     const [page, setPage] = useState(1);
     const [data, setData] = useState<any[]>([]);
     const numOfPages = 500
@@ -18,6 +20,7 @@ const TvSeries = () => {
         .then((res) => res.json())
         .then((items) => {
           setData(items.results);
+          setLoading(false)
         });
       window.scroll(0, 0);
     }, [page]);
@@ -29,6 +32,9 @@ const TvSeries = () => {
           <div className="top-trending-div">
             <h1>Tv Series</h1>
           </div>
+          {
+            loading ? <Loader/>:
+          
           <Grid container spacing={2} alignItems="stretch">
             {data &&
               data.map((val: any) => {
@@ -46,8 +52,14 @@ const TvSeries = () => {
                 );
               })}
           </Grid>
+}
         </Container>
+        {
+         loading === false ?
         <MyPagination setPage={setPage} numOfPages={numOfPages} />
+        :
+        ""
+        }
       </div>
       <Footer />
     </>
