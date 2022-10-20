@@ -20,3 +20,11 @@ i:hover{
     justify-content: flex-end;
     align-items: center;
 }
+.profile-icon{
+    height: 7vh;
+    width: 4vw;
+    color: white;
+}
+.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper{
+    width: 10vw;
+}

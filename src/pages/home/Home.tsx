@@ -1,26 +1,9 @@
 import { Container } from "@mui/material";
-import { forwardRef, useState } from "react";
-import Login from "../../components/login/Login";
-import Signup from "../../components/sign-up/Signup";
-import Footer from "../../components/footer/Footer";
-import Dialog from "@mui/material/Dialog";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import CloseIcon from "@mui/icons-material/Close";
-import Slide from "@mui/material/Slide";
-import { TransitionProps } from "@mui/material/transitions";
-
+import {  useState } from "react";
 import "./home.css";
-const Transition = forwardRef(function Transition(
-  props: TransitionProps & {
-    children: React.ReactElement;
-  },
-  ref: React.Ref<unknown>
-) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
+import RegisterModal from "../../modals/register/RegisterModal";
+import LoginModal from "../../modals/login/LoginModal";
+import Footer from "../../components/footer/Footer";
 
 const Home = () => {
   const [tempState, setTempState] = useState(false);
@@ -194,60 +177,8 @@ const Home = () => {
                   Sign Up
                 </button>
               </div>
-              <Dialog
-                fullScreen
-                open={open}
-                onClose={handleClose}
-                TransitionComponent={Transition}
-              >
-                <AppBar sx={{ position: "relative" }}>
-                  <Toolbar>
-                    <Typography
-                      sx={{ ml: 2, flex: 1 }}
-                      variant="h6"
-                      component="div"
-                    >
-                      Register
-                    </Typography>
-                    <IconButton
-                      edge="start"
-                      color="inherit"
-                      onClick={handleClose}
-                      aria-label="close"
-                    >
-                      <CloseIcon />
-                    </IconButton>
-                  </Toolbar>
-                </AppBar>
-                <Signup handleClickOpen2={handleClickOpen2} />
-              </Dialog>
-              <Dialog
-                fullScreen
-                open={open2}
-                onClose={handleClose2}
-                TransitionComponent={Transition}
-              >
-                <AppBar sx={{ position: "relative" }}>
-                  <Toolbar>
-                    <Typography
-                      sx={{ ml: 2, flex: 1 }}
-                      variant="h6"
-                      component="div"
-                    >
-                      Login
-                    </Typography>
-                    <IconButton
-                      edge="start"
-                      color="inherit"
-                      onClick={handleClose2}
-                      aria-label="close"
-                    >
-                      <CloseIcon />
-                    </IconButton>
-                  </Toolbar>
-                </AppBar>
-                <Login handleClickOpen={handleClickOpen} />
-              </Dialog>
+              <RegisterModal open={open} handleClose={handleClose} handleClickOpen2={handleClickOpen2}/>
+              <LoginModal open2={open2} handleClose2={handleClose2} handleClickOpen={handleClickOpen}/>
             </div>
           </div>
         </Container>

@@ -2,6 +2,8 @@ import "./signup.css";
 import * as Yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 type Inputs = {
   username: string;
@@ -56,11 +58,15 @@ const Signup = (props: any) => {
       password: data.password,
     };
     localStorage.setItem("register", JSON.stringify(register));
-    window.location.href = "/";
+    toast.success("You Gets Registered Successfuly");
+    setTimeout(() => {
+      window.location.href = "/";
+    },3000);
   };
 
   return (
     <>
+    <ToastContainer autoClose={3000} />
       <div className="signup-header-div">
         <div className="register-img-div">
           <img

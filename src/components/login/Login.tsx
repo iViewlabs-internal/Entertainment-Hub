@@ -3,18 +3,17 @@ import * as Yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 
 type Inputs = {
-  username: string;
+  email: string;
   password: string;
 };
 const validationSchema = Yup.object()
   .shape({
-    username: Yup.string()
-      .required()
-      .required("*Username is required")
-      .min(3, "*Username must be at least 3 characters")
-      .max(15, "*Username must not exceed 20 characters"),
+    email: Yup.string()
+    .required("*Email is required")
+    .email("*Email is invalid"),
     password: Yup.string()
       .required()
       .required("*Password is required")
@@ -36,17 +35,28 @@ const Login = (props: any) => {
   const onSubmit = (data: any) => {
     const registerData: any = localStorage.getItem("register");
     const parsedData = JSON.parse(registerData);
-    if (
-      parsedData.username === data.username &&
+    if (!data.email || !data.password) {
+      toast.error("Fields are empty!");
+    } else if (parsedData.email !== data.email) {
+      toast.error("Invailid username!");
+    } else if (parsedData.password !== data.password) {
+      toast.error("Invailid Password!");
+    } else if (
+      parsedData.email === data.email &&
       parsedData.password === data.password
     ) {
-      navigate("/trending");
+      toast.success("Logged In Successfuly!");
+      setTimeout(() => {
+        navigate("/trending");
+      }, 3000);
     } else {
-      alert("no");
+      toast.error("Invailid Entries!");
     }
   };
 
   return (
+    <>
+        <ToastContainer autoClose={3000} />
     <div className="login-header-div">
       <div className="login-form">
         <div className="img-div-lock">
@@ -58,14 +68,14 @@ const Login = (props: any) => {
         </div>
         <div>
           <form onSubmit={handleSubmit(onSubmit)} className="form-class">
-            <div>
+          <div>
               <input
                 type="text"
-                placeholder="Your Username"
-                {...register("username")}
-                className="input-fields-login inpt-login-one"
+                placeholder="Your Email"
+                {...register("email")}
+                className="input-fields"
               />
-              <div className="invalid-feedback">{errors.username?.message}</div>
+              <div className="invalid-feedback">{errors.email?.message}</div>
 
               <br />
             </div>
@@ -105,6 +115,7 @@ const Login = (props: any) => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
