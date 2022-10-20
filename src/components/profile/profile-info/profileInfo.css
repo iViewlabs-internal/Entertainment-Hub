@@ -1,0 +1,23 @@
+.div2-info{
+    margin-left: 1.4vw;
+}
+.info-div-parent{
+    display: flex;
+}
+.info-div-btn{
+    display: flex;
+    justify-content: space-between;
+}
+.info-div-btn > button{
+     width: 49%;
+     padding: 2vh 0;
+     font-size: 1rem;
+     background-color: #0a325a;
+     color: white;
+     border: 1px solid white;
+     border-radius: 8px;
+     font-weight: 600;
+}
+.info-div-btn > button:hover{
+    background-color: #173d63;
+}

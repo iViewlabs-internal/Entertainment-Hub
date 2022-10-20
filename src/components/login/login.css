@@ -14,14 +14,14 @@
   margin-bottom: 0;
 }
 .input-fields-login {
-  width: 45vw;
+  width: 50vw;
   height: 7vh;
 }
 .login-btn {
   margin-top: 1.5vh;
   font-size: 1.2rem;
   height: 8vh;
-  width: 46.6vw;
+  width: 100%;
   border: 1px solid white;
   border-radius: 6px;
   color: white;

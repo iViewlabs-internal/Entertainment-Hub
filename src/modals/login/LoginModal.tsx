@@ -1,0 +1,51 @@
+import { forwardRef } from "react";
+import Login from "../../components/login/Login";
+import Dialog from "@mui/material/Dialog";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import CloseIcon from "@mui/icons-material/Close";
+import Slide from "@mui/material/Slide";
+import { TransitionProps } from "@mui/material/transitions";
+
+const Transition = forwardRef(function Transition(
+  props: TransitionProps & {
+    children: React.ReactElement;
+  },
+  ref: React.Ref<unknown>
+) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
+
+const LoginModal = (props: any) => {
+  return (
+    <>
+      <Dialog
+        fullScreen
+        open={props.open2}
+        onClose={props.handleClose2}
+        TransitionComponent={Transition}
+      >
+        <AppBar sx={{ position: "relative" }}>
+          <Toolbar>
+            <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
+              Login
+            </Typography>
+            <IconButton
+              edge="start"
+              color="inherit"
+              onClick={props.handleClose2}
+              aria-label="close"
+            >
+              <CloseIcon />
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+        <Login handleClickOpen={props.handleClickOpen} />
+      </Dialog>
+    </>
+  );
+};
+
+export default LoginModal;
