@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./profileInfo.css";
 
 interface gpd{
@@ -9,9 +8,9 @@ const ProfileInfo: React.FC<gpd>= (props)=> {
   const userInfo = JSON.parse(registeredUser);
   return ( 
     <>
-      <div> 
-        <h2>User Profile</h2>
-      </div>
+    
+        <h2 style={{marginBottom:"0%",paddingBottom:"0%"}}>User Profile</h2>
+     
       <div className="info-div-parent">
         <div className="info-div1">
           <h3>Username:</h3>

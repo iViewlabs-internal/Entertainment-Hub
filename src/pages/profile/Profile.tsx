@@ -19,13 +19,14 @@ const Profile: React.FC = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar handle={handleState2}/>
       <div className="profile-parent">
         <div>
           <img
             className="profile-page-img"
             src={
-              "https://media.istockphoto.com/photos/compliance-with-internal-regulations-basic-rules-of-employees-in-the-picture-id1390249765?s=612x612"
+              "https://www.simplilearn.com/ice9/free_resources_article_thumb/ethicalhacking.jpg"
+              // "https://media.istockphoto.com/photos/compliance-with-internal-regulations-basic-rules-of-employees-in-the-picture-id1390249765?s=612x612"
             }
             alt="profile"
           />

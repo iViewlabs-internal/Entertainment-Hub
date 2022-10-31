@@ -19,7 +19,7 @@
     3) after that open your terminal in main folder and run a commond:  npm install
         and hit enter (it will install all the dependancies that have required in this project)
 
-    4) now, you can follow a commond to run your project:
+    4) now, you can follow a commond to run your project: npm start
   # npm start
   
     it will start your server on local host and you will be redirect to the home page of the application by default.
