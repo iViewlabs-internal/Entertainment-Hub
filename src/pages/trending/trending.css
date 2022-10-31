@@ -9,6 +9,18 @@
     align-items: center;
     align-self: center;
 }
+#week-id{
+    color: blue;
+}
+#week-id:hover{
+    cursor: pointer;
+}
+#day-id{
+    text-decoration: underline;
+}
+#day-id:hover{
+    cursor: pointer;
+}
 .top-trending-div{
     display: flex;
     justify-content: center;

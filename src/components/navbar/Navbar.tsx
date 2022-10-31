@@ -1,13 +1,13 @@
 import { Container } from "@mui/system";
 import { useEffect, useState } from "react";
-import { Link, useNavigate , useLocation } from "react-router-dom";
-import { CgProfile } from 'react-icons/cg';
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { CgProfile } from "react-icons/cg";
 
 import "./navbar.css";
 import { Button, Menu, MenuItem } from "@mui/material";
 import { toast, ToastContainer } from "react-toastify";
 
-const Navbar = () => {
+const Navbar = (props:any) => {
   const location = useLocation();
   const navigate = useNavigate();
   const handleRoute = () => {
@@ -33,15 +33,15 @@ const Navbar = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const loggedOut = ()=>{
-    toast.success("Logged Out Successfuly!")
+  const loggedOut = () => {
+    toast.success("Logged Out Successfuly!");
     setTimeout(() => {
-      navigate("/")
+      navigate("/");
     }, 3000);
-  }
+  };
   return (
     <>
-    <ToastContainer autoClose={3000}/>
+      <ToastContainer autoClose={3000} />
       <div className="header-nav-top">
         <Container>
           <div className="header-nav-top">
@@ -78,31 +78,45 @@ const Navbar = () => {
             <div className="same-nav-divs profile-div">
               {/* <div><CgProfile className="profile-icon"/></div> */}
               <div>
-              <Button
-        id="basic-button"
-        className="profile-icon"
-        aria-controls={open ? 'basic-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-        >
-        <div><CgProfile className="profile-icon"/></div>
-       
-      </Button>
-      <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
-      >
-        <Link to="/profile" style={{color:"black",textDecoration:"none"}}>
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        </Link>
-        <MenuItem onClick={()=>{handleClose(); loggedOut()}}>Logout</MenuItem>
-      </Menu>
+                <Button
+                  id="basic-button"
+                  className="profile-icon"
+                  aria-controls={open ? "basic-menu" : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open ? "true" : undefined}
+                  onClick={handleClick}
+                >
+                  <div>
+                    <CgProfile className="profile-icon" />
+                  </div>
+                </Button>
+                <Menu
+                  id="basic-menu"
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={handleClose}
+                  MenuListProps={{
+                    "aria-labelledby": "basic-button",
+                  }}
+                >
+                  <Link
+                    to="/profile"
+                    style={{ color: "black", textDecoration: "none" }}
+                  >
+                    <MenuItem onClick={()=>{
+                      handleClose()
+                      props.handle()
+                    }}>Profile</MenuItem>
+                  </Link>
+                  <MenuItem
+                    onClick={() => {
+                      handleClose();
+                      loggedOut();
+                    }}
+                  >
+                    Logout
+                  </MenuItem>
+                </Menu>
               </div>
             </div>
           </div>

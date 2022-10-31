@@ -204,13 +204,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 5vh;
+  padding-bottom: 3vh;
 }
 .para-about-hub {
   color: white;
 }
 .inner-top-head {
   align-self: center;
+}
+.inner-top-head > h1{
+  margin-bottom: 0;
 }
 .inner-about {
   display: flex;

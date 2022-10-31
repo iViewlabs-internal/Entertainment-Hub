@@ -13,9 +13,10 @@ const Trending = () => {
   const [loading , setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [data, setData] = useState<any[]>([]);
+  const [trending, setTrending] = useState("day");
   useEffect(() => {
     fetch(
-      `https://api.themoviedb.org/3/trending/all/day?api_key=${mykey}&page=${page}`
+      `https://api.themoviedb.org/3/trending/all/${trending}?api_key=${mykey}&page=${page}`
     )
       .then((res) => res.json())
       .then((items) => {
@@ -23,14 +24,28 @@ const Trending = () => {
         setLoading(false);
       });
     window.scroll(0, 0);
-  }, [page]);
+  }, [page,trending]);
+  const weekFunc = ()=>{
+    setTrending("week")
+    document.getElementById("week-id")!.style.textDecoration = "underline";
+    document.getElementById("week-id")!.style.color = "black";
+    document.getElementById("day-id")!.style.textDecoration = "none";
+    document.getElementById("day-id")!.style.color = "blue";
+  }
+  const dayFunc = ()=>{
+    setTrending("day")
+    document.getElementById("day-id")!.style.textDecoration = "underline";
+    document.getElementById("day-id")!.style.color = "black";
+    document.getElementById("week-id")!.style.textDecoration = "none";
+    document.getElementById("week-id")!.style.color = "blue";
+  }
   return (
     <>
       <Navbar />
       <div className="container-items">
         <Container>
           <div className="top-trending-div">
-            <h1>Top Trendings of The Day</h1>
+            <h1>Top Trendings of The (<span id="day-id" onClick={dayFunc}>Day</span> / <span id="week-id" onClick={weekFunc}>Week</span>)</h1>
           </div>
           {
             loading ? <Loader/>:

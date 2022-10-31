@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
+import ForgotPass from "../../modals/forgot-pass/forgotPass";
+import { useState } from "react";
 
 type Inputs = {
   email: string;
@@ -53,7 +55,10 @@ const Login = (props: any) => {
       toast.error("Invailid Entries!");
     }
   };
-
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  
   return (
     <>
         <ToastContainer autoClose={3000} />
@@ -108,13 +113,14 @@ const Login = (props: any) => {
                 </span>
               </div>
               <div>
-                <p className="forgott-pass">Forgot Password?</p>
+                <p className="forgott-pass" onClick={handleOpen}>Forgot Password?</p>
               </div>
             </div>
           </form>
         </div>
       </div>
     </div>
+              <ForgotPass handleClose={handleClose} handleOpen={handleOpen} open={open}/>
     </>
   );
 };

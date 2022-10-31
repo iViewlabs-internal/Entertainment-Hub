@@ -61,7 +61,7 @@ const EditProfile:React.FC<gpd2> = (props) => {
     <>
       <ToastContainer autoClose={3000} />
       <div>
-        <h2 className="user-profile-h">User Profile</h2>
+        <h2 className="user-profile-h">Edit User Profile</h2>
       </div>
       <div className="info-parent-div">
         <div className="info-div2">
