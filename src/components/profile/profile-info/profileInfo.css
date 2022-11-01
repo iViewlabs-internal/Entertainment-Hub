@@ -21,3 +21,13 @@
 .info-div-btn > button:hover{
     background-color: #173d63;
 }
+@media screen and (min-width: 300px) and (max-width: 800px) {
+    .info-div-btn{
+        padding-bottom: 4vh;
+    }
+}
+@media screen and (min-width: 200px) and (max-width: 350px) {
+    .info-div-btn > button{
+         font-size: 0.9rem;
+    }
+}

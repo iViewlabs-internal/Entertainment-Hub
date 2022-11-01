@@ -3,7 +3,7 @@
     justify-content: center;
 }
 .input-fields2{
-    width: 70%;
+    width: 92%;
     height: 5vh;
 }
 .info-div2{
@@ -17,7 +17,7 @@
     margin-bottom: 0.5vh;
 }
 .submit-btn{
-    width: 74%;
+    width: 96%;
     height: 7vh;
     color: white;
     background-color: #0a325a;
@@ -27,4 +27,9 @@
 }
 .submit-btn:hover{
     background-color: #1a4167;
+}
+@media screen and (min-width: 300px) and (max-width: 800px) {
+       .submit-btn{
+        margin-bottom: 4vh;
+       }
 }
