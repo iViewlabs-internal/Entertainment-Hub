@@ -21,7 +21,7 @@ const Profile: React.FC = () => {
     <>
       <Navbar handle={handleState2}/>
       <div className="profile-parent">
-        <div>
+        <div className="profile-left-div">
           <img
             className="profile-page-img"
             src={

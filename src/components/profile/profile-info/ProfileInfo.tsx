@@ -1,16 +1,15 @@
 import "./profileInfo.css";
 
-interface gpd{
+interface gpd {
   handleState(): boolean;
 }
-const ProfileInfo: React.FC<gpd>= (props)=> {
+const ProfileInfo: React.FC<gpd> = (props) => {
   const registeredUser: any = localStorage.getItem("register");
   const userInfo = JSON.parse(registeredUser);
-  return ( 
+  return (
     <>
-    
-        <h2 style={{marginBottom:"0%",paddingBottom:"0%"}}>User Profile</h2>
-     
+      <h2 style={{ marginBottom: "0%", paddingBottom: "0%" }}>User Profile</h2>
+
       <div className="info-div-parent">
         <div className="info-div1">
           <h3>Username:</h3>
