@@ -1,3 +1,9 @@
+.top-trending-div{
+    display: flex;
+    justify-content:center;
+    color: rgb(0, 0, 0);
+    margin-bottom: 2%;
+  }
 .container-items{
     background-color: rgb(227, 232, 240);
     /* flex-wrap: wrap; */
@@ -21,39 +27,7 @@
 #day-id:hover{
     cursor: pointer;
 }
-.top-trending-div{
-    display: flex;
-    justify-content: center;
-    color: rgb(10, 10, 10);
-    margin-bottom: 2%;
-}
-/* .top-trending-div{
-	-webkit-animation: color_change 3s infinite alternate;
-	-moz-animation: color_change 3s infinite alternate;
-	-ms-animation: color_change 3s infinite alternate;
-	-o-animation: color_change 3s infinite alternate;
-	animation: color_change 3s infinite alternate;
-}
-@-webkit-keyframes color_change {
-	from { color: blue; }
-	to { color: red; }
-}
-@-moz-keyframes color_change {
-	from { color: blue; }
-	to { color: red; }
-}
-@-ms-keyframes color_change {
-	from { color: blue; }
-	to { color: red; }
-}
-@-o-keyframes color_change {
-	from { color: blue; }
-	to { color: red; }
-}
-@keyframes color_change {
-	from { color: blue; }
-	to { color: red; }
-} */
+
 .css-mhc70k-MuiGrid-root>.MuiGrid-item{
     display: flex !important;
     justify-content: center !important;

@@ -1,0 +1,128 @@
+.top-movies-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: rgb(0, 0, 0);
+  margin-bottom: 2%;
+}
+/* .top-trending-div{
+-webkit-animation: color_change 3s infinite alternate;
+-moz-animation: color_change 3s infinite alternate;
+-ms-animation: color_change 3s infinite alternate;
+-o-animation: color_change 3s infinite alternate;
+animation: color_change 3s infinite alternate;
+}
+@-webkit-keyframes color_change {
+from { color: blue; }
+to { color: red; }
+}
+@-moz-keyframes color_change {
+from { color: blue; }
+to { color: red; }
+}
+@-ms-keyframes color_change {
+from { color: blue; }
+to { color: red; }
+}
+@-o-keyframes color_change {
+from { color: blue; }
+to { color: red; }
+}
+@keyframes color_change {
+from { color: blue; }
+to { color: red; }
+} */
+
+.filter-head{
+  font-size: 30px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+}
+.filter-head{
+  -webkit-animation: color_change 5s infinite alternate;
+  -moz-animation: color_change 5s infinite alternate;
+  -ms-animation: color_change 5s infinite alternate;
+  -o-animation: color_change 5s infinite alternate;
+  animation: color_change 5s infinite alternate;
+  }
+  @-webkit-keyframes color_change {
+  from { color: rgb(72, 72, 118); }
+  to { color: rgb(172, 74, 74); }
+  }
+  @-moz-keyframes color_change {
+  from { color: rgb(55, 137, 82); }
+  to { color: rgb(159, 57, 121); }
+  }
+  @-ms-keyframes color_change {
+  from { color: rgb(63, 144, 210); }
+  to { color: rgb(54, 37, 37); }
+  }
+  @-o-keyframes color_change {
+  from { color: rgb(20, 20, 21); }
+  to { color: rgb(159, 123, 123); }
+  }
+  @keyframes color_change {
+  from { color: rgb(72, 72, 118); }
+  to { color: rgb(137, 147, 60); }
+  }
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
+    transition: 0.5s;
+    /* padding-top: 60px; */
+  }
+  #header-filter-div{
+    margin-left: 7.5vw;
+    margin-bottom: 0.7vh;
+  }
+  .all-lables{
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    font-weight: 500;
+    padding-left: 1vw;
+  }
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    /* position: absolute;
+    top: 0;
+    right: 25px; */
+    font-size: 36px;
+    color: rgb(0, 0, 0);
+    /* margin-left: 50px; */
+  }
+  .genres-div{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2.2vw;
+  }
+  .genres-div > h4{
+    color: rgb(0, 0, 0);
+    padding-top: 0.5vh;
+  }
+  .hr-genre{
+    color: rgb(0, 0, 0);
+    margin-bottom: 3vh !important;
+    margin-top: 0vh !important;
+  }
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
