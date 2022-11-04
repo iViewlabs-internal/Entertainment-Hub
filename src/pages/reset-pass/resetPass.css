@@ -3,7 +3,8 @@
     flex-direction: row;
     justify-content: center;
     height: auto;
-    margin: 1rem;
+    margin: 4vh 2vw;
+    border: 6px solid gray;
 }
 .inpt-reset-fields{
     width: 40vw;
@@ -12,12 +13,12 @@
 .reset-inner-left-div , .reset-inner-right-div{
     width: 50%;
     height: auto;
-    border: 6px solid gray;
 }
 .reset-inner-left-div{
     display: flex;
     justify-content: center;
-    margin-right: 0.5rem;
+    /* margin-right: 0.5rem; */
+    background-color: rgb(70 94 139);
     align-items: center;
 }
 .img-reset-pass{
@@ -32,4 +33,8 @@
     border-radius: 6px;
     color:white;
     background-color: #0a325a;
+}
+.reset-submit-btn:hover{
+    cursor: pointer;
+    background-color: #224c76;
 }

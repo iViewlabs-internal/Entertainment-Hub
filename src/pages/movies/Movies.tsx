@@ -73,6 +73,7 @@ import Footer from "../../components/footer/Footer";
 import Loader from "../../components/loader/Loader";
 import Navbar from "../../components/navbar/Navbar";
 import MyPagination from "../../components/pagination/MyPagination";
+import { day } from "../../utils";
 import "./movies.css";
 
 const mykey = process.env.REACT_APP_USER_API_KEY;
@@ -81,25 +82,29 @@ const Movies = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<any[]>([]);
   const [genre, setGenre] = useState<any[]>([]);
-  const numOfPages = 500;
   const [genreArr, setGenreArr] = useState<any[]>([]);
+  const numOfPages = 500;
   let myStr = "";
 
   const tempFunc = (id: number, snd: string) => {
     const temp = document.querySelector(`#${snd}`) as HTMLInputElement;
+
     if (temp.checked) {
       setGenreArr([...genreArr, id]);
+     
     } else {
       if (genreArr.includes(id) === true) {
         genreArr.splice(genreArr.indexOf(id), 1);
       }
     }
   };
-  genreArr.map((val) => {
-    myStr += val + ",";
-  });
-
+ 
   useEffect(() => {
+     
+    genreArr.map((val) => {
+      myStr += val + ",";
+    });
+
     fetch(
       `https://api.themoviedb.org/3/discover/movie?api_key=${mykey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${myStr}`
     )
@@ -134,7 +139,7 @@ const Movies = () => {
       <div id="mySidenav" className="sidenav">
         <div className="genres-div">
           <h4>Genres</h4>
-          <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>
+          <a href="#!" className="closebtn" onClick={closeNav}>
             &times;
           </a>
         </div>
@@ -158,12 +163,11 @@ const Movies = () => {
       <div className="container-items">
         <Container>
           <div className="top-movies-div">
-            <h4 className="filter-head" onClick={openNav}>
+          <h4 className="filter-head" onClick={openNav}>
               Filter<i className="fa-solid fa-filter"></i>
             </h4>
-
             <h1>Movies</h1>
-            <h4></h4>
+          <h4 className="day-today">{day}</h4> 
           </div>
           {loading ? (
             <Loader />

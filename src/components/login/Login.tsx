@@ -14,8 +14,8 @@ type Inputs = {
 const validationSchema = Yup.object()
   .shape({
     email: Yup.string()
-    .required("*Email is required")
-    .email("*Email is invalid"),
+      .required("*Email is required")
+      .email("*Email is invalid"),
     password: Yup.string()
       .required()
       .required("*Password is required")
@@ -58,69 +58,77 @@ const Login = (props: any) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  
+
   return (
     <>
-        <ToastContainer autoClose={3000} />
-    <div className="login-header-div">
-      <div className="login-form">
-        <div className="img-div-lock">
-          <img
-            className="login-lock"
-            src="https://images.unsplash.com/photo-1509822929063-6b6cfc9b42f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-            alt="login pic"
-          />
-        </div>
-        <div>
-          <form onSubmit={handleSubmit(onSubmit)} className="form-class">
+      <ToastContainer autoClose={3000} />
+      <div className="login-header-div">
+        <div className="login-form">
+          <div className="img-div-lock">
+            <img
+              className="login-lock"
+              src="https://images.unsplash.com/photo-1509822929063-6b6cfc9b42f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+              alt="login pic"
+            />
+          </div>
           <div>
-              <input
-                type="text"
-                placeholder="Your Email"
-                {...register("email")}
-                className="input-fields"
-              />
-              <div className="invalid-feedback">{errors.email?.message}</div>
-
-              <br />
-            </div>
-            <div>
-              <input
-                type="password"
-                placeholder="Your Password"
-                {...register("password")}
-                className="input-fields-login"
-              />
-
-              <div className="invalid-feedback">{errors.password?.message}</div>
-              <br />
-            </div>
-            <div>
-              <button type="submit" className="login-btn">
-                Login
-              </button>
-            </div>
-            <div className="register-sec">
+            <form onSubmit={handleSubmit(onSubmit)} className="form-class">
               <div>
-                <span className="account-des-login">
-                  Don't have any account ?{" "}
-                  <span
-                    className="register-link"
-                    onClick={props.handleClickOpen}
-                  >
-                    Register
+                <input
+                  type="text"
+                  placeholder="Your Email"
+                  {...register("email")}
+                  className="input-fields"
+                />
+                <div className="invalid-feedback">{errors.email?.message}</div>
+
+                <br />
+              </div>
+              <div>
+                <input
+                  type="password"
+                  placeholder="Your Password"
+                  {...register("password")}
+                  className="input-fields-login"
+                />
+
+                <div className="invalid-feedback">
+                  {errors.password?.message}
+                </div>
+                <br />
+              </div>
+              <div>
+                <button type="submit" className="login-btn">
+                  Login
+                </button>
+              </div>
+              <div className="register-sec">
+                <div>
+                  <span className="account-des-login">
+                    Don't have any account ?{" "}
+                    <span
+                      className="register-link"
+                      onClick={props.handleClickOpen}
+                    >
+                      Register
+                    </span>
                   </span>
-                </span>
+                </div>
+                <div>
+                  <p className="forgott-pass" onClick={handleOpen}>
+                    Forgot Password?
+                  </p>
+                </div>
               </div>
-              <div>
-                <p className="forgott-pass" onClick={handleOpen}>Forgot Password?</p>
-              </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-              <ForgotPass handleClose={handleClose} handleOpen={handleOpen} open={open}/>
+      <ForgotPass
+        handleClose={handleClose}
+        handleOpen={handleOpen}
+        open={open}
+      />
     </>
   );
 };

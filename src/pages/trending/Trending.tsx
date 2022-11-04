@@ -45,7 +45,7 @@ const Trending = () => {
       <div className="container-items">
         <Container>
           <div className="top-trending-div">
-            <h1>Top Trendings of The (<span id="day-id" onClick={dayFunc}>Day</span> / <span id="week-id" onClick={weekFunc}>Week</span>)</h1>
+            <h1>Top Trendings of The (<span id="day-id" onClick={dayFunc}>day</span> / <span id="week-id" onClick={weekFunc}>week</span>)</h1>
           </div>
           {
             loading ? <Loader/>:
