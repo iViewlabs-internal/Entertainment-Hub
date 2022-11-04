@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import "./profileInfo.css";
 
 interface gpd {
@@ -6,6 +7,10 @@ interface gpd {
 const ProfileInfo: React.FC<gpd> = (props) => {
   const registeredUser: any = localStorage.getItem("register");
   const userInfo = JSON.parse(registeredUser);
+const navigate = useNavigate()
+   const resetPage = ()=>{
+      navigate("/reset-password")
+   }
   return (
     <>
       <h2 style={{ marginBottom: "0%", paddingBottom: "0%" }}>User Profile</h2>
@@ -26,7 +31,7 @@ const ProfileInfo: React.FC<gpd> = (props) => {
         {/* <Link to="edit"> */}
         <button onClick={props.handleState}>Edit Info</button>
         {/* </Link> */}
-        <button>Reset Password</button>
+        <button onClick={resetPage}>Reset Password</button>
       </div>
     </>
   );
