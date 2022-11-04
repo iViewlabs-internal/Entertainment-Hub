@@ -22,9 +22,9 @@ const navigate = useNavigate()
           <h3>Mobile No.:</h3>
         </div>
         <div className="div2-info">
-          <h3 className="info-details">{userInfo.username}</h3>
-          <h3 className="info-details">{userInfo.email}</h3>
-          <h3 className="info-details">{userInfo.mobile}</h3>
+          <h3 className="info-details">{userInfo?.username}</h3>
+          <h3 className="info-details">{userInfo?.email}</h3>
+          <h3 className="info-details">{userInfo?.mobile}</h3>
         </div>
       </div>
       <div className="info-div-btn">

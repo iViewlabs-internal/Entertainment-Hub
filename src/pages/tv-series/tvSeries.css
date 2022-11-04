@@ -1,0 +1,11 @@
+.top-series-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: rgb(0, 0, 0);
+  margin-bottom: 2%;
+}
+#header-filter-tv{
+    margin-left: 5vw;
+    margin-bottom: 1vh;
+}
