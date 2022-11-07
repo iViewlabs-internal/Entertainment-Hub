@@ -10,7 +10,7 @@ import "./trending.css";
 const mykey = process.env.REACT_APP_USER_API_KEY;
 let numOfPages = 10;
 const Trending = () => {
-  const [loading , setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [data, setData] = useState<any[]>([]);
   const [trending, setTrending] = useState("day");
@@ -24,59 +24,68 @@ const Trending = () => {
         setLoading(false);
       });
     window.scroll(0, 0);
-  }, [page,trending]);
-  const weekFunc = ()=>{
-    setTrending("week")
+  }, [page, trending]);
+  const weekFunc = () => {
+    setTrending("week");
     document.getElementById("week-id")!.style.textDecoration = "underline";
     document.getElementById("week-id")!.style.color = "black";
     document.getElementById("day-id")!.style.textDecoration = "none";
     document.getElementById("day-id")!.style.color = "blue";
-  }
-  const dayFunc = ()=>{
-    setTrending("day")
+  };
+  const dayFunc = () => {
+    setTrending("day");
     document.getElementById("day-id")!.style.textDecoration = "underline";
     document.getElementById("day-id")!.style.color = "black";
     document.getElementById("week-id")!.style.textDecoration = "none";
     document.getElementById("week-id")!.style.color = "blue";
-  }
+  };
   return (
     <>
       <Navbar />
       <div className="container-items">
         <Container>
           <div className="top-trending-div">
-            <h1>Top Trendings of The (<span id="day-id" onClick={dayFunc}>day</span> / <span id="week-id" onClick={weekFunc}>week</span>)</h1>
+            <h1>
+              Top Trendings of The (
+              <span id="day-id" onClick={dayFunc}>
+                day
+              </span>{" "}
+              /{" "}
+              <span id="week-id" onClick={weekFunc}>
+                week
+              </span>
+              )
+            </h1>
           </div>
-          {
-            loading ? <Loader/>:
-          
-          <Grid container spacing={2}>
-            {data &&
-              data.map((val: any) => {
-                return (
-                  <Content
-                    id={val.id}
-                    key={val.id}
-                    title={val.title ? val.title : val.name}
-                    date={val.first_air_date}
-                    poster={val.poster_path}
-                    mediaType={val.media_type}
-                    release_date={val.release_date}
-                    overview={val.overview}
-                    first_air_date={val.first_air_date}
-                    vote_average={val.vote_average}
-                  />
-                );
-              })}
-          </Grid>
-         }
+          {loading ? (
+            <Loader />
+          ) : (
+            <Grid container spacing={2}>
+              {data &&
+                data.map((val: any) => {
+                  return (
+                    <Content
+                      id={val.id}
+                      key={val.id}
+                      title={val.title ? val.title : val.name}
+                      date={val.first_air_date}
+                      poster={val.poster_path}
+                      mediaType={val.media_type}
+                      release_date={val.release_date}
+                      overview={val.overview}
+                      first_air_date={val.first_air_date}
+                      vote_average={val.vote_average}
+                    />
+                  );
+                })}
+            </Grid>
+          )}
         </Container>
-        {
-           loading === false ?
-            <MyPagination setPage={setPage} numOfPages={numOfPages}/>
-            :
-            ""
-        }
+        {loading === false ? (
+          <MyPagination setPage={setPage} numOfPages={numOfPages} />
+        ) : (
+          ""
+        )}
       </div>
       <Footer />
     </>

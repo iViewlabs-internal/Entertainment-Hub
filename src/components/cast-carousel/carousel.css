@@ -1,23 +1,23 @@
 @import "react-alice-carousel/lib/alice-carousel.css";
 .carouselItem {
-    display: flex;
-    flex-direction: column;
-    object-fit: contain;
-    padding: 10px;
-  }
-  .carouselItem__txt{
-    color: white;
-    font-weight: 500;
-  }
-  .anchor-single-img{
-    text-decoration: none;
-  }
-  .carouselItem__txt:hover{
-      color: rgb(11, 20, 120);
-  }
-  .carouselItem__img {
-    border-radius: 10px;
-    box-shadow: 0px 0px 5px black;
-    height: 22vh;
-    width: 7.5vw;
-  }
+  display: flex;
+  flex-direction: column;
+  object-fit: contain;
+  padding: 10px;
+}
+.carouselItem__txt {
+  color: white;
+  font-weight: 500;
+}
+.anchor-single-img {
+  text-decoration: none;
+}
+.carouselItem__txt:hover {
+  color: rgb(11, 20, 120);
+}
+.carouselItem__img {
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px black;
+  height: 22vh;
+  width: 7.5vw;
+}

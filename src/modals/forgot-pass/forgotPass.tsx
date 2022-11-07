@@ -10,7 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./forgotPass.css";
 import { IconButton } from "@mui/material";
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from "@mui/icons-material/Close";
 
 interface FadeProps {
   children?: React.ReactElement;
@@ -108,15 +108,15 @@ export default function SpringModal(props: any) {
       localStorage.setItem("register", JSON.stringify(register));
       toast.success("Password Has Been Changed Successfuly");
       setTimeout(() => {
-          props.handleClose();
-        }, 3000);
-    }else{
-        toast.error("Email or Mobile No. is Mismatching!");
+        props.handleClose();
+      }, 3000);
+    } else {
+      toast.error("Email or Mobile No. is Mismatching!");
     }
   };
   return (
     <div>
-        <ToastContainer autoClose={3000} />
+      <ToastContainer autoClose={3000} />
       <Modal
         aria-labelledby="spring-modal-title"
         aria-describedby="spring-modal-description"
@@ -131,19 +131,19 @@ export default function SpringModal(props: any) {
         <Fade in={props.open}>
           <Box sx={style}>
             <div className="header-content-forgot">
-                <div>
-                    <h2>Forgot Password</h2>
-                </div>
-                <div className="close-icon-div">
+              <div>
+                <h2>Forgot Password</h2>
+              </div>
+              <div className="close-icon-div">
                 <IconButton
-              edge="start"
-              color="inherit"
-              onClick={props.handleClose}
-              aria-label="close"
-            >
-              <CloseIcon />
-            </IconButton>
-                </div>
+                  edge="start"
+                  color="inherit"
+                  onClick={props.handleClose}
+                  aria-label="close"
+                >
+                  <CloseIcon />
+                </IconButton>
+              </div>
             </div>
             <div>
               <form onSubmit={handleSubmit(onSubmit)}>
@@ -199,7 +199,9 @@ export default function SpringModal(props: any) {
                   <br />
                 </div>
                 <div>
-                  <button type="submit" className="forgot-btn">Submit</button>
+                  <button type="submit" className="forgot-btn">
+                    Submit
+                  </button>
                 </div>
               </form>
             </div>

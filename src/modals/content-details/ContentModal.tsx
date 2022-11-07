@@ -61,11 +61,10 @@ const ContentModal = (props: any) => {
           </div>
         </div>
         <div className="modal-inner-right">
-          {/* <div className="item-overview"> */}
-            <p className="overview-para">
-              {props.overview ? props.overview : tempOverview}
-            </p>
-          {/* </div> */}
+          <p className="overview-para">
+            {props.overview ? props.overview : tempOverview}
+          </p>
+
           <div>
             <Carousel mediaType={props.mediaType} id={props.id} />
           </div>

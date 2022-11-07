@@ -1,5 +1,5 @@
 import { Container } from "@mui/material";
-import {  useState } from "react";
+import { useState } from "react";
 import "./home.css";
 import RegisterModal from "../../modals/register/RegisterModal";
 import LoginModal from "../../modals/login/LoginModal";
@@ -7,12 +7,12 @@ import Footer from "../../components/footer/Footer";
 
 const Home = () => {
   const [tempState, setTempState] = useState(false);
-  const [state1, setState1] = useState(false)
-  const [state2, setState2] = useState(false)
-  const [state3, setState3] = useState(false)
-  const [state4, setState4] = useState(false)
-  const [state5, setState5] = useState(false)
-  const [state6, setState6] = useState(false)
+  const [state1, setState1] = useState(false);
+  const [state2, setState2] = useState(false);
+  const [state3, setState3] = useState(false);
+  const [state4, setState4] = useState(false);
+  const [state5, setState5] = useState(false);
+  const [state6, setState6] = useState(false);
   const q1 = () => {
     if (tempState === false) {
       document.getElementById("ans-1")!.style.display = "block";
@@ -28,7 +28,7 @@ const Home = () => {
       setTempState(false);
       setState1(false);
     }
-  }; 
+  };
   const q2 = () => {
     if (tempState === false) {
       document.getElementById("ans-2")!.style.display = "block";
@@ -131,7 +131,11 @@ const Home = () => {
   return (
     <>
       <div className="home-parent-div">
-        <img className="temp" src="https://assets.nflxext.com/ffe/siteui/vlv3/afc06103-4d6a-4236-b496-34b671a7e9ba/383fc36a-aa04-4dfd-95a0-a4b71bc21eed/IN-en-20221003-popsignuptwoweeks-perspective_alpha_website_large.jpg" alt="background"/>
+        <img
+          className="temp"
+          src="https://assets.nflxext.com/ffe/siteui/vlv3/afc06103-4d6a-4236-b496-34b671a7e9ba/383fc36a-aa04-4dfd-95a0-a4b71bc21eed/IN-en-20221003-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+          alt="background"
+        />
         <div className="container-div">
           <Container>
             <div className="nav-head-div">
@@ -177,8 +181,16 @@ const Home = () => {
                   Sign Up
                 </button>
               </div>
-              <RegisterModal open={open} handleClose={handleClose} handleClickOpen2={handleClickOpen2}/>
-              <LoginModal open2={open2} handleClose2={handleClose2} handleClickOpen={handleClickOpen}/>
+              <RegisterModal
+                open={open}
+                handleClose={handleClose}
+                handleClickOpen2={handleClickOpen2}
+              />
+              <LoginModal
+                open2={open2}
+                handleClose2={handleClose2}
+                handleClickOpen={handleClickOpen}
+              />
             </div>
           </div>
         </Container>

@@ -1,35 +1,35 @@
-.info-parent-div{
-    display: flex;
-    justify-content: center;
+.info-parent-div {
+  display: flex;
+  justify-content: center;
 }
-.input-fields2{
-    width: 92%;
-    height: 5vh;
+.input-fields2 {
+  width: 92%;
+  height: 5vh;
 }
-.info-div2{
-    width: 100%;
+.info-div2 {
+  width: 100%;
 }
-.user-profile-h{
-    margin-bottom: 2vh;
+.user-profile-h {
+  margin-bottom: 2vh;
 }
-.user-name{
-    margin-top: 0;
-    margin-bottom: 0.5vh;
+.user-name {
+  margin-top: 0;
+  margin-bottom: 0.5vh;
 }
-.submit-btn{
-    width: 96%;
-    height: 7vh;
-    color: white;
-    background-color: #0a325a;
-    border: 1px solid white;
-    border-radius: 8px;
-    font-weight: 600;
+.submit-btn {
+  width: 96%;
+  height: 7vh;
+  color: white;
+  background-color: #0a325a;
+  border: 1px solid white;
+  border-radius: 8px;
+  font-weight: 600;
 }
-.submit-btn:hover{
-    background-color: #1a4167;
+.submit-btn:hover {
+  background-color: #1a4167;
 }
 @media screen and (min-width: 300px) and (max-width: 800px) {
-       .submit-btn{
-        margin-bottom: 4vh;
-       }
+  .submit-btn {
+    margin-bottom: 4vh;
+  }
 }

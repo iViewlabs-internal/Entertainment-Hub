@@ -31,7 +31,7 @@ const TvSeries = () => {
   };
   genreArr.map((val) => {
     myStr += val + ",";
-  }); 
+  });
 
   useEffect(() => {
     fetch(
@@ -42,7 +42,6 @@ const TvSeries = () => {
         setData(items.results);
         setLoading(false);
       });
-    // window.scroll(0, 0);
   }, [page, tempFunc]);
   useEffect(() => {
     fetch(
@@ -68,7 +67,6 @@ const TvSeries = () => {
       <div id="mySidenav" className="sidenav">
         <div className="genres-div">
           <h4>Genres</h4>
-          {/* <a href="javascript:void(0)" className="closebtn" onClick={closeNav}> */}
           <a href="#!" className="closebtn" onClick={closeNav}>
             &times;
           </a>
@@ -135,5 +133,3 @@ const TvSeries = () => {
 };
 
 export default TvSeries;
-
-

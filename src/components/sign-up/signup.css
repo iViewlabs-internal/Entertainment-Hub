@@ -1,91 +1,91 @@
-.signup-header-div{
-    margin-top: 6vh;
-    display: flex;
-    justify-content: space-evenly;
+.signup-header-div {
+  margin-top: 6vh;
+  display: flex;
+  justify-content: space-evenly;
 }
-.register-img{
-    height: 70vh;
-    width: 40vw;
+.register-img {
+  height: 70vh;
+  width: 40vw;
 }
-.invalid-feedback{
-    color: red;
-    font-size: 0.8rem;
+.invalid-feedback {
+  color: red;
+  font-size: 0.8rem;
 }
-.register-form{
-    padding-left: 7px;
-    padding-bottom: 12px;
+.register-form {
+  padding-left: 7px;
+  padding-bottom: 12px;
 }
-.input-fields{
-    width: 50vw;
-    height: 6.2vh;
+.input-fields {
+  width: 50vw;
+  height: 6.2vh;
 }
-.signup-btn{
-    font-size: 1.5rem;
-    height: 8.5vh;
-    width:50.5vw;
-    border: 1px solid white;
-    border-radius: 6px;
-    color:white;
-    margin-top: 2vh;
-    background-color: #0a325a;
+.signup-btn {
+  font-size: 1.5rem;
+  height: 8.5vh;
+  width: 50.5vw;
+  border: 1px solid white;
+  border-radius: 6px;
+  color: white;
+  margin-top: 2vh;
+  background-color: #0a325a;
 }
-.signup-btn:hover{
-    cursor: pointer;
-    background-color: #184572;
+.signup-btn:hover {
+  cursor: pointer;
+  background-color: #184572;
 }
-.login-sec{
-    display: flex;
-    justify-content: center;
-    margin-top: 1vh
+.login-sec {
+  display: flex;
+  justify-content: center;
+  margin-top: 1vh;
 }
-.account-des{
- font-size: 0.9rem;
- padding-top: 3px;
+.account-des {
+  font-size: 0.9rem;
+  padding-top: 3px;
 }
-.login-link{
-color: blue;
+.login-link {
+  color: blue;
 }
-.register-heading{
-    margin-bottom: 0;
+.register-heading {
+  margin-bottom: 0;
 }
-hr{
-    margin-bottom: 3vh;
-    margin-left: -0.5vw;
+hr {
+  margin-bottom: 3vh;
+  margin-left: -0.5vw;
 }
-.login-link:hover{
-    text-decoration: underline;
-    cursor: pointer;
+.login-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 @media screen and (min-width: 200px) and (max-width: 600px) {
-    .signup-header-div{
-        display: inline;
-        justify-content: flex-start;
-        margin-left: 9vw;
-        margin-right: 5vw;
-        width: 100%;
-    }
-    .last-inpt{
-        margin-right: 0.5vh;
-    }
-    .input-fields{
-        width: 80%;
-        height: 6vh;
-    }
-    .signup-btn{
-        width: 82%;
-        margin-top: 0%;
-        height: 8vh;
-    }
-    .register-form{
-        padding-left: 0;
-    }
-    .register-img-div{
-        display: none;
-    }
-    .account-des{
-        font-size: initial;
-    }
-    .login-sec{
-        margin-left: -10vw;
-    }
+  .signup-header-div {
+    display: inline;
+    justify-content: flex-start;
+    margin-left: 9vw;
+    margin-right: 5vw;
+    width: 100%;
+  }
+  .last-inpt {
+    margin-right: 0.5vh;
+  }
+  .input-fields {
+    width: 80%;
+    height: 6vh;
+  }
+  .signup-btn {
+    width: 82%;
+    margin-top: 0%;
+    height: 8vh;
+  }
+  .register-form {
+    padding-left: 0;
+  }
+  .register-img-div {
+    display: none;
+  }
+  .account-des {
+    font-size: initial;
+  }
+  .login-sec {
+    margin-left: -10vw;
+  }
 }
