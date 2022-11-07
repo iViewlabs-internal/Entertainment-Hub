@@ -1,22 +1,22 @@
-.inpt-fields{
-    width: 95%;
-    height: 5vh;
+.inpt-fields {
+  width: 95%;
+  height: 5vh;
 }
-.forgot-btn{
-    width: 99.3%;
-    height: 7vh;
-    font-size: 1.3rem;
-    border: 1px solid white;
-    border-radius: 6px;
-    color:white;
-    background-color: #0a325a;
+.forgot-btn {
+  width: 99.3%;
+  height: 7vh;
+  font-size: 1.3rem;
+  border: 1px solid white;
+  border-radius: 6px;
+  color: white;
+  background-color: #0a325a;
 }
-.forgot-btn:hover{
-    cursor: pointer;
+.forgot-btn:hover {
+  cursor: pointer;
 }
-.header-content-forgot{
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   margin-top: -4vh;
+.header-content-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -4vh;
 }

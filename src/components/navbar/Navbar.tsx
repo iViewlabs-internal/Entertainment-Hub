@@ -7,7 +7,7 @@ import "./navbar.css";
 import { Button, Menu, MenuItem } from "@mui/material";
 import { toast, ToastContainer } from "react-toastify";
 
-const Navbar = (props:any) => {
+const Navbar = (props: any) => {
   const location = useLocation();
   const navigate = useNavigate();
   const handleRoute = () => {
@@ -76,7 +76,6 @@ const Navbar = (props:any) => {
               </Link>
             </div>
             <div className="same-nav-divs profile-div">
-              {/* <div><CgProfile className="profile-icon"/></div> */}
               <div>
                 <Button
                   id="basic-button"
@@ -103,10 +102,14 @@ const Navbar = (props:any) => {
                     to="/profile"
                     style={{ color: "black", textDecoration: "none" }}
                   >
-                    <MenuItem onClick={()=>{
-                      handleClose()
-                      props.handle()
-                    }}>Profile</MenuItem>
+                    <MenuItem
+                      onClick={() => {
+                        handleClose();
+                        props.handle();
+                      }}
+                    >
+                      Profile
+                    </MenuItem>
                   </Link>
                   <MenuItem
                     onClick={() => {

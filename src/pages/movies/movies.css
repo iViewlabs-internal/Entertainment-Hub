@@ -1,39 +1,12 @@
-.top-movies-div{
+.top-movies-div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   color: rgb(0, 0, 0);
   margin-bottom: 2%;
 }
-/* .top-trending-div{
--webkit-animation: color_change 3s infinite alternate;
--moz-animation: color_change 3s infinite alternate;
--ms-animation: color_change 3s infinite alternate;
--o-animation: color_change 3s infinite alternate;
-animation: color_change 3s infinite alternate;
-}
-@-webkit-keyframes color_change {
-from { color: blue; }
-to { color: red; }
-}
-@-moz-keyframes color_change {
-from { color: blue; }
-to { color: red; }
-}
-@-ms-keyframes color_change {
-from { color: blue; }
-to { color: red; }
-}
-@-o-keyframes color_change {
-from { color: blue; }
-to { color: red; }
-}
-@keyframes color_change {
-from { color: blue; }
-to { color: red; }
-} */
 
-.filter-head{
+.filter-head {
   font-size: 1.3rem;
   cursor: pointer;
   margin-top: 1.5rem;
@@ -41,130 +14,168 @@ to { color: red; }
   border-radius: 12px;
   padding: 0.2em 0.3em;
 }
-.filter-head:hover{
+.filter-head:hover {
   color: white;
   background-color: black;
   border: 2px solid rgb(179, 84, 84);
-  /* padding: 0.3em; */
 }
-.day-today{
+.day-today {
   font-size: 1.5rem;
   margin-top: 1.7rem;
   border-radius: 12px;
-  /* padding-right: 1.2rem; */
 }
-.day-today{
+.day-today {
   -webkit-animation: color_change 5s infinite alternate;
   -moz-animation: color_change 5s infinite alternate;
   -ms-animation: color_change 5s infinite alternate;
   -o-animation: color_change 5s infinite alternate;
   animation: color_change 5s infinite alternate;
-  }
-  @-webkit-keyframes color_change {
-  from { color: rgb(70, 70, 171); }
-  to { color: rgb(176, 51, 51); }
-  }
-  @-moz-keyframes color_change {
-  from { color: rgb(63, 193, 106); }
-  to { color: rgb(219, 64, 162); }
-  }
-  @-ms-keyframes color_change {
-  from { color: rgb(9, 109, 192); }
-  to { color: rgb(31, 23, 23); }
-  }
-  @-o-keyframes color_change {
-  from { color: rgb(66, 66, 127); }
-  to { color: rgb(56, 5, 5); }
-  }
-  @keyframes color_change {
-  from { color: rgb(74, 74, 239); }
-  to { color: rgb(25, 196, 222); }
 }
-.filter-head{
+@-webkit-keyframes color_change {
+  from {
+    color: rgb(70, 70, 171);
+  }
+  to {
+    color: rgb(176, 51, 51);
+  }
+}
+@-moz-keyframes color_change {
+  from {
+    color: rgb(63, 193, 106);
+  }
+  to {
+    color: rgb(219, 64, 162);
+  }
+}
+@-ms-keyframes color_change {
+  from {
+    color: rgb(9, 109, 192);
+  }
+  to {
+    color: rgb(31, 23, 23);
+  }
+}
+@-o-keyframes color_change {
+  from {
+    color: rgb(66, 66, 127);
+  }
+  to {
+    color: rgb(56, 5, 5);
+  }
+}
+@keyframes color_change {
+  from {
+    color: rgb(74, 74, 239);
+  }
+  to {
+    color: rgb(25, 196, 222);
+  }
+}
+.filter-head {
   -webkit-animation: color_change 5s infinite alternate;
   -moz-animation: color_change 5s infinite alternate;
   -ms-animation: color_change 5s infinite alternate;
   -o-animation: color_change 5s infinite alternate;
   animation: color_change 5s infinite alternate;
+}
+@-webkit-keyframes color_change {
+  from {
+    color: rgb(70, 70, 171);
   }
-  @-webkit-keyframes color_change {
-  from { color: rgb(70, 70, 171); }
-  to { color: rgb(176, 51, 51); }
+  to {
+    color: rgb(176, 51, 51);
   }
-  @-moz-keyframes color_change {
-  from { color: rgb(63, 193, 106); }
-  to { color: rgb(219, 64, 162); }
+}
+@-moz-keyframes color_change {
+  from {
+    color: rgb(63, 193, 106);
   }
-  @-ms-keyframes color_change {
-  from { color: rgb(9, 109, 192); }
-  to { color: rgb(31, 23, 23); }
+  to {
+    color: rgb(219, 64, 162);
   }
-  @-o-keyframes color_change {
-  from { color: rgb(66, 66, 127); }
-  to { color: rgb(56, 5, 5); }
+}
+@-ms-keyframes color_change {
+  from {
+    color: rgb(9, 109, 192);
   }
-  @keyframes color_change {
-  from { color: rgb(74, 74, 239); }
-  to { color: rgb(25, 196, 222); }
+  to {
+    color: rgb(31, 23, 23);
   }
+}
+@-o-keyframes color_change {
+  from {
+    color: rgb(66, 66, 127);
+  }
+  to {
+    color: rgb(56, 5, 5);
+  }
+}
+@keyframes color_change {
+  from {
+    color: rgb(74, 74, 239);
+  }
+  to {
+    color: rgb(25, 196, 222);
+  }
+}
 .sidenav {
-    height: 100%;
-    width: 0;
-    position:fixed;
-    z-index: 1;
-    top: 0;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
   left: 0;
-    background-color: rgb(255, 255, 255);
-    overflow-x: hidden;
-    transition: 0.5s;
-    /* padding-top: 60px; */
-  }
-  #header-filter-div{
-    margin-left: 7.5vw;
-    margin-bottom: 0.7vh;
-  }
-  .all-lables{
-    color: rgb(0, 0, 0);
-    font-size: 1rem;
-    font-weight: 500;
-    padding-left: 1vw;
+  background-color: rgb(255, 255, 255);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+#header-filter-div {
+  margin-left: 7.5vw;
+  margin-bottom: 0.7vh;
+}
+.all-lables {
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+  font-weight: 500;
+  padding-left: 1vw;
+}
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  font-size: 36px;
+  color: rgb(0, 0, 0);
+}
+.genres-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 2.2vw;
+}
+.genres-div > h4 {
+  color: rgb(0, 0, 0);
+  padding-top: 0.5vh;
+}
+.hr-genre {
+  color: rgb(0, 0, 0);
+  margin-bottom: 3vh !important;
+  margin-top: 0vh !important;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
   }
   .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
+    font-size: 18px;
   }
-  
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  
-  .sidenav .closebtn {
-    /* position: absolute;
-    top: 0;
-    right: 25px; */
-    font-size: 36px;
-    color: rgb(0, 0, 0);
-    /* margin-left: 50px; */
-  }
-  .genres-div{
-    display: flex;
-    justify-content: space-between;
-    margin-left: 2.2vw;
-  }
-  .genres-div > h4{
-    color: rgb(0, 0, 0);
-    padding-top: 0.5vh;
-  }
-  .hr-genre{
-    color: rgb(0, 0, 0);
-    margin-bottom: 3vh !important;
-    margin-top: 0vh !important;
-  }
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
+}

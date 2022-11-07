@@ -44,9 +44,9 @@
   color: white;
   padding-right: 1vw;
 }
-.overview-para{
+.overview-para {
   height: 24%;
-  color:white;
+  color: white;
   display: flex;
   font-size: 1.3rem;
   border-radius: 12px;
@@ -58,9 +58,6 @@
 }
 .overview-para::-webkit-scrollbar {
   display: none;
-  /* width: 0.2vw;
-  background-color: red;
-  margin-right: 2vw; */
 }
 @media screen and (min-width: 100px) and (max-width: 700px) {
   .modal-header-div {
@@ -75,20 +72,20 @@
   }
 }
 @media screen and (min-width: 100px) and (max-width: 400px) {
-    .modal-item-img{
-        width: 73vw;
-        height: 50vh;
-    }
+  .modal-item-img {
+    width: 73vw;
+    height: 50vh;
+  }
 }
 @media screen and (min-width: 401px) and (max-width: 500px) {
-    .modal-item-img{
-        width: 78vw;
-        height: 50vh;
-    }
+  .modal-item-img {
+    width: 78vw;
+    height: 50vh;
+  }
 }
 @media screen and (min-width: 501px) and (max-width: 699px) {
-    .modal-item-img{
-        width: 84.8vw;
-        height:55vh;
-    }
+  .modal-item-img {
+    width: 84.8vw;
+    height: 55vh;
+  }
 }

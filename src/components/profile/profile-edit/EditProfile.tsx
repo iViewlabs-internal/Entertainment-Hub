@@ -12,7 +12,7 @@ type Inputs = {
   mobile: string;
   password: string;
 };
-interface gpd2{
+interface gpd2 {
   handleState(): boolean;
 }
 const validationSchema = Yup.object()
@@ -32,8 +32,8 @@ const validationSchema = Yup.object()
       .max(15, "*Mobile no. must not exceed 12 characters"),
   })
   .required();
-const EditProfile:React.FC<gpd2> = (props) => {
-    const navigate = useNavigate()
+const EditProfile: React.FC<gpd2> = (props) => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -52,10 +52,7 @@ const EditProfile:React.FC<gpd2> = (props) => {
     };
     localStorage.setItem("register", JSON.stringify(register));
     toast.success("profile Updated Successfuly");
-    props.handleState()
-    // setTimeout(() => {
-    //   navigate("/profile")
-    // }, 3000);
+    props.handleState();
   };
   return (
     <>

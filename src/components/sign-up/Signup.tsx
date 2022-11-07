@@ -41,7 +41,6 @@ const validationSchema = Yup.object()
   .required();
 
 const Signup = (props: any) => {
-
   const {
     register,
     handleSubmit,
@@ -61,12 +60,12 @@ const Signup = (props: any) => {
     toast.success("You Gets Registered Successfuly");
     setTimeout(() => {
       window.location.href = "/";
-    },3000);
+    }, 3000);
   };
 
   return (
     <>
-    <ToastContainer autoClose={3000} />
+      <ToastContainer autoClose={3000} />
       <div className="signup-header-div">
         <div className="register-img-div">
           <img

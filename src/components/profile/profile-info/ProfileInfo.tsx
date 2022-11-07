@@ -7,10 +7,10 @@ interface gpd {
 const ProfileInfo: React.FC<gpd> = (props) => {
   const registeredUser: any = localStorage.getItem("register");
   const userInfo = JSON.parse(registeredUser);
-const navigate = useNavigate()
-   const resetPage = ()=>{
-      navigate("/reset-password")
-   }
+  const navigate = useNavigate();
+  const resetPage = () => {
+    navigate("/reset-password");
+  };
   return (
     <>
       <h2 style={{ marginBottom: "0%", paddingBottom: "0%" }}>User Profile</h2>
@@ -28,9 +28,7 @@ const navigate = useNavigate()
         </div>
       </div>
       <div className="info-div-btn">
-        {/* <Link to="edit"> */}
         <button onClick={props.handleState}>Edit Info</button>
-        {/* </Link> */}
         <button onClick={resetPage}>Reset Password</button>
       </div>
     </>

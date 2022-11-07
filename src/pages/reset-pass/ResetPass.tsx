@@ -9,7 +9,7 @@ import "./resetPass.css";
 import { useNavigate } from "react-router-dom";
 
 type Inputs = {
-  oldPassword:string,
+  oldPassword: string;
   newPassword: string;
   confirmPassword: string;
 };
@@ -28,7 +28,10 @@ const validationSchema = Yup.object()
     confirmPassword: Yup.string()
       .required()
       .required("*Confirm Password is required")
-      .oneOf([Yup.ref("newPassword"), null], "*Confirm Password does not match"),
+      .oneOf(
+        [Yup.ref("newPassword"), null],
+        "*Confirm Password does not match"
+      ),
     acceptTerms: Yup.bool().oneOf([true], "*Accept Terms is required"),
   })
   .required();
@@ -56,7 +59,7 @@ const ResetPass = () => {
       localStorage.setItem("register", JSON.stringify(register));
       toast.success("Password Has Been Changed Successfuly");
       setTimeout(() => {
-        navigate("/profile")
+        navigate("/profile");
       }, 3000);
     } else {
       toast.error("Old Password is Mismatching!");
@@ -75,9 +78,11 @@ const ResetPass = () => {
                 {...register("oldPassword")}
                 className="inpt-reset-fields"
               />
-                <i className="fa-solid fa-eye"></i>
-         
-              <div className="invalid-feedback">{errors.oldPassword?.message}</div>
+              <i className="fa-solid fa-eye"></i>
+
+              <div className="invalid-feedback">
+                {errors.oldPassword?.message}
+              </div>
               <br />
             </div>
             <div>
@@ -88,7 +93,9 @@ const ResetPass = () => {
                 className="inpt-reset-fields"
               />
 
-              <div className="invalid-feedback">{errors.newPassword?.message}</div>
+              <div className="invalid-feedback">
+                {errors.newPassword?.message}
+              </div>
               <br />
             </div>
             <div>

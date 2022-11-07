@@ -1,31 +1,29 @@
-.profile-parent{
-    display: flex;
-    /* justify-content: space-between; */
-    border: 8px solid gray;
-    margin: 4vh 2vw;
+.profile-parent {
+  display: flex;
+  border: 8px solid gray;
+  margin: 4vh 2vw;
 }
-.profile-page-img{
-    width: 45vw;
-    height: 70vh;
+.profile-page-img {
+  width: 45vw;
+  height: 70vh;
 }
-.profile-right-div{
-    background-color: rgb(70 94 139);
-    width: 100%;
-    /* margin-left: 1vw; */
-    color: white;
+.profile-right-div {
+  background-color: rgb(70 94 139);
+  width: 100%;
+  color: white;
 }
 
-.info-section-container{
-    height: 70%;
-    margin-left: 1vw;
-    margin-right: 1vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.info-section-container {
+  height: 70%;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @media screen and (min-width: 300px) and (max-width: 800px) {
-   .profile-left-div{
+  .profile-left-div {
     display: none;
-   }
+  }
 }

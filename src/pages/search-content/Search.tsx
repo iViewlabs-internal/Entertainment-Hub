@@ -50,8 +50,7 @@ const Search = () => {
             />
             <Button
               onClick={fetchData}
-              // variant=""
-              style={{backgroundColor:"rgba(0, 0, 0, 0.06)",color:"black"}}
+              style={{ backgroundColor: "rgba(0, 0, 0, 0.06)", color: "black" }}
               className="btn-search-icon"
             >
               <i

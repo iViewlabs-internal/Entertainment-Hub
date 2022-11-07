@@ -1,64 +1,66 @@
-.content-top-div{
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    width: 21vw;
-    background-color: #38393a;
-    color: white;
-    border: 1.5px solid rgb(17, 17, 17);
-    border-radius: 8px;
-    margin-bottom: 4vh;
+.content-top-div {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 21vw;
+  background-color: #38393a;
+  color: white;
+  border: 1.5px solid rgb(17, 17, 17);
+  border-radius: 8px;
+  margin-bottom: 4vh;
 }
 
 .content-top-div:hover {
-    border: 3px solid rgb(46, 43, 43);
-    background-color: rgb(202, 195, 195);
-    color: black;
+  border: 3px solid rgb(46, 43, 43);
+  background-color: rgb(202, 195, 195);
+  color: black;
 }
 
-.img-containt-div{
-    display: flex;
-    justify-content: center;
-    padding: 0 2.2vw;
+.img-containt-div {
+  display: flex;
+  justify-content: center;
+  padding: 0 2.2vw;
 }
-.content-img{
-    height: 50vh;
-    width: auto;
-    margin-top: 1.5vh;
-    border: 2px solid rgb(98, 78, 78);
-    border-radius: 6px;
+.content-img {
+  height: 50vh;
+  width: auto;
+  margin-top: 1.5vh;
+  border: 2px solid rgb(98, 78, 78);
+  border-radius: 6px;
 }
-.content-img:hover{
-    border: 3px solid rgb(32, 103, 82);
+.content-img:hover {
+  border: 3px solid rgb(32, 103, 82);
 }
-.para-containt-div{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-left: 2.4vw;
+.para-containt-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 2.4vw;
 }
-.para-content-title{
-    color: rgb(10, 10, 10);
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin: 0;
+.para-content-title {
+  color: rgb(10, 10, 10);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
 }
-.inner-para-containt-div{
-    margin-top: 1vh;
+.inner-para-containt-div {
+  margin-top: 1vh;
 }
-.inner-para-containt{
-    display: flex;
-    margin-bottom: 1vh;
-    color: white;
+.inner-para-containt {
+  display: flex;
+  margin-bottom: 1vh;
+  color: white;
 }
-.style-containt{
-    border: 1.5px solid rgb(6, 5, 5);
-    border-radius: 5px;
-    margin-bottom: 2vh;
+.style-containt {
+  border: 1.5px solid rgb(6, 5, 5);
+  border-radius: 5px;
+  margin-bottom: 2vh;
 }
-.style-containt:hover{
-    background-color: rgb(47, 52, 60);
-    border: 3px solid rgb(32, 103, 82);
-    border-radius: 12px;
+.style-containt:hover {
+  background-color: rgb(47, 52, 60);
+  border: 3px solid rgb(32, 103, 82);
+  border-radius: 12px;
 }
-.style-containt:hover  .para-content-title { color:white; }
+.style-containt:hover .para-content-title {
+  color: white;
+}

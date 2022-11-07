@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import AliceCarousel from "react-alice-carousel";
-
 import "./carousel.css";
 
 const handleDragStart = (e: any) => e.preventDefault();
@@ -21,7 +20,12 @@ const Carousel = (props: any) => {
         className="carouselItem__img"
       />
 
-      <a href={`https://en.wikipedia.org/wiki/${val.name}`} target="_blank" rel="noreferrer" className="anchor-single-img">
+      <a
+        href={`https://en.wikipedia.org/wiki/${val.name}`}
+        target="_blank"
+        rel="noreferrer"
+        className="anchor-single-img"
+      >
         <b className="carouselItem__txt">{val?.name}</b>
       </a>
     </div>
@@ -46,10 +50,10 @@ const Carousel = (props: any) => {
       .then((items) => {
         setCredits(items.cast);
       });
-  }, [props.id , props.mediaType]);
+  }, [props.id, props.mediaType]);
 
   return (
-    <AliceCarousel 
+    <AliceCarousel
       mouseTracking
       infinite
       disableDotsControls
