@@ -15,28 +15,34 @@ const Movies = () => {
   const [data, setData] = useState<any[]>([]);
   const [genre, setGenre] = useState<any[]>([]);
   const [genreArr, setGenreArr] = useState<any[]>([]);
+  let [myStr,setMyStr] = useState("")
   const numOfPages = 500;
-  let myStr = "";
-
+  
   const tempFunc = (id: number, snd: string) => {
     const temp = document.querySelector(`#${snd}`) as HTMLInputElement;
 
     if (temp.checked) {
       setGenreArr([...genreArr, id]);
     } else {
-      if (genreArr.includes(id) === true) {
-        genreArr.splice(genreArr.indexOf(id), 1);
-      }
+      // if (genreArr.includes(id) === true) {
+      genreArr.splice(genreArr.indexOf(id), 1);
+      setGenreArr([...genreArr]);
+      // }
     }
   };
-  const applyFilter = ()=>{
+  const applyFilter = () => {
+    setMyStr("")
+    console.log(myStr , "lll")
+    let tempStr = ""
     genreArr.map((val) => {
-      myStr += val + ",";
+       tempStr+= val+","
     });
-    console.log(genreArr)
-  }
+    setMyStr(tempStr);
+    console.log(myStr);
+  };
 
   useEffect(() => {
+    console.log("called", myStr , "yes");
     fetch(
       `https://api.themoviedb.org/3/discover/movie?api_key=${mykey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${myStr}`
     )
@@ -49,7 +55,7 @@ const Movies = () => {
 
   useEffect(() => {
     fetch(
-      `https://api.themoviedb.org/3/genre/movie/list?api_key=ccb91c7384cb693bdf68278448b573d9&language=en-US`
+      `https://api.themoviedb.org/3/genre/movie/list?api_key=${mykey}&language=en-US`
     )
       .then((res) => res.json())
       .then((items) => {
@@ -83,24 +89,22 @@ const Movies = () => {
                 id={`check${val.id}`}
                 onClick={() => tempFunc(val.id, `check${val.id}`)}
               />
-              <label htmlFor={`check${val.id}`} className="all-lables">
-                {val.name}
-              </label>
+              <label className="all-lables">{val.name}</label>
             </div>
           );
         })}
-        <button onClick={applyFilter}>Apply</button>
+        <button onClick={applyFilter} className="btn-apply">Apply Filters</button>
       </div>
-
+     
       <div className="container-items">
         <Container>
-          <div className="top-movies-div">
-            <h4 className="filter-head" onClick={openNav}>
-              Filter<i className="fa-solid fa-filter"></i>
-            </h4>
-            <h1>Movies</h1>
-            <h4 className="day-today">{day}</h4>
-          </div>
+        <div className="top-movies-div">
+          <h4 className="filter-head" onClick={openNav}>
+            Filter<i className="fa-solid fa-filter"></i>
+          </h4>
+          <h1>Movies</h1>
+          <h4 className="day-today">{day}</h4>
+        </div>
           {loading ? (
             <Loader />
           ) : (
