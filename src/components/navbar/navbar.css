@@ -1,16 +1,19 @@
 .header-nav-top {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: #2d313a;
   color: white;
 }
 .same-nav-divs {
-  width: 33.33%;
+  /* width: 25%; */
 }
 i:hover {
   cursor: pointer;
 }
 .search-header-div {
+  /* padding: 0 9vw; */
+  width: 40%;
+  margin-left: -9vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -27,4 +30,46 @@ i:hover {
 }
 .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
   width: 10vw;
+}
+
+@media screen and (min-width: 200px) and (max-width: 700px) {
+       .search-header-div {
+        margin-left: 0;
+       }
+}
+@media screen and (min-width: 200px) and (max-width: 600px) {
+  .header-nav-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  /* .nav-heading-logo{
+    font-size: 1.5rem;
+   } */
+   .search-header-div {
+    width: 90%;
+   }
+   /* .profile-div{
+    margin-top: 1vh;
+   } */
+   .profile-icon{
+    height: 14vh;
+    width: 12vw;
+   }
+   .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+    width: 25vw;
+    height: 17vh;
+   }
+}
+@media screen and (min-width: 401px) and (max-width: 600px) {
+  .profile-icon{
+    height: 10vh;
+    width:9vw;
+   }
+}
+@media screen and (min-width: 600px) and (max-width: 800px) {
+        .nav-heading-logo{
+        font-size: 1rem;
+       }
 }

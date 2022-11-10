@@ -50,7 +50,7 @@ const Navbar = (props: any) => {
                 Entertainment-<span className="hub-span2">HUB</span>
               </h2>
             </div>
-            <div className="search-header-div same-nav-divs">
+            <div className="search-header-div">
               <Link to="/trending" style={{ color: "white" }}>
                 <div>
                   <i className="fa-solid fa-house fa-2x" id="trending-item"></i>

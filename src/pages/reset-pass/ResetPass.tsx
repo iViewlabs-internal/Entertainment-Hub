@@ -78,8 +78,6 @@ const ResetPass = () => {
                 {...register("oldPassword")}
                 className="inpt-reset-fields"
               />
-              <i className="fa-solid fa-eye"></i>
-
               <div className="invalid-feedback">
                 {errors.oldPassword?.message}
               </div>

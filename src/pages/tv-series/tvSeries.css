@@ -9,3 +9,6 @@
   margin-left: 5vw;
   margin-bottom: 1vh;
 }
+.css-1fwwhll-MuiGrid-root>.MuiGrid-item {
+  padding-left: 16px !important;
+}

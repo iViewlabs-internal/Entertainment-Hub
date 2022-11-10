@@ -20,7 +20,7 @@ const Footer = () => {
             <div className="inner-footer-div-sec">
               <div className="inner-divs-same">About Entertainment-HUB</div>
               <div className="inner-divs-same">Contact Us</div>
-              <div className="inner-divs-same">FAQs</div>
+              <div className="inner-divs-same"><a href="#about-containt-div" className="faq-link">FAQs</a></div>
             </div>
             <div className="header-parent-div">
               <div className="header-inner-div-first">

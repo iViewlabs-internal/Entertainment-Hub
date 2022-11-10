@@ -15,23 +15,28 @@ const TvSeries = () => {
   const [data, setData] = useState<any[]>([]);
   const [genre, setGenre] = useState<any[]>([]);
   const [genreArr, setGenreArr] = useState<any[]>([]);
+  let [myStr,setMyStr] = useState("")
   const numOfPages = 500;
-
-  let myStr = "";
 
   const tempFunc = (id: number, snd: string) => {
     const temp = document.querySelector(`#${snd}`) as HTMLInputElement;
     if (temp.checked) {
-      setGenreArr([...genreArr, id]);
+      setGenreArr([...genreArr, id]);        
     } else {
-      if (genreArr.includes(id) === true) {
+      // if (genreArr.includes(id) === true) {
         genreArr.splice(genreArr.indexOf(id), 1);
-      }
+      // }
     }
   };
-  genreArr.map((val) => {
-    myStr += val + ",";
-  });
+  const applyFilter = () => {
+    setMyStr("")
+    let tempStr = ""
+    genreArr.map((val) => {
+       tempStr+= val+","
+    });
+    setMyStr(tempStr);
+    console.log(myStr);
+  };
 
   useEffect(() => {
     fetch(
@@ -42,7 +47,7 @@ const TvSeries = () => {
         setData(items.results);
         setLoading(false);
       });
-  }, [page, tempFunc]);
+  }, [page, myStr]);
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/genre/tv/list?api_key=${mykey}&language=en-US`
@@ -86,6 +91,7 @@ const TvSeries = () => {
             </div>
           );
         })}
+         <button onClick={applyFilter} className="btn-apply">Apply Filters</button>
       </div>
       <div className="container-items">
         <Container>
