@@ -4,7 +4,6 @@ import * as Yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import "./editProfile.css";
-import { useNavigate } from "react-router-dom";
 
 type Inputs = {
   username: string;
@@ -12,7 +11,7 @@ type Inputs = {
   mobile: string;
   password: string;
 };
-interface gpd2 {
+interface stateHandleSecond {
   handleState(): boolean;
 }
 const validationSchema = Yup.object()
@@ -32,8 +31,7 @@ const validationSchema = Yup.object()
       .max(15, "*Mobile no. must not exceed 12 characters"),
   })
   .required();
-const EditProfile: React.FC<gpd2> = (props) => {
-  const navigate = useNavigate();
+const EditProfile: React.FC<stateHandleSecond> = (props) => {
   const {
     register,
     handleSubmit,

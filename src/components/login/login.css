@@ -15,7 +15,7 @@
 }
 .input-fields-login {
   width: 50vw;
-  height: 7vh;
+  height: 6.5vh;
 }
 .login-btn {
   margin-top: 1.5vh;
@@ -63,7 +63,6 @@ hr {
 .css-10ghrmp-MuiPaper-root-MuiAppBar-root {
   background-color: #0a325a !important;
 }
-
 @media screen and (min-width: 200px) and (max-width: 600px) {
   .login-header-div {
     display: flex;
@@ -72,8 +71,9 @@ hr {
   .img-div-lock {
     display: none;
   }
-  .input-fields-login {
+  .input-fields-login , .input-fields{
     width: 100%;
+    height: 6.2vh;
   }
   .inpt-login-one {
     margin-top: 1vh;
@@ -83,10 +83,17 @@ hr {
     margin-top: 0%;
     height: 8vh;
   }
+  .form-class{
+    margin: 0% 6%;
+  }
 }
 @media screen and (min-width: 601px) and (max-width: 900px) {
   .login-lock {
     height: 45vh;
+  }
+  .input-fields-login {
+    padding-top: 0vh !important;
+    height: 6.2vh;
   }
   .login-btn {
     margin-top: 1vh;

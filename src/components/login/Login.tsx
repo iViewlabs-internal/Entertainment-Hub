@@ -20,7 +20,7 @@ const validationSchema = Yup.object()
       .required()
       .required("*Password is required")
       .min(6, "*Password must be at least 6 characters")
-      .max(40, "*Password must not exceed 40 characters"),
+      .max(15, "*Password must not exceed 15 characters"),
   })
   .required();
 
@@ -40,9 +40,9 @@ const Login = (props: any) => {
     if (!data.email || !data.password) {
       toast.error("Fields are empty!");
     } else if (parsedData.email !== data.email) {
-      toast.error("Invailid username!");
+      toast.error("Invalid username!");
     } else if (parsedData.password !== data.password) {
-      toast.error("Invailid Password!");
+      toast.error("Invalid Password!");
     } else if (
       parsedData.email === data.email &&
       parsedData.password === data.password

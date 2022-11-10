@@ -2,7 +2,6 @@ import { Container } from "@mui/system";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
-
 import "./navbar.css";
 import { Button, Menu, MenuItem } from "@mui/material";
 import { toast, ToastContainer } from "react-toastify";
@@ -51,22 +50,22 @@ const Navbar = (props: any) => {
               </h2>
             </div>
             <div className="search-header-div">
-              <Link to="/trending" style={{ color: "white" }}>
+              <Link to="/trending" className="link-react">
                 <div>
                   <i className="fa-solid fa-house fa-2x" id="trending-item"></i>
                 </div>
               </Link>
-              <Link to="/movies" style={{ color: "white" }}>
+              <Link to="/movies" className="link-react">
                 <div>
                   <i className="fa-solid fa-film fa-2x" id="movies-item"></i>
                 </div>
               </Link>
-              <Link to="/tv-series" style={{ color: "white" }}>
+              <Link to="/tv-series" className="link-react">
                 <div>
                   <i className="fa-solid fa-tv fa-2x" id="tv-series-item"></i>
                 </div>
               </Link>
-              <Link to="/search" style={{ color: "white" }}>
+              <Link to="/search" className="link-react">
                 <div>
                   <i
                     className="fa-solid fa-magnifying-glass fa-2x"

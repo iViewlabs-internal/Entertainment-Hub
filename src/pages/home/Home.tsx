@@ -13,7 +13,8 @@ const Home = () => {
   const [state4, setState4] = useState(false);
   const [state5, setState5] = useState(false);
   const [state6, setState6] = useState(false);
-  const q1 = () => {
+  
+  const handleQ1 = () => {
     if (tempState === false) {
       document.getElementById("ans-1")!.style.display = "block";
       document.getElementById("ans-2")!.style.display = "none";
@@ -29,7 +30,7 @@ const Home = () => {
       setState1(false);
     }
   };
-  const q2 = () => {
+  const handleQ2 = () => {
     if (tempState === false) {
       document.getElementById("ans-2")!.style.display = "block";
       document.getElementById("ans-1")!.style.display = "none";
@@ -45,7 +46,7 @@ const Home = () => {
       setTempState(false);
     }
   };
-  const q3 = () => {
+  const handleQ3 = () => {
     if (tempState === false) {
       document.getElementById("ans-3")!.style.display = "block";
       document.getElementById("ans-2")!.style.display = "none";
@@ -61,7 +62,7 @@ const Home = () => {
       setState3(false);
     }
   };
-  const q4 = () => {
+  const handleQ4 = () => {
     if (tempState === false) {
       document.getElementById("ans-4")!.style.display = "block";
       document.getElementById("ans-2")!.style.display = "none";
@@ -77,7 +78,7 @@ const Home = () => {
       setState4(false);
     }
   };
-  const q5 = () => {
+  const handleQ5 = () => {
     if (tempState === false) {
       document.getElementById("ans-5")!.style.display = "block";
       document.getElementById("ans-2")!.style.display = "none";
@@ -93,7 +94,7 @@ const Home = () => {
       setState5(false);
     }
   };
-  const q6 = () => {
+  const handleQ6 = () => {
     if (tempState === false) {
       document.getElementById("ans-6")!.style.display = "block";
       setTempState(true);
@@ -245,7 +246,7 @@ const Home = () => {
               <h1>Frequently Asked Questions</h1>
             </div>
             <div className="inner-about">
-              <div className="heading-btn" onClick={q1}>
+              <div className="heading-btn" onClick={handleQ1}>
                 <h3 className="heading-faq">-What is Entertainment-HUB?</h3>
                 {state1 === false ? (
                   <i className="fa-solid fa-plus fa-2x"></i>
@@ -261,7 +262,7 @@ const Home = () => {
                 ad – all for one low monthly price. There's always something new
                 to discover, and new TV shows and movies are added every week!
               </p>
-              <div className="heading-btn" onClick={q2}>
+              <div className="heading-btn" onClick={handleQ2}>
                 <h3 className="heading-faq">-How do i cancel?</h3>
                 {state2 === false ? (
                   <i className="fa-solid fa-plus fa-2x"></i>
@@ -275,7 +276,7 @@ const Home = () => {
                 two clicks. There are no cancellation fees – start or stop your
                 account anytime.
               </p>
-              <div className="heading-btn" onClick={q3}>
+              <div className="heading-btn" onClick={handleQ3}>
                 <h3 className="heading-faq">-How much does It's Cost?</h3>
                 {state3 === false ? (
                   <i className="fa-solid fa-plus fa-2x"></i>
@@ -289,7 +290,7 @@ const Home = () => {
                 Plans range from ₹ 149 to ₹ 649 a month. No extra costs, no
                 contracts.
               </p>
-              <div className="heading-btn" onClick={q4}>
+              <div className="heading-btn" onClick={handleQ4}>
                 <h3 className="heading-faq">-Where i can whatch?</h3>
                 {state4 === false ? (
                   <i className="fa-solid fa-plus fa-2x"></i>
@@ -306,7 +307,7 @@ const Home = () => {
                 You can also download your favourite shows with the iOS,
                 Android, or Windows 10 app.
               </p>
-              <div className="heading-btn" onClick={q5}>
+              <div className="heading-btn" onClick={handleQ5}>
                 <h3 className="heading-faq">
                   -What i can watch on Entertainment-Hub
                 </h3>
@@ -322,7 +323,7 @@ const Home = () => {
                 originals, and more. Watch as much as you want, anytime you
                 want.
               </p>
-              <div className="heading-btn" onClick={q6}>
+              <div className="heading-btn" onClick={handleQ6}>
                 <h3 className="heading-faq">
                   -Is Entertainment-Hub good for kids?
                 </h3>
