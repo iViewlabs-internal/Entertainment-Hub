@@ -7,6 +7,9 @@
 .same-nav-divs {
   /* width: 25%; */
 }
+.link-react{
+  color: white;
+}
 i:hover {
   cursor: pointer;
 }

@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import AliceCarousel from "react-alice-carousel";
 import "./carousel.css";
 
-const handleDragStart = (e: any) => e.preventDefault();
 const mykey = process.env.REACT_APP_USER_API_KEY;
 const Carousel = (props: any) => {
   const [credits, setCredits] = useState([]);
+
+  const handleDragStart = (e: any) => e.preventDefault();
 
   const items = credits?.map((val: any) => (
     <div className="carouselItem">

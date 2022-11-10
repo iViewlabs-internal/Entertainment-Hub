@@ -98,11 +98,11 @@ const Search = () => {
           )}
           {!data ? (
             type ? (
-              <h2 id="demo" style={{ textAlign: "center" }}>
+              <h2 id="demo" className="not-found-content">
                 No Series Found
               </h2>
             ) : (
-              <h2 style={{ textAlign: "center" }}>No Movies Found</h2>
+              <h2 className="not-found-content">No Movies Found</h2>
             )
           ) : (
             ""

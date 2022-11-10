@@ -8,6 +8,9 @@
 .searchBox {
   flex: 1;
 }
+.not-found-content{
+  text-align: center;
+}
 .tabs-search {
   padding-bottom: 9vh;
   padding-top: 3vh;

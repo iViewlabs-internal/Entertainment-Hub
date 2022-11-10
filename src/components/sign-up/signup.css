@@ -69,7 +69,7 @@ hr {
   }
   .input-fields {
     width: 80%;
-    height: 6vh;
+    /* height: 6vh; */
   }
   .signup-btn {
     width: 82%;

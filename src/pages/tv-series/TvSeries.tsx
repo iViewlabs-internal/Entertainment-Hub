@@ -16,7 +16,7 @@ const TvSeries = () => {
   const [genre, setGenre] = useState<any[]>([]);
   const [genreArr, setGenreArr] = useState<any[]>([]);
   let [myStr,setMyStr] = useState("")
-  const numOfPages = 500;
+  const [numOfPages, setNumOfPages] = useState(0)
 
   const tempFunc = (id: number, snd: string) => {
     const temp = document.querySelector(`#${snd}`) as HTMLInputElement;
@@ -35,7 +35,7 @@ const TvSeries = () => {
        tempStr+= val+","
     });
     setMyStr(tempStr);
-    console.log(myStr);
+    closeNav()
   };
 
   useEffect(() => {
@@ -45,6 +45,7 @@ const TvSeries = () => {
       .then((res) => res.json())
       .then((items) => {
         setData(items.results);
+        setNumOfPages(items.total_pages >= 500 ? 500 : items.total_pages)
         setLoading(false);
       });
   }, [page, myStr]);
@@ -127,10 +128,8 @@ const TvSeries = () => {
             </Grid>
           )}
         </Container>
-        {loading === false ? (
+        {numOfPages > 1 && (
           <MyPagination setPage={setPage} numOfPages={numOfPages} />
-        ) : (
-          ""
         )}
       </div>
       <Footer />

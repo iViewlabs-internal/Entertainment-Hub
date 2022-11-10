@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import "./profileInfo.css";
 
-interface gpd {
+interface stateHandleFirst {
   handleState(): boolean;
 }
-const ProfileInfo: React.FC<gpd> = (props) => {
+const ProfileInfo: React.FC<stateHandleFirst> = (props) => {
   const registeredUser: any = localStorage.getItem("register");
   const userInfo = JSON.parse(registeredUser);
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const ProfileInfo: React.FC<gpd> = (props) => {
   };
   return (
     <>
-      <h2 style={{ marginBottom: "0%", paddingBottom: "0%" }}>User Profile</h2>
+      <h2 className="user-profile-heading">User Profile</h2>
 
       <div className="info-div-parent">
         <div className="info-div1">

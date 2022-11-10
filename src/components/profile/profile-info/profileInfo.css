@@ -21,6 +21,10 @@
 .info-div-btn > button:hover {
   background-color: #173d63;
 }
+.user-profile-heading{
+  margin-bottom: 0%;
+  padding-bottom: 0%;
+}
 @media screen and (min-width: 300px) and (max-width: 800px) {
   .info-div-btn {
     padding-bottom: 4vh;

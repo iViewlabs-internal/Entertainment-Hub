@@ -15,43 +15,43 @@ const Movies = () => {
   const [data, setData] = useState<any[]>([]);
   const [genre, setGenre] = useState<any[]>([]);
   const [genreArr, setGenreArr] = useState<any[]>([]);
-  let [myStr,setMyStr] = useState("")
-  const numOfPages = 500;
-  
-  const tempFunc = (id: number, snd: string) => {
-    const temp = document.querySelector(`#${snd}`) as HTMLInputElement;
+  let [genreStr, setgenreStr] = useState("");
+  const [numOfPages, setNumOfPages] = useState(0);
+
+  const tempFunc = (id: number, idStr: string) => {
+    const temp = document.querySelector(`#${idStr}`) as HTMLInputElement;
 
     if (temp.checked) {
       setGenreArr([...genreArr, id]);
     } else {
       // if (genreArr.includes(id) === true) {
       genreArr.splice(genreArr.indexOf(id), 1);
-      setGenreArr([...genreArr]);
+      // setGenreArr([...genreArr]);
       // }
     }
   };
   const applyFilter = () => {
-    setMyStr("")
-    console.log(myStr , "lll")
-    let tempStr = ""
+    setgenreStr("");
+    let tempStr = "";
     genreArr.map((val) => {
-       tempStr+= val+","
+      tempStr += val + ",";
     });
-    setMyStr(tempStr);
-    console.log(myStr);
+    setgenreStr(tempStr);
+    closeNav();
   };
 
   useEffect(() => {
-    console.log("called", myStr , "yes");
     fetch(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${mykey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${myStr}`
+      `https://api.themoviedb.org/3/discover/movie?api_key=${mykey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genreStr}`
     )
       .then((res) => res.json())
       .then((items) => {
         setData(items.results);
+        // setNumOfPages(items.total_pages)
+        setNumOfPages(items.total_pages >= 500 ? 500 : items.total_pages);
         setLoading(false);
       });
-  }, [page,myStr]);
+  }, [page, genreStr]);
 
   useEffect(() => {
     fetch(
@@ -93,18 +93,20 @@ const Movies = () => {
             </div>
           );
         })}
-        <button onClick={applyFilter} className="btn-apply">Apply Filters</button>
+        <button onClick={applyFilter} className="btn-apply">
+          Apply Filters
+        </button>
       </div>
-     
+
       <div className="container-items">
         <Container>
-        <div className="top-movies-div">
-          <h4 className="filter-head" onClick={openNav}>
-            Filter<i className="fa-solid fa-filter"></i>
-          </h4>
-          <h1>Movies</h1>
-          <h4 className="day-today">{day}</h4>
-        </div>
+          <div className="top-movies-div">
+            <h4 className="filter-head" onClick={openNav}>
+              Filter<i className="fa-solid fa-filter"></i>
+            </h4>
+            <h1>Movies</h1>
+            <h4 className="day-today">{day}</h4>
+          </div>
           {loading ? (
             <Loader />
           ) : (
@@ -127,7 +129,7 @@ const Movies = () => {
             </Grid>
           )}
         </Container>
-        {data.length > 19 && (
+        {numOfPages > 1 && (
           <MyPagination setPage={setPage} numOfPages={numOfPages} />
         )}
       </div>

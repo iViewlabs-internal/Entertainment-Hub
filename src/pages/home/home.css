@@ -308,6 +308,7 @@
   }
   .inner-top-head > h1 {
     font-size: 1.5rem;
+    margin-left: 3vw;
   }
   .inner-about {
     width: auto;

@@ -72,12 +72,12 @@ const validationSchema = Yup.object()
       .required()
       .required("*Mobile number is required")
       .min(10, "*Mobile no. must be at least 10 characters")
-      .max(15, "*Mobile no. must not exceed 12 characters"),
+      .max(12, "*Mobile no. must not exceed 12 characters"),
     password: Yup.string()
       .required()
       .required("*Password is required")
       .min(6, "*Password must be at least 6 characters")
-      .max(40, "*Password must not exceed 40 characters"),
+      .max(15, "*Password must not exceed 15 characters"),
     confirmPassword: Yup.string()
       .required()
       .required("*Confirm Password is required")
