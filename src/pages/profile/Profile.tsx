@@ -3,6 +3,8 @@ import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 import EditProfile from "../../components/profile/profile-edit/EditProfile";
 import ProfileInfo from "../../components/profile/profile-info/ProfileInfo";
+import config from "../../config/config.json";
+
 import "./profile.css";
 
 const Profile: React.FC = () => {
@@ -24,9 +26,7 @@ const Profile: React.FC = () => {
         <div className="profile-left-div">
           <img
             className="profile-page-img"
-            src={
-              "https://www.simplilearn.com/ice9/free_resources_article_thumb/ethicalhacking.jpg"
-            }
+            src={config.PROFILE_DUMY_PICTURE}
             alt="profile"
           />
         </div>

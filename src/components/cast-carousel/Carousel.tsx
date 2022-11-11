@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import AliceCarousel from "react-alice-carousel";
+import config from "../../config/config.json";
+
 import "./carousel.css";
 
 const mykey = process.env.REACT_APP_USER_API_KEY;
@@ -14,7 +16,7 @@ const Carousel = (props: any) => {
         src={
           val.profile_path
             ? `https://image.tmdb.org/t/p/w300/${val.profile_path}`
-            : "https://upload.wikimedia.org/wikipedia/en/6/60/No_Picture.jpg"
+            : config.NO_PICTURE
         }
         alt={val?.name}
         onDragStart={handleDragStart}
@@ -22,7 +24,7 @@ const Carousel = (props: any) => {
       />
 
       <a
-        href={`https://en.wikipedia.org/wiki/${val.name}`}
+        href={`https://en.wikipedia.org/wiki/${val?.name}`}
         target="_blank"
         rel="noreferrer"
         className="anchor-single-img"

@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import ForgotPass from "../../modals/forgot-pass/forgotPass";
 import { useState } from "react";
+import config from "../../config/config.json";
 
 type Inputs = {
   email: string;
@@ -67,7 +68,7 @@ const Login = (props: any) => {
           <div className="img-div-lock">
             <img
               className="login-lock"
-              src="https://images.unsplash.com/photo-1509822929063-6b6cfc9b42f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+              src={config.LOGIN_PICTURE}
               alt="login pic"
             />
           </div>

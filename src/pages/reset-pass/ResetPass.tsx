@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./resetPass.css";
 import { useNavigate } from "react-router-dom";
+import config from "../../config/config.json";
 
 type Inputs = {
   oldPassword: string;
@@ -117,7 +118,7 @@ const ResetPass = () => {
         </div>
         <div className="reset-inner-right-div">
           <img
-            src="https://image.shutterstock.com/image-illustration/3d-illustration-computer-keyboard-print-260nw-528632875.jpg"
+            src={config.RESET_PASS_DUMY_PICTURE}
             alt="reset"
             className="img-reset-pass"
           />

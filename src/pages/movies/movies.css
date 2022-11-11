@@ -148,7 +148,13 @@
   display: block;
   transition: 0.3s;
 }
-
+.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+  height: 6vh;
+}
+.harshu{
+  padding-top: 5vh;
+  color: blue;
+}
 .sidenav a:hover {
   color: #f1f1f1;
 }
@@ -197,7 +203,25 @@
   }
 }
 @media screen and (min-width: 200px) and (max-width: 600px) {
-  .day-today{
-    display: none;
+  .top-movies-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .fa-filter{
+    margin-left: 70%;
+  }
+  .movie-head{
+    margin: 0px;
+    margin-left: 25%;
+  }
+  .harshu{
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+   
+  }
+  .filter-head{
+    margin-bottom: 2vh;
+ 
   }
 }
