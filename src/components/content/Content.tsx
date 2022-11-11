@@ -44,7 +44,7 @@ const Content = (props: any) => {
                 </div>
                 <div className="inner-para-containt">
                   <p className="para-content-title">
-                    {props.title.length > 20
+                    {props.title?.length > 20
                       ? `${props.title.slice(0, 22)}...`
                       : props.title}
                   </p>

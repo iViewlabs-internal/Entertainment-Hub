@@ -137,7 +137,7 @@ const TvSeries = () => {
         {numOfPages > 1 && (
           <MyPagination setPage={setPage} numOfPages={numOfPages} />
         )}
-        {(!data.length && loading === false) ? <h1 className="no-data-heading"> <i className="fa-solid fa-face-frown"></i> No Data Found</h1> : ""}
+        {(!data?.length && loading === false) ? <h1 className="no-data-heading"> <i className="fa-solid fa-face-frown"></i> No Data Found</h1> : ""}
       </div>
       <Footer /> 
     </>
