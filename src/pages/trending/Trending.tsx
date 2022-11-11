@@ -1,5 +1,11 @@
-import { Container, Grid } from "@mui/material";
-import { useEffect, useState } from "react";
+import {
+  Box,
+  Container,
+  FormControl,
+  Grid,
+  NativeSelect,
+} from "@mui/material";
+import { ChangeEvent, useEffect, useState } from "react";
 import Content from "../../components/content/Content";
 import Footer from "../../components/footer/Footer";
 import Loader from "../../components/loader/Loader";
@@ -25,20 +31,10 @@ const Trending = () => {
       });
     window.scroll(0, 0);
   }, [page, trending]);
-  const weekFunc = () => {
-    setTrending("week");
-    document.getElementById("week-id")!.style.textDecoration = "underline";
-    document.getElementById("week-id")!.style.color = "black";
-    document.getElementById("day-id")!.style.textDecoration = "none";
-    document.getElementById("day-id")!.style.color = "blue";
+  const func = (e: ChangeEvent<HTMLSelectElement>) => {
+    setTrending(e.target.value);
   };
-  const dayFunc = () => {
-    setTrending("day");
-    document.getElementById("day-id")!.style.textDecoration = "underline";
-    document.getElementById("day-id")!.style.color = "black";
-    document.getElementById("week-id")!.style.textDecoration = "none";
-    document.getElementById("week-id")!.style.color = "blue";
-  };
+
   return (
     <>
       <Navbar />
@@ -46,15 +42,24 @@ const Trending = () => {
         <Container>
           <div className="top-trending-div">
             <h1>
-              Top Trendings of The (
-              <span id="day-id" onClick={dayFunc}>
-                day
-              </span>{" "}
-              /{" "}
-              <span id="week-id" onClick={weekFunc}>
-                week
-              </span>
-              )
+              Top Trendings of The
+              <Box sx={{ minWidth: 120 }}>
+                <FormControl fullWidth>
+                  <NativeSelect
+                    defaultValue={"day"}
+                    inputProps={{
+                      name: "Trending",
+                      id: "uncontrolled-native",
+                    }}
+                    onChange={(e) => {
+                      func(e);
+                    }}
+                  >
+                    <option value="day">Day</option>
+                    <option value="week">Week</option>
+                  </NativeSelect>
+                </FormControl>
+              </Box>
             </h1>
           </div>
           {loading ? (
@@ -62,7 +67,7 @@ const Trending = () => {
           ) : (
             <Grid container spacing={2}>
               {data &&
-                data.map((val: any) => {
+                data?.map((val: any) => {
                   return (
                     <Content
                       id={val.id}

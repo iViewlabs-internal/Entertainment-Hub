@@ -1,7 +1,11 @@
 import { Container } from "@mui/material";
 import "./footer.css";
 import { year } from "../../utils";
+import { useNavigate } from "react-router-dom";
+
 const Footer = () => {
+  const navigate = useNavigate();
+  
   return (
     <>
       <div className="footer-head-div">
@@ -18,7 +22,7 @@ const Footer = () => {
               <div className="inner-divs-same">Privacy</div>
             </div>
             <div className="inner-footer-div-sec">
-              <div className="inner-divs-same">About Entertainment-HUB</div>
+              <div className="inner-divs-same about" onClick={()=>{navigate("/about")}}>About Entertainment-HUB</div>
               <div className="inner-divs-same">Contact Us</div>
               <div className="inner-divs-same"><a href="#about-containt-div" className="faq-link">FAQs</a></div>
             </div>

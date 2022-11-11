@@ -4,8 +4,11 @@ import "./home.css";
 import RegisterModal from "../../modals/register/RegisterModal";
 import LoginModal from "../../modals/login/LoginModal";
 import Footer from "../../components/footer/Footer";
+import config from "../../config/config.json";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate()
   const [tempState, setTempState] = useState(false);
   const [state1, setState1] = useState(false);
   const [state2, setState2] = useState(false);
@@ -134,7 +137,7 @@ const Home = () => {
       <div className="home-parent-div">
         <img
           className="temp"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/afc06103-4d6a-4236-b496-34b671a7e9ba/383fc36a-aa04-4dfd-95a0-a4b71bc21eed/IN-en-20221003-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+          src={config.HOME_BACKGROUND_PICTURE}
           alt="background"
         />
         <div className="container-div">
@@ -152,7 +155,7 @@ const Home = () => {
                       FAQ's
                     </a>
                   </p>
-                  <p className="right-para right-para-about">About</p>
+                  <p className="right-para right-para-about" onClick={()=>{navigate("/about")}}>About</p>
                 </div>
               </div>
             </div>
@@ -203,7 +206,7 @@ const Home = () => {
             <div className="middle-left-div">
               <img
                 className="dumy-picture"
-                src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg"
+                src={config.HOME_DUMY_PICTURE_ONE}
                 alt="dumy"
               />
             </div>
@@ -231,7 +234,7 @@ const Home = () => {
             <div className="bottom-right-div">
               <img
                 className="streaming-picture"
-                src="https://images.unsplash.com/photo-1615986201152-7686a4867f30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c3RyZWFtaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
+                src={config.HOME_DUMY_PICTURE_TWO}
                 alt="dumy"
               />
             </div>
@@ -286,8 +289,7 @@ const Home = () => {
               </div>
               <p className="para-faq-ans" id="ans-3">
                 Watch Entertainment-Hub on your smartphone, tablet, Smart TV,
-                laptop, or streaming device, all for one fixed monthly fee.
-                Plans range from ₹ 149 to ₹ 649 a month. No extra costs, no
+                laptop, or streaming device, all for alltime fee. No extra costs, no
                 contracts.
               </p>
               <div className="heading-btn" onClick={handleQ4}>

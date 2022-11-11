@@ -50,6 +50,9 @@
 .right-font-icon-div {
   padding-left: 2vw;
 }
+.about{
+  cursor: pointer;
+}
 .items {
   padding-top: 1vh;
 }

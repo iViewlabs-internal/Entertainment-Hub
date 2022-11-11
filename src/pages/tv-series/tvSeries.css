@@ -9,6 +9,34 @@
   margin-left: 5vw;
   margin-bottom: 1vh;
 }
+.no-data-heading{
+  color: rgb(0, 0, 0);
+  margin-top: 10vh;
+  margin-bottom: 12.6vh;
+}
+.fa-face-frown{
+  color: rgb(77, 67, 67);
+}
 .css-1fwwhll-MuiGrid-root>.MuiGrid-item {
   padding-left: 16px !important;
+}
+@media screen and (min-width: 200px) and (max-width: 600px) {
+  .top-series-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .series-head{
+    margin: 0px;
+    margin-left: 25%;
+  }
+  .harshu{
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+   
+  }
+  .filter-head{
+    margin-bottom: 2vh;
+ 
+  }
 }

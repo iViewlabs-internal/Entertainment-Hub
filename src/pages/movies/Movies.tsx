@@ -1,11 +1,11 @@
-import { Container, Grid } from "@mui/material";
+import { Container,Grid,SelectChangeEvent } from "@mui/material";
 import { useEffect, useState } from "react";
 import Content from "../../components/content/Content";
 import Footer from "../../components/footer/Footer";
+import Language from "../../components/language/Language";
 import Loader from "../../components/loader/Loader";
 import Navbar from "../../components/navbar/Navbar";
 import MyPagination from "../../components/pagination/MyPagination";
-import { day } from "../../utils";
 import "./movies.css";
 
 const mykey = process.env.REACT_APP_USER_API_KEY;
@@ -39,10 +39,15 @@ const Movies = () => {
     setgenreStr(tempStr);
     closeNav();
   };
+  const [language, setLanguage] = useState('en-Us');
+
+  const handleChange = (event: SelectChangeEvent) => {
+    setLanguage(event.target.value as string);
+  };
 
   useEffect(() => {
     fetch(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${mykey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genreStr}`
+      `https://api.themoviedb.org/3/discover/movie?api_key=${mykey}&language=${language}&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genreStr}`
     )
       .then((res) => res.json())
       .then((items) => {
@@ -51,7 +56,7 @@ const Movies = () => {
         setNumOfPages(items.total_pages >= 500 ? 500 : items.total_pages);
         setLoading(false);
       });
-  }, [page, genreStr]);
+  }, [page, genreStr,language]);
 
   useEffect(() => {
     fetch(
@@ -69,7 +74,7 @@ const Movies = () => {
   const closeNav = () => {
     document.getElementById("mySidenav")!.style.width = "0";
   };
-
+  
   return (
     <>
       <Navbar />
@@ -81,7 +86,7 @@ const Movies = () => {
           </a>
         </div>
         <hr className="hr-genre" />
-        {genre.map((val) => {
+        {genre?.map((val) => {
           return (
             <div key={val.id} id="header-filter-div">
               <input
@@ -104,15 +109,15 @@ const Movies = () => {
             <h4 className="filter-head" onClick={openNav}>
               Filter<i className="fa-solid fa-filter"></i>
             </h4>
-            <h1>Movies</h1>
-            <h4 className="day-today">{day}</h4>
+            <h1 className="movie-head">Movies</h1>
+            <Language language={language} handleChange={handleChange}/>
           </div>
           {loading ? (
             <Loader />
           ) : (
             <Grid container spacing={2} alignItems="stretch">
               {data &&
-                data.map((val: any) => {
+                data?.map((val: any) => {
                   return (
                     <Content
                       key={val.id}
@@ -132,6 +137,7 @@ const Movies = () => {
         {numOfPages > 1 && (
           <MyPagination setPage={setPage} numOfPages={numOfPages} />
         )}
+          {(!data.length && loading === false) ? <h1 className="no-data-heading"> <i className="fa-solid fa-face-frown"></i> No Data Found</h1> : ""}
       </div>
       <Footer />
     </>

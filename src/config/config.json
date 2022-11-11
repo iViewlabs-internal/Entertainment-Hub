@@ -1,3 +1,14 @@
 {
-    "SERVER_URL": "https://api.themoviedb.org/3"
+  "SERVER_URL": "https://api.themoviedb.org/3",
+  "NO_PICTURE": "https://upload.wikimedia.org/wikipedia/en/6/60/No_Picture.jpg",
+  "LOGIN_PICTURE": "https://images.unsplash.com/photo-1509822929063-6b6cfc9b42f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+  "SIGNUP_PICTURE": "https://images.unsplash.com/photo-1543599538-a6c4f6cc5c05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+  "ABOUT_HEAD_PICTURE": "https://images.ctfassets.net/4cd45et68cgf/2JXwkOk00mTTVOBiNkybja/ab3466dcf6317a7ac5860ae4b44d9874/2015.png",
+  "ABOUT_CAREER_PICTURE": "https://images.ctfassets.net/4cd45et68cgf/5AgYJu2sr8Huq6DDu3rE9D/1a1e281ca5054fb09646b0dcc9058b68/Careers-Image.jpg",
+  "ABOUT_CULTURE_PICTURE": "https://media.istockphoto.com/id/1407840013/photo/group-of-multiethnic-business-people-portrait-in-the-office.jpg?s=1024x1024&w=is&k=20&c=5RlB4dofcvxvXFYTD7JYgEhWJreFn4UPhAMFeSQu5SA=",
+  "HOME_BACKGROUND_PICTURE": "https://assets.nflxext.com/ffe/siteui/vlv3/afc06103-4d6a-4236-b496-34b671a7e9ba/383fc36a-aa04-4dfd-95a0-a4b71bc21eed/IN-en-20221003-popsignuptwoweeks-perspective_alpha_website_large.jpg",
+  "HOME_DUMY_PICTURE_ONE": "https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg",
+  "HOME_DUMY_PICTURE_TWO": "https://images.unsplash.com/photo-1615986201152-7686a4867f30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c3RyZWFtaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60",
+  "PROFILE_DUMY_PICTURE": "https://www.simplilearn.com/ice9/free_resources_article_thumb/ethicalhacking.jpg",
+  "RESET_PASS_DUMY_PICTURE": "https://image.shutterstock.com/image-illustration/3d-illustration-computer-keyboard-print-260nw-528632875.jpg"
 }
