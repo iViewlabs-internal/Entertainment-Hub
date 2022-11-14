@@ -60,7 +60,7 @@ hr {
 .forgott-pass:hover {
   cursor: pointer;
 }
-.css-10ghrmp-MuiPaper-root-MuiAppBar-root {
+.css-10ghrmp-MuiPaper-root-MuiAppBar-root , .css-1ctq51k{
   background-color: #0a325a !important;
 }
 @media screen and (min-width: 200px) and (max-width: 600px) {
