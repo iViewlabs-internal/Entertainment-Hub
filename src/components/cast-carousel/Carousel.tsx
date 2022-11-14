@@ -15,7 +15,7 @@ const Carousel = (props: any) => {
       <img
         src={
           val.profile_path
-            ? `https://image.tmdb.org/t/p/w300/${val.profile_path}`
+            ? `https://image.tmdb.org/t/p/w300/${val?.profile_path}`
             : config.NO_PICTURE
         }
         alt={val?.name}

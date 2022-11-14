@@ -78,7 +78,7 @@ const Search = () => {
           ) : (
             <Grid container spacing={2}>
               {data &&
-                data.map((val: any) => {
+                data?.map((val: any) => {
                   return (
                     <Content
                       id={val.id}
