@@ -41,7 +41,7 @@ const Search = () => {
   useEffect(() => {
     fetchData();
     window.scroll(0, 0);
-  }, [myPage, type]);
+  }, [type,myPage]);
 
   return (
     <>
@@ -58,7 +58,6 @@ const Search = () => {
             />
             <Button
               onClick={fetchData}
-              style={{ backgroundColor: "rgba(0, 0, 0, 0.06)", color: "black" }}
               className="btn-search-icon"
             >
               <i
@@ -78,8 +77,8 @@ const Search = () => {
             className="tabs-search"
             aria-label="disabled tabs example"
           >
-            <Tab className="tabs-search-query" label="Movies" />
-            <Tab className="tabs-search-query" label="TV Series" />
+            <Tab className="tabs-search-query" label="Movies"/>
+            <Tab className="tabs-search-query" label="TV Series"/>
           </Tabs>
           {loading ? (
             <Loader />

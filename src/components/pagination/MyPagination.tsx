@@ -16,8 +16,8 @@ const MyPagination = (props: any) => {
       <Pagination
         onChange={(e: any) => handlePageChange(e.target.textContent)}
         count={props.numOfPages}
-        // hideNextButton
-        // hidePrevButton
+        hideNextButton
+        hidePrevButton
       />
     </Stack>
   );

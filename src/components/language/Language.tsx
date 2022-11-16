@@ -16,7 +16,7 @@ const Language = () => {
   const language: any = useAppSelector(
     (state: { language: { value: any } }) => state.language.value
   );
-  console.log(language);
+
   const handleChange = (event: SelectChangeEvent) => {
     dispatch(changeLanguage(event.target.value as string));
   };

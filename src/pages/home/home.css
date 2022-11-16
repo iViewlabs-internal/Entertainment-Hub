@@ -372,9 +372,14 @@
     margin-left: 12vw;
   }
 }
-@media screen and (min-width: 601px) and (max-width: 700px) {
+@media screen and (min-width: 601px) and (max-width: 750px) {
   .streaming-picture {
-    height: 35vh;
+    height: 33vh;
+    width: 33vw;
     margin-left: 4vw;
+  }
+  .dumy-picture {
+    width: 50vw;
+    height: 50vh;
   }
 }

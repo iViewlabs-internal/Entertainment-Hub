@@ -4,6 +4,8 @@
 }
 .btn-search-icon {
   margin-left: 0.6vw !important;
+  background-color: rgba(0, 0, 0, 0.06) !important;
+  color: black !important;
 }
 .searchBox {
   flex: 1;
