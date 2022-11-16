@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 import AliceCarousel from "react-alice-carousel";
 import config from "../../config/config.json";
-
+import { useGetCarouselsQuery } from "../../redux/services/entertainment";
 import "./carousel.css";
 
-const mykey = process.env.REACT_APP_USER_API_KEY;
 const Carousel = (props: any) => {
   const [credits, setCredits] = useState([]);
-
+  const obj = {
+    mediaType: props.mediaType,
+    id:props.id
+  }
+  const responseInfo = useGetCarouselsQuery(obj);
   const handleDragStart = (e: any) => e.preventDefault();
 
   const items = credits?.map((val: any) => (
@@ -15,7 +18,7 @@ const Carousel = (props: any) => {
       <img
         src={
           val.profile_path
-            ? `https://image.tmdb.org/t/p/w300/${val?.profile_path}`
+            ? `${config.POSTER_ROOT_PATH}${val?.profile_path}`
             : config.NO_PICTURE
         }
         alt={val?.name}
@@ -24,7 +27,7 @@ const Carousel = (props: any) => {
       />
 
       <a
-        href={`https://en.wikipedia.org/wiki/${val?.name}`}
+        href={`${config.WIKIPEDIA_NAME_URL}${val?.name}`}
         target="_blank"
         rel="noreferrer"
         className="anchor-single-img"
@@ -46,14 +49,10 @@ const Carousel = (props: any) => {
     },
   };
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/${props.mediaType}/${props.id}/credits?api_key=${mykey}&language=en-US`
-    )
-      .then((res) => res.json())
-      .then((items) => {
-        setCredits(items.cast);
-      });
-  }, [props.id, props.mediaType]);
+  
+        setCredits(responseInfo?.data?.cast);
+ 
+  }, [obj]);
 
   return (
     <AliceCarousel

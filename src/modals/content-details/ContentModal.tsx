@@ -9,6 +9,7 @@ import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
 import { forwardRef } from "react";
 import "./contentModal.css";
+import config from "../../config/config.json";
 
 const Transition = forwardRef(function Transition(
   props: TransitionProps & {
@@ -54,7 +55,7 @@ const ContentModal = (props: any) => {
         <div className="modal-inner-left">
           <div>
             <img
-              src={`https://image.tmdb.org/t/p/w300${props.poster}`}
+              src={`${config.POSTER_ROOT_PATH}${props.poster}`}
               alt={props.title}
               className="modal-item-img"
             />

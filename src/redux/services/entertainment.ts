@@ -42,6 +42,12 @@ export const entertainmentApi = createApi({
         }&include_adult=false`,
       }),
     }),
+    getCarousels: builder.query({
+      query: (obj) => ({
+        url: `${obj.mediaType}/${obj.id}/credits?api_key=${mykey}&language=en-US`,
+        method: "GET",
+      }),
+    }),
   }),
 });
 export const {
@@ -50,4 +56,5 @@ export const {
   useGetAllTvSeriesQuery,
   useGetAllGenreQuery,
   useGetAllTrendingQuery,
+  useGetCarouselsQuery,
 } = entertainmentApi;
