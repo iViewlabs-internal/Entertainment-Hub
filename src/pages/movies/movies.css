@@ -151,7 +151,7 @@
 .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
   height: 6vh;
 }
-.harshu{
+.box-header {
   padding-top: 5vh;
   color: blue;
 }
@@ -171,7 +171,7 @@
   margin-left: 2.2vw;
   margin-top: -0.5vh;
 }
-.btn-apply{
+.btn-apply {
   padding: 4% 8%;
   color: white;
   background-color: #0a325a;
@@ -182,7 +182,7 @@
   font-weight: 600;
   margin-top: 1vh;
 }
-.btn-apply:hover{
+.btn-apply:hover {
   background-color: #173e64;
 }
 .genres-div > h4 {
@@ -203,25 +203,23 @@
   }
 }
 @media screen and (min-width: 200px) and (max-width: 600px) {
-  .top-movies-div{
+  .top-movies-div {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
   }
-  .fa-filter{
+  .fa-filter {
     margin-left: 70%;
   }
-  .movie-head{
+  .movie-head {
     margin: 0px;
     margin-left: 25%;
   }
-  .harshu{
+  .box-header {
     padding-top: 2vh;
     padding-bottom: 2vh;
-   
   }
-  .filter-head{
+  .filter-head {
     margin-bottom: 2vh;
- 
   }
 }

@@ -1,108 +1,118 @@
-.about-nav-header{
-    display: flex;
-    justify-content: space-between;
-    background-color: #2d313a;
-    color: white;
+.about-nav-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #2d313a;
+  color: white;
 }
-.about-middle-sec{
-    display: flex;
-    padding-top: 3vh;
-    background-color: rgb(255, 255, 255);
+.about-middle-sec {
+  display: flex;
+  padding-top: 3vh;
+  background-color: rgb(255, 255, 255);
 }
-.home-btn{
-    border: 1px solid white;
-    border-radius: 12px;
-    padding: 0.5vh 1.2vw;
-    cursor: pointer;
+.home-btn {
+  border: 1px solid white;
+  border-radius: 12px;
+  padding: 0.5vh 1.2vw;
+  cursor: pointer;
 }
-.home-btn:hover{
-    background-color: #000000;
+.home-btn:hover {
+  background-color: #000000;
 }
-.about-middle-left , .about-middle-right{
-    width: 50%;
+.about-middle-left,
+.about-middle-right {
+  width: 50%;
 }
-.about-middle-left > p{
-   font-size: 1.1rem;
-   font-weight: 500;
+.about-middle-left > p {
+  font-size: 1.1rem;
+  font-weight: 500;
 }
-.about-middle-right > img{
-    width: 90%;
-    height: 90%;
+.about-middle-right > img {
+  width: 90%;
+  height: 90%;
 }
-.about-middle-right{
-    display: flex;
-    justify-content: end;
+.about-middle-right {
+  display: flex;
+  justify-content: end;
 }
-.about-author-para{
-    margin-left: 62%;
+.about-author-para {
+  margin-left: 62%;
 }
-.about-bottom-sec{
-    display: flex;
-    background-color: #000000;
-    padding: 5vh 0vh;
+.about-bottom-sec {
+  display: flex;
+  background-color: #000000;
+  padding: 5vh 0vh;
 }
-.about-bottom-left  , .about-bottom-right{
-    width: 50%;
+.about-bottom-left,
+.about-bottom-right {
+  width: 50%;
 }
-.about-bottom-right{
-    color: white;
+.about-bottom-right {
+  color: white;
 }
 .about-bottom-right > p {
-    font-size: 1.3rem;
+  font-size: 1.3rem;
 }
-.career-img{
-    width: 90%;
+.career-img {
+  width: 90%;
 }
-.about-bottom-se{
-    display: flex;
-    background-color: #ffffff;
-    padding: 5vh 0vh;
-    padding-bottom: 0px;
+.about-bottom-se {
+  display: flex;
+  background-color: #ffffff;
+  padding: 5vh 0vh;
+  padding-bottom: 0px;
 }
-.about-bottom-l  , .about-bottom-r{
-    width: 50%;
+.about-bottom-l,
+.about-bottom-r {
+  width: 50%;
 }
-.about-bottom-r{
-    color: rgb(0, 0, 0);
+.about-bottom-r {
+  color: rgb(0, 0, 0);
 }
 .about-bottom-r > p {
-    font-size: 1.3rem;
+  font-size: 1.3rem;
 }
-.culture-img{
-    width: 100%;
-    height: 80%;
+.culture-img {
+  width: 100%;
+  height: 80%;
 }
 @media screen and (min-width: 200px) and (max-width: 700px) {
-    .about-middle-sec{
-        display: flex;
-        flex-direction: column;
-        padding-bottom: 3vh;
-    }
-    .about-bottom-sec{
-        display: flex;
-        flex-direction: column;
-    }
-    .about-bottom-se{
-        display: flex;
-        flex-direction: column;
-    }
-    .about-middle-left , .about-middle-right , .about-bottom-left  , .about-bottom-right , .about-bottom-l  , .about-bottom-r{
-        width: 100%;
-    }
-    .about-middle-left > p{
-        font-size: 1rem;
-        font-weight: 500;
-    }
-    .about-author-para{
-        margin-left: 25%;
-    }
-    .about-middle-right > img , .culture-img , .career-img{
-        width: 100%;
-        height: 100%;
-    }
-    .about-bottom-se{
-        display: flex;
-        flex-direction: column-reverse;
-        padding-bottom: 3vh;
-    }
+  .about-middle-sec {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3vh;
+  }
+  .about-bottom-sec {
+    display: flex;
+    flex-direction: column;
+  }
+  .about-bottom-se {
+    display: flex;
+    flex-direction: column;
+  }
+  .about-middle-left,
+  .about-middle-right,
+  .about-bottom-left,
+  .about-bottom-right,
+  .about-bottom-l,
+  .about-bottom-r {
+    width: 100%;
+  }
+  .about-middle-left > p {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .about-author-para {
+    margin-left: 25%;
+  }
+  .about-middle-right > img,
+  .culture-img,
+  .career-img {
+    width: 100%;
+    height: 100%;
+  }
+  .about-bottom-se {
+    display: flex;
+    flex-direction: column-reverse;
+    padding-bottom: 3vh;
+  }
 }

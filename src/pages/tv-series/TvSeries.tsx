@@ -1,4 +1,4 @@
-import { Container, Grid, SelectChangeEvent } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import Content from "../../components/content/Content";
 import Footer from "../../components/footer/Footer";
@@ -7,63 +7,63 @@ import Loader from "../../components/loader/Loader";
 import Navbar from "../../components/navbar/Navbar";
 import MyPagination from "../../components/pagination/MyPagination";
 import "./tvSeries.css";
+import type { RootState } from "../../redux/Store";
+import { useSelector } from "react-redux";
+import { useAppSelector } from "../../redux/hooks";
+import { useGetAllTvSeriesQuery } from "../../redux/services/entertainment";
+import { useGetAllGenreQuery } from "../../redux/services/entertainment";
 
-const mykey = process.env.REACT_APP_USER_API_KEY;
 const TvSeries = () => {
   const [loading, setLoading] = useState(true);
-  const [page, setPage] = useState(1);
   const [data, setData] = useState<any[]>([]);
   const [genre, setGenre] = useState<any[]>([]);
   const [genreArr, setGenreArr] = useState<any[]>([]);
-  let [myStr,setMyStr] = useState("")
-  const [numOfPages, setNumOfPages] = useState(0)
+  let [myStr, setMyStr] = useState("");
+  const [numOfPages, setNumOfPages] = useState(0);
+
+  const myPage = useSelector((state: RootState) => state.page.value);
+  const language: any = useAppSelector(
+    (state: { language: { value: any } }) => state.language.value
+  );
+  let obj = {
+    myPage: myPage,
+    language: language,
+    myStr: myStr,
+  };
+  const responseInfo = useGetAllTvSeriesQuery(obj);
+  const genreInfo = useGetAllGenreQuery();
 
   const tempFunc = (id: number, snd: string) => {
     const temp = document.querySelector(`#${snd}`) as HTMLInputElement;
     if (temp.checked) {
-      setGenreArr([...genreArr, id]);        
+      setGenreArr([...genreArr, id]);
     } else {
-      // if (genreArr.includes(id) === true) {
-        genreArr.splice(genreArr.indexOf(id), 1);
-      // }
+      genreArr.splice(genreArr.indexOf(id), 1);
     }
   };
   const applyFilter = () => {
-    setMyStr("")
-    let tempStr = ""
+    setMyStr("");
+    let tempStr = "";
     genreArr?.map((val) => {
-       tempStr+= val+","
+      tempStr += val + ",";
     });
     setMyStr(tempStr);
-    closeNav()
-  };
-   
-  const [language, setLanguage] = useState('en-Us');
-
-  const handleChange = (event: SelectChangeEvent) => {
-    setLanguage(event.target.value as string);
+    closeNav();
   };
 
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/discover/tv?api_key=${mykey}&language=${language}&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${myStr}`
-    )
-      .then((res) => res.json())
-      .then((items) => {
-        setData(items.results);
-        setNumOfPages((items.total_pages >= 500) ? 500 : items.total_pages)
-        setLoading(false);
-      });
-  }, [page, myStr,language]);
+    setData(responseInfo?.data?.results);
+    setNumOfPages(
+      responseInfo?.data?.total_pages >= 500
+        ? 500
+        : responseInfo?.data?.total_pages
+    );
+    setLoading(false);
+  }, [obj]);
+
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/genre/tv/list?api_key=${mykey}&language=en-US`
-    )
-      .then((res) => res.json())
-      .then((items) => {
-        setGenre(items.genres);
-      });
-  }, [page]);
+    setGenre(genreInfo?.data?.genres);
+  }, [myPage]);
 
   const openNav = () => {
     document.getElementById("mySidenav")!.style.width = "250px";
@@ -98,7 +98,9 @@ const TvSeries = () => {
             </div>
           );
         })}
-         <button onClick={applyFilter} className="btn-apply">Apply Filters</button>
+        <button onClick={applyFilter} className="btn-apply">
+          Apply Filters
+        </button>
       </div>
       <div className="container-items">
         <Container>
@@ -108,7 +110,7 @@ const TvSeries = () => {
             </h4>
 
             <h1 className="series-head">Tv Series</h1>
-            <Language language={language} handleChange={handleChange}/>
+            <Language />
           </div>
           {loading ? (
             <Loader />
@@ -134,12 +136,17 @@ const TvSeries = () => {
             </Grid>
           )}
         </Container>
-        {numOfPages > 1 && (
-          <MyPagination setPage={setPage} numOfPages={numOfPages} />
+        {numOfPages > 1 && <MyPagination numOfPages={numOfPages} />}
+        {!data?.length && loading === false ? (
+          <h1 className="no-data-heading">
+            {" "}
+            <i className="fa-solid fa-face-frown"></i> No Data Found
+          </h1>
+        ) : (
+          ""
         )}
-        {(!data?.length && loading === false) ? <h1 className="no-data-heading"> <i className="fa-solid fa-face-frown"></i> No Data Found</h1> : ""}
       </div>
-      <Footer /> 
+      <Footer />
     </>
   );
 };

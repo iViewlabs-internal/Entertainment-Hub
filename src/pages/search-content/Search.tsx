@@ -6,34 +6,43 @@ import Loader from "../../components/loader/Loader";
 import Navbar from "../../components/navbar/Navbar";
 import MyPagination from "../../components/pagination/MyPagination";
 import "./search.css";
+import type { RootState } from "../../redux/Store";
+import { useSelector, useDispatch } from "react-redux";
+import { changePage } from "../../redux/features/page/pageSlice";
+import { useGetSearchResultQuery } from "../../redux/services/entertainment";
 
 const mykey = process.env.REACT_APP_USER_API_KEY;
 const Search = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [type, setType] = useState(0);
-  const [page, setPage] = useState(1);
   const [numOfPages, setNumOfPages] = useState(1);
   const [searchText, setSearchText] = useState("");
 
+  const dispatch = useDispatch();
+  const myPage = useSelector((state: RootState) => state.page.value);
+
+  let obj = {
+    myPage: myPage,
+    type: type,
+    searchText: searchText,
+  };
+  const responseInfo = useGetSearchResultQuery(obj);
+
   const fetchData = () => {
-    fetch(
-      `https://api.themoviedb.org/3/search/${
-        type ? "tv" : "movie"
-      }?api_key=${mykey}&language=en-US&query=${searchText}&page=${page}&include_adult=false`
-    )
-      .then((res) => res.json())
-      .then((items) => {
-        setData(items.results);
-        setLoading(false);
-        setNumOfPages(items.total_pages);
-      });
+    setData(responseInfo?.data?.results);
+    setLoading(false);
+    setNumOfPages(
+      responseInfo?.data?.total_pages >= 500
+        ? 500
+        : responseInfo?.data?.total_pages
+    );
   };
 
   useEffect(() => {
     fetchData();
     window.scroll(0, 0);
-  }, [page, type]);
+  }, [myPage, type]);
 
   return (
     <>
@@ -65,7 +74,7 @@ const Search = () => {
             textColor="primary"
             onChange={(event, newValue) => {
               setType(newValue);
-              setPage(1);
+              dispatch(changePage(1));
             }}
             className="tabs-search"
             aria-label="disabled tabs example"
@@ -109,7 +118,7 @@ const Search = () => {
           )}
         </Container>
         {loading === false && numOfPages > 1 ? (
-          <MyPagination setPage={setPage} numOfPages={numOfPages} />
+          <MyPagination numOfPages={numOfPages} />
         ) : (
           ""
         )}

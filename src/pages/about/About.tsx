@@ -45,10 +45,7 @@ const About = () => {
               <p className="about-author-para">~Team Entertainment-HUB</p>
             </div>
             <div className="about-middle-right">
-              <img
-                src={config.ABOUT_HEAD_PICTURE}
-                alt="about"
-              />
+              <img src={config.ABOUT_HEAD_PICTURE} alt="about" />
             </div>
           </div>
         </Container>
@@ -58,11 +55,11 @@ const About = () => {
           <div className="about-bottom-sec">
             <div className="about-bottom-left">
               <img
-              className="career-img"
+                className="career-img"
                 src={config.ABOUT_CAREER_PICTURE}
                 alt="carrers"
               />
-            </div> 
+            </div>
             <div className="about-bottom-right">
               <h1>Careers</h1>
               <p>
@@ -79,13 +76,20 @@ const About = () => {
             <div className="about-bottom-r">
               <h1>Our Culture</h1>
               <p>
-              At Entertainment-HUB, we have an amazing and unique employee culture. Find out first-hand what it’s really like to work here, and to learn more about our company values.
+                At Entertainment-HUB, we have an amazing and unique employee
+                culture. Find out first-hand what it’s really like to work here,
+                and to learn more about our company values.
               </p>
-              <span>Great entertainment thrills and inspires. It sparks laughter, tears, gasps and sighs, stirring our emotions and nourishing our spirit. Ever since humans learned to speak, storytelling has been essential to our happiness.</span>
+              <span>
+                Great entertainment thrills and inspires. It sparks laughter,
+                tears, gasps and sighs, stirring our emotions and nourishing our
+                spirit. Ever since humans learned to speak, storytelling has
+                been essential to our happiness.
+              </span>
             </div>
             <div className="about-bottom-l">
               <img
-              className="culture-img"
+                className="culture-img"
                 src={config.ABOUT_CULTURE_PICTURE}
                 alt="culture"
               />

@@ -1,12 +1,14 @@
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
+import { changePage } from "../../redux/features/page/pageSlice";
 import "./myPagination.css";
+import { useDispatch } from 'react-redux';
 
 const MyPagination = (props: any) => {
+  const dispatch = useDispatch();
   const handlePageChange = (page: number) => {
-    props.setPage(page);
+    dispatch(changePage(page))
     window.scroll(0, 0);
-    console.log(page)
   };
  
   return (

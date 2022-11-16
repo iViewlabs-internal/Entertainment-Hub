@@ -1,7 +1,7 @@
 import { Container } from "@mui/material";
 import "./footer.css";
-import { year } from "../../utils";
 import { useNavigate } from "react-router-dom";
+import { getYear } from "../../utils";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -54,7 +54,7 @@ const Footer = () => {
       <div className="bottom-footer-header">
         <Container>
           <p className="text-light mt-3">
-            Copyright &#169; {year} Iview Labs Pvt Ltd. All Rights Reserved
+            Copyright &#169; {getYear()} Iview Labs Pvt Ltd. All Rights Reserved
           </p>
         </Container>
       </div>
