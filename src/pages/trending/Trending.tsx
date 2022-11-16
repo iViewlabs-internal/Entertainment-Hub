@@ -1,10 +1,4 @@
-import {
-  Box,
-  Container,
-  FormControl,
-  Grid,
-  NativeSelect,
-} from "@mui/material";
+import { Box, Container, FormControl, Grid, NativeSelect } from "@mui/material";
 import { ChangeEvent, useEffect, useState } from "react";
 import Content from "../../components/content/Content";
 import Footer from "../../components/footer/Footer";
@@ -12,25 +6,36 @@ import Loader from "../../components/loader/Loader";
 import Navbar from "../../components/navbar/Navbar";
 import MyPagination from "../../components/pagination/MyPagination";
 import "./trending.css";
+import type { RootState } from "../../redux/Store";
+import { useDispatch, useSelector } from "react-redux";
+import { useGetAllTrendingQuery } from "../../redux/services/entertainment";
+import { changePage } from "../../redux/features/page/pageSlice";
 
-const mykey = process.env.REACT_APP_USER_API_KEY;
 let numOfPages = 10;
 const Trending = () => {
   const [loading, setLoading] = useState(true);
-  const [page, setPage] = useState(1);
   const [data, setData] = useState<any[]>([]);
   const [trending, setTrending] = useState("day");
+  const dispatch = useDispatch();
+
+  const myPage = useSelector((state: RootState) => state.page.value);
+  let obj = {
+    myPage: myPage,
+    trending: trending,
+  };
+  const responseInfo = useGetAllTrendingQuery(obj);
+
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/trending/all/${trending}?api_key=${mykey}&page=${page}`
-    )
-      .then((res) => res.json())
-      .then((items) => {
-        setData(items.results);
-        setLoading(false);
-      });
+    setData(responseInfo?.data?.results);
+    setLoading(false);
+
     window.scroll(0, 0);
-  }, [page, trending]);
+  }, [obj]);
+
+  useEffect(() => {
+    dispatch(changePage(1));
+  }, [trending]);
+
   const func = (e: ChangeEvent<HTMLSelectElement>) => {
     setTrending(e.target.value);
   };
@@ -86,11 +91,7 @@ const Trending = () => {
             </Grid>
           )}
         </Container>
-        {loading === false ? (
-          <MyPagination setPage={setPage} numOfPages={numOfPages} />
-        ) : (
-          ""
-        )}
+        {numOfPages > 1 ? <MyPagination numOfPages={numOfPages} /> : ""}
       </div>
       <Footer />
     </>
