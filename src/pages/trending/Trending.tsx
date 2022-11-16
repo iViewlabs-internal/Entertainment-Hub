@@ -28,7 +28,6 @@ const Trending = () => {
   useEffect(() => {
     setData(responseInfo?.data?.results);
     setLoading(false);
-
     window.scroll(0, 0);
   }, [obj]);
 
@@ -91,7 +90,7 @@ const Trending = () => {
             </Grid>
           )}
         </Container>
-        {numOfPages > 1 ? <MyPagination numOfPages={numOfPages} /> : ""}
+        {numOfPages > 1 && loading===false ? <MyPagination numOfPages={numOfPages} /> : ""}
       </div>
       <Footer />
     </>
