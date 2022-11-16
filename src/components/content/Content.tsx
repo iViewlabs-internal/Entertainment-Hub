@@ -3,6 +3,7 @@ import "./content.css";
 import { useState } from "react";
 import ContentModal from "../../modals/content-details/ContentModal";
 import { useLocation } from "react-router-dom";
+import config from "../../config/config.json";
 
 const Content = (props: any) => {
   const location = useLocation();
@@ -27,7 +28,7 @@ const Content = (props: any) => {
             <div className="style-containt" onClick={handleClickOpen}>
               <div className="img-containt-div">
                 <img
-                  src={`https://image.tmdb.org/t/p/w300${props.poster}`}
+                  src={`${config.POSTER_ROOT_PATH}${props.poster}`}
                   alt={props.title}
                   className="content-img"
                 />

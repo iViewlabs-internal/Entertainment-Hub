@@ -11,7 +11,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { changePage } from "../../redux/features/page/pageSlice";
 import { useGetSearchResultQuery } from "../../redux/services/entertainment";
 
-const mykey = process.env.REACT_APP_USER_API_KEY;
 const Search = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
