@@ -12,6 +12,7 @@ import { useSelector } from "react-redux";
 import { useAppSelector } from "../../redux/hooks";
 import { useGetAllTvSeriesQuery } from "../../redux/services/entertainment";
 import { useGetAllGenreQuery } from "../../redux/services/entertainment";
+import Filter from "../../components/filter/Filter";
 
 const TvSeries = () => {
   const [loading, setLoading] = useState(true);
@@ -76,32 +77,7 @@ const TvSeries = () => {
   return (
     <>
       <Navbar />
-      <div id="mySidenav" className="sidenav">
-        <div className="genres-div">
-          <h4>Genres</h4>
-          <a href="#!" className="closebtn" onClick={closeNav}>
-            &times;
-          </a>
-        </div>
-        <hr className="hr-genre" />
-        {genre?.map((val) => {
-          return (
-            <div key={val.id} id="header-filter-tv">
-              <input
-                type="checkbox"
-                id={`check${val.id}`}
-                onClick={() => tempFunc(val.id, `check${val.id}`)}
-              />
-              <label htmlFor={`check${val.id}`} className="all-lables">
-                {val.name}
-              </label>
-            </div>
-          );
-        })}
-        <button onClick={applyFilter} className="btn-apply">
-          Apply Filters
-        </button>
-      </div>
+      <Filter applyFilter={applyFilter} tempFunc={tempFunc} genre={genre} closeNav={closeNav}/>
       <div className="container-items">
         <Container>
           <div className="top-series-div">
