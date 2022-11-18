@@ -37,7 +37,7 @@ export const entertainmentApi = createApi({
       query: (obj) => ({
         url: `/search/${
           obj.type ? "tv" : "movie"
-        }?api_key=${mykey}&language=en-US&query=${obj.searchText}&page=${
+        }?api_key=${mykey}&language=${obj.language}&query=${obj.searchText}&page=${
           obj.myPage
         }&include_adult=false`,
       }),

@@ -8,13 +8,16 @@ import Navbar from "../../components/navbar/Navbar";
 import MyPagination from "../../components/pagination/MyPagination";
 import "./tvSeries.css";
 import type { RootState } from "../../redux/Store";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useAppSelector } from "../../redux/hooks";
 import { useGetAllTvSeriesQuery } from "../../redux/services/entertainment";
 import { useGetAllGenreQuery } from "../../redux/services/entertainment";
 import Filter from "../../components/filter/Filter";
+import { changeLanguage } from "../../redux/features/language/languageSlice";
+import { changePage } from "../../redux/features/page/pageSlice";
 
 const TvSeries = () => {
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<any[]>([]);
   const [genre, setGenre] = useState<any[]>([]);
@@ -65,6 +68,10 @@ const TvSeries = () => {
   useEffect(() => {
     setGenre(genreInfo?.data?.genres);
   }, [myPage]);
+  useEffect(()=>{
+    dispatch(changeLanguage("en-US"));
+    dispatch(changePage(1))
+  },[])
 
   const openNav = () => {
     document.getElementById("mySidenav")!.style.width = "250px";

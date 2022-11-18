@@ -10,6 +10,9 @@ import type { RootState } from "../../redux/Store";
 import { useSelector, useDispatch } from "react-redux";
 import { changePage } from "../../redux/features/page/pageSlice";
 import { useGetSearchResultQuery } from "../../redux/services/entertainment";
+import Language from "../../components/language/Language";
+import { useAppSelector } from "../../redux/hooks";
+import { changeLanguage } from "../../redux/features/language/languageSlice";
 
 const Search = () => {
   const [data, setData] = useState([]);
@@ -20,15 +23,20 @@ const Search = () => {
 
   const dispatch = useDispatch();
   const myPage = useSelector((state: RootState) => state.page.value);
-
+  const language: any = useAppSelector(
+    (state: { language: { value: any } }) => state.language.value
+  );
   let obj = {
+    language:language,
     myPage: myPage,
     type: type,
-    searchText: searchText,
+    searchText: searchText
   };
+  
   const responseInfo = useGetSearchResultQuery(obj);
 
   const fetchData = () => {
+    // responseInfo.refetch()
     setData(responseInfo?.data?.results);
     setLoading(false);
     setNumOfPages(
@@ -38,17 +46,24 @@ const Search = () => {
     );
   };
 
+  // let keys = Object.keys(obj);
   useEffect(() => {
     fetchData();
     window.scroll(0, 0);
-  }, [type,myPage]);
+  }, [obj]);
+  useEffect(()=>{
+    dispatch(changeLanguage("en-US"));
+  },[])
 
   return (
     <>
       <Navbar />
       <div className="container-items header-search-div">
         <Container>
+          <div className="search-language-div">
           <h2>Search with Name and Explore it!</h2>
+          <Language/>
+          </div>
           <div className="search-top-div">
             <TextField
               className="searchBox"
