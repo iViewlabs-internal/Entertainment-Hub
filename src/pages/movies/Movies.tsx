@@ -11,8 +11,12 @@ import { useGetAllMoviesQuery } from "../../redux/services/entertainment";
 import { useGetAllGenreQuery } from "../../redux/services/entertainment";
 import { useAppSelector } from "../../redux/hooks";
 import Filter from "../../components/filter/Filter";
+import { changeLanguage } from "../../redux/features/language/languageSlice";
+import { useDispatch } from "react-redux";
+import { changePage } from "../../redux/features/page/pageSlice";
 
 const Movies = () => {
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<any[]>([]);
   const [genre, setGenre] = useState<any[]>([]);
@@ -67,6 +71,11 @@ const Movies = () => {
   useEffect(() => {
     setGenre(genreInfo?.data?.genres);
   }, [obj]);
+   
+  useEffect(()=>{
+    dispatch(changeLanguage("en-US"));
+    dispatch(changePage(1))
+  },[])
 
   const openNav = () => {
     document.getElementById("mySidenav")!.style.width = "250px";

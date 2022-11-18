@@ -36,7 +36,7 @@ const Language = () => {
             <MenuItem value="en-Us">English</MenuItem>
             <MenuItem value="hi">Hindi</MenuItem>
             <MenuItem value="ur">Urdu</MenuItem>
-            <MenuItem value="te">Telagu</MenuItem>
+            <MenuItem value="te">Telgu</MenuItem>
             <MenuItem value="bn">Bengali</MenuItem>
             <MenuItem value="pa">Punjabi</MenuItem>
             <MenuItem value="gu">Gujarati</MenuItem>

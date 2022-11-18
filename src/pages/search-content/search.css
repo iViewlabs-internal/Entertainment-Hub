@@ -28,6 +28,10 @@
 .header-search-div {
   padding-bottom: 3vh !important;
 }
+.search-language-div{
+  display: flex;
+  justify-content: space-between;
+}
 @media screen and (min-width: 200px) and (max-width: 600px) {
   .tabs-search-query {
     font-size: 1rem !important;
