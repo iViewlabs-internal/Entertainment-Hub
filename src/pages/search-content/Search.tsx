@@ -118,7 +118,7 @@ const Search = () => {
                 })}
             </Grid>
           )}
-          {!data ? (
+          {!data?.length ? (
             type ? (
               <h2 id="demo" className="not-found-content">
                 No Series Found
