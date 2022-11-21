@@ -1,6 +1,6 @@
 .search-top-div {
-  display: flex;
-  margin: 15px 0;
+  display: flex !important;
+  margin: 15px 0 !important;
 }
 .btn-search-icon {
   margin-left: 0.6vw !important;
@@ -8,16 +8,16 @@
   color: black !important;
 }
 .searchBox {
-  flex: 1;
+  flex: 1 !important;
 }
 .not-found-content{
-  text-align: center;
+  text-align: center !important;
 }
 .tabs-search {
-  padding-bottom: 9vh;
-  padding-top: 3vh;
+  padding-bottom: 9vh !important;
+  padding-top: 3vh !important;
   width: 100% !important;
-  text-align: center;
+  text-align: center !important;
 }
 .css-heg063-MuiTabs-flexContainer {
   display: inline !important;
@@ -29,8 +29,8 @@
   padding-bottom: 3vh !important;
 }
 .search-language-div{
-  display: flex;
-  justify-content: space-between;
+  display: flex !important;
+  justify-content: space-between !important;
 }
 @media screen and (min-width: 200px) and (max-width: 600px) {
   .tabs-search-query {
