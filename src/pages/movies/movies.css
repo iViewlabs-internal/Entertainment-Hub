@@ -148,17 +148,9 @@
   display: block;
   transition: 0.3s;
 }
-.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
-  height: 6vh !important;
-}
-.box-header {
-  padding-top: 5vh !important;
-  color: blue !important;
-}
 .sidenav a:hover {
   color: #f1f1f1;
 }
-
 .sidenav .closebtn {
   font-size: 36px;
   color: rgb(0, 0, 0);

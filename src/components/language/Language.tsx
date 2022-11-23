@@ -9,6 +9,7 @@ import {
 import { useDispatch } from "react-redux";
 import { changeLanguage } from "../../redux/features/language/languageSlice";
 import { useAppSelector } from "../../redux/hooks";
+import "./language.css";
 
 const Language = () => {
   const dispatch = useDispatch();
