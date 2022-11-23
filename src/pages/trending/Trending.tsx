@@ -46,7 +46,7 @@ const Trending = () => {
         <Container>
           <div className="top-trending-div">
             <h1>
-              Top Trendings of The
+              Top Trendings of The {trending}
               <Box sx={{ minWidth: 120 }}>
                 <FormControl fullWidth>
                   <NativeSelect
