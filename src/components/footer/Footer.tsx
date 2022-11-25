@@ -1,11 +1,12 @@
 import { Container } from "@mui/material";
 import "./footer.css";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { getYear } from "../../utils";
 
 const Footer = () => {
   const navigate = useNavigate();
-  
+  const location = useLocation();
+
   return (
     <>
       <div className="footer-head-div">
@@ -22,9 +23,26 @@ const Footer = () => {
               <div className="inner-divs-same">Privacy</div>
             </div>
             <div className="inner-footer-div-sec">
-              <div className="inner-divs-same about" onClick={()=>{navigate("/about")}}>About Entertainment-HUB</div>
+              <div
+                className="inner-divs-same about"
+                onClick={() => {
+                  navigate("/about");
+                }}
+              >
+                About Entertainment-HUB
+              </div>
               <div className="inner-divs-same">Contact Us</div>
-              <div className="inner-divs-same"><a href="#about-containt-div" className="faq-link">FAQs</a></div>
+              <div className="inner-divs-same">
+                {location.pathname !== "/" ? (
+                  <a href="/#about-containt-div" className="faq-link">
+                    FAQs
+                  </a>
+                ) : (
+                  <a href="#about-containt-div" className="faq-link">
+                    FAQs
+                  </a>
+                )}
+              </div>
             </div>
             <div className="header-parent-div">
               <div className="header-inner-div-first">
