@@ -31,6 +31,8 @@
 .search-language-div{
   display: flex !important;
   justify-content: space-between !important;
+  padding-top: 2.5vh;
+  padding-bottom: 2.5vh;
 }
 @media screen and (min-width: 200px) and (max-width: 600px) {
   .tabs-search-query {

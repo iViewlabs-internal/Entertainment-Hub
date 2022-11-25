@@ -28,7 +28,7 @@ const Movies = () => {
     (state: { page: { value: any } }) => state.page.value
   );
   const language: any = useAppSelector(
-    (state: { language: { value: any } }) => state.language.value
+    (state: { language: { value: string } }) => state.language.value
   );
 
   let obj = {

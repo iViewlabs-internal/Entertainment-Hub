@@ -45,7 +45,6 @@
   padding-right: 1vw;
 }
 .overview-para {
-  height: 24%;
   color: white;
   display: flex;
   font-size: 1.3rem;
@@ -55,6 +54,9 @@
   margin-top: 0;
   box-shadow: inset 0 0 5px #000000;
   text-align: justify;
+}
+.overview-para:hover{
+  color: rgb(239, 233, 233);
 }
 .overview-para::-webkit-scrollbar {
   display: none;

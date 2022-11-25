@@ -4,8 +4,11 @@
   justify-content: space-between;
   color: rgb(0, 0, 0);
   padding-bottom: 2%;
+  padding-top: 2.5vh;
 }
-
+.movie-head{
+  font-size: 1.8rem;
+}
 .filter-head {
   font-size: 1.3rem;
   cursor: pointer;
