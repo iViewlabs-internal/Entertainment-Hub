@@ -5,6 +5,7 @@ import { CgProfile } from "react-icons/cg";
 import "./navbar.css";
 import { Button, Menu, MenuItem } from "@mui/material";
 import { toast, ToastContainer } from "react-toastify";
+import Tooltip from "@mui/material/Tooltip";
 
 const Navbar = (props: any) => {
   const location = useLocation();
@@ -52,25 +53,36 @@ const Navbar = (props: any) => {
             <div className="search-header-div">
               <Link to="/trending" className="link-react">
                 <div>
-                  <i className="fa-solid fa-house fa-2x" id="trending-item"></i>
+                  <Tooltip title="Trendings" arrow>
+                    <i
+                      className="fa-solid fa-house fa-2x"
+                      id="trending-item"
+                    ></i>
+                  </Tooltip>
                 </div>
               </Link>
               <Link to="/movies" className="link-react">
                 <div>
+                <Tooltip title="Movies" arrow>
                   <i className="fa-solid fa-film fa-2x" id="movies-item"></i>
+                  </Tooltip>
                 </div>
               </Link>
               <Link to="/tv-series" className="link-react">
                 <div>
+                <Tooltip title="Tv-Series" arrow>
                   <i className="fa-solid fa-tv fa-2x" id="tv-series-item"></i>
+                  </Tooltip>
                 </div>
               </Link>
               <Link to="/search" className="link-react">
                 <div>
+                <Tooltip title="Search" arrow>
                   <i
                     className="fa-solid fa-magnifying-glass fa-2x"
                     id="search-item"
                   ></i>
+                  </Tooltip>
                 </div>
               </Link>
             </div>
@@ -84,9 +96,11 @@ const Navbar = (props: any) => {
                   aria-expanded={open ? "true" : undefined}
                   onClick={handleClick}
                 >
+                  <Tooltip title="Profile" arrow>
                   <div>
                     <CgProfile className="profile-icon" />
                   </div>
+                  </Tooltip>
                 </Button>
                 <Menu
                   id="basic-menu"

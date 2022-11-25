@@ -33,15 +33,6 @@ export const entertainmentApi = createApi({
         method: "GET",
       }),
     }),
-    getSearchResult: builder.query({
-      query: (obj) => ({
-        url: `/search/${
-          obj.type ? "tv" : "movie"
-        }?api_key=${mykey}&language=${obj.language}&query=${obj.searchText}&page=${
-          obj.myPage
-        }&include_adult=false`,
-      }),
-    }),
     getCarousels: builder.query({
       query: (obj) => ({
         url: `${obj.mediaType}/${obj.id}/credits?api_key=${mykey}&language=en-US`,
@@ -51,7 +42,7 @@ export const entertainmentApi = createApi({
   }),
 });
 export const {
-  useGetSearchResultQuery,
+  // useGetSearchResultQuery,
   useGetAllMoviesQuery,
   useGetAllTvSeriesQuery,
   useGetAllGenreQuery,

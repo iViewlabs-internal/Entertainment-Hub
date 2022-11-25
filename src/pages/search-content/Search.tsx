@@ -6,54 +6,45 @@ import Loader from "../../components/loader/Loader";
 import Navbar from "../../components/navbar/Navbar";
 import MyPagination from "../../components/pagination/MyPagination";
 import "./search.css";
-import type { RootState } from "../../redux/Store";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { changePage } from "../../redux/features/page/pageSlice";
-import { useGetSearchResultQuery } from "../../redux/services/entertainment";
 import Language from "../../components/language/Language";
 import { useAppSelector } from "../../redux/hooks";
 import { changeLanguage } from "../../redux/features/language/languageSlice";
+import config from "../../config/config.json";
 
+const mykey = process.env.REACT_APP_USER_API_KEY;
 const Search = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [type, setType] = useState(0);
   const [numOfPages, setNumOfPages] = useState(1);
   const [searchText, setSearchText] = useState("");
-
   const dispatch = useDispatch();
-  const myPage = useSelector((state: RootState) => state.page.value);
+  const myPage = useAppSelector((state) => state.page.value);
   const language: any = useAppSelector(
     (state: { language: { value: any } }) => state.language.value
   );
-  let obj = {
-    language:language,
-    myPage: myPage,
-    type: type,
-    searchText: searchText
-  };
-  
-  const responseInfo = useGetSearchResultQuery(obj);
 
-  const fetchData = () => {
-    // responseInfo.refetch()
-    setData(responseInfo?.data?.results);
-    setLoading(false);
-    setNumOfPages(
-      responseInfo?.data?.total_pages >= 500
-        ? 500
-        : responseInfo?.data?.total_pages
+  const fetchData = async () => {
+    const response = await fetch(
+      `${config.SERVER_URL}search/${
+        type ? "tv" : "movie"
+      }?api_key=${mykey}&language=${language}&query=${searchText}&page=${myPage}&include_adult=false`
     );
+    const data = await response.json();
+    setData(data.results);
+    setLoading(false);
+    setNumOfPages(data?.numOfPages >= 500 ? 500 : data?.total_pages);
   };
 
-  // let keys = Object.keys(obj);
   useEffect(() => {
     fetchData();
-    window.scroll(0, 0);
-  }, [obj]);
-  useEffect(()=>{
+  }, [myPage, type, language]);
+
+  useEffect(() => {
     dispatch(changeLanguage("en-US"));
-  },[])
+  }, []);
 
   return (
     <>
@@ -61,8 +52,8 @@ const Search = () => {
       <div className="container-items header-search-div">
         <Container>
           <div className="search-language-div">
-          <h2>Search with Name and Explore it!</h2>
-          <Language/>
+            <h2>Search with Name and Explore it!</h2>
+            <Language />
           </div>
           <div className="search-top-div">
             <TextField
@@ -71,10 +62,7 @@ const Search = () => {
               variant="filled"
               onChange={(e: any) => setSearchText(e.target.value)}
             />
-            <Button
-              onClick={fetchData}
-              className="btn-search-icon"
-            >
+            <Button onClick={fetchData} className="btn-search-icon">
               <i
                 className="fa-solid fa-magnifying-glass fa-2x"
                 id="search-item"
@@ -92,8 +80,8 @@ const Search = () => {
             className="tabs-search"
             aria-label="disabled tabs example"
           >
-            <Tab className="tabs-search-query" label="Movies"/>
-            <Tab className="tabs-search-query" label="TV Series"/>
+            <Tab className="tabs-search-query" label="Movies" />
+            <Tab className="tabs-search-query" label="TV Series" />
           </Tabs>
           {loading ? (
             <Loader />
@@ -118,7 +106,7 @@ const Search = () => {
                 })}
             </Grid>
           )}
-          {!data?.length ? (
+          {!data?.length && loading === false ? (
             type ? (
               <h2 id="demo" className="not-found-content">
                 No Series Found

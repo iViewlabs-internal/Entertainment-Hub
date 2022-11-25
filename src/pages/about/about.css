@@ -67,6 +67,7 @@
 }
 .about-bottom-r {
   color: rgb(0, 0, 0);
+  padding-right: 1vw;
 }
 .about-bottom-r > p {
   font-size: 1.3rem;

@@ -4,6 +4,12 @@
   color: rgb(0, 0, 0);
   margin-bottom: 2%;
 }
+.css-ece9u5{
+  margin-top: 1vh !important;
+}
+.top-trending-div > h1{
+  font-size: 1.6rem;
+}
 .container-items {
   background-color: rgb(227, 232, 240);
   padding-bottom: 4vh;
