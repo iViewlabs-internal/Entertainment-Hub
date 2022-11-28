@@ -3,9 +3,15 @@ import { useNavigate } from "react-router-dom";
 import config from "../../config/config.json";
 import Footer from "../../components/footer/Footer";
 import "./about.css";
+import { useEffect } from "react";
 
 const About = () => {
   const navigate = useNavigate();
+  
+  useEffect(() => {
+   window.scroll(0,0)
+  }, []);
+
   return (
     <>
       <div className="about-nav-header">

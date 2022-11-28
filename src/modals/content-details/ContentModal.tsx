@@ -62,7 +62,7 @@ const ContentModal = (props: any) => {
           </div>
         </div>
         <div className="modal-inner-right">
-          <p className="overview-para">
+          <p className="overview-para" style={{height : props.overview.length > 150 ? "20%" : "auto"}}>
             {props.overview ? props.overview : tempOverview}
           </p>
 
@@ -70,16 +70,14 @@ const ContentModal = (props: any) => {
             <Carousel mediaType={props.mediaType} id={props.id} />
           </div>
           <div>
-            <button className="btn-video">
+            <button className="btn-video" onClick={()=>{window.open(`https://www.youtube.com/results?search_query=${props.title}+trailer`)}}>
               <span>
                 <i className="fa-brands fa-youtube fa-2x youtube-icon"></i>
-                <a
-                  href={`https://www.youtube.com/results?search_query=${props.title}+trailer`}
-                  target="__blank"
+                <span
                   className="anchor-video"
                 >
                   Watch the Trailer
-                </a>
+                </span>
               </span>
             </button>
           </div>
