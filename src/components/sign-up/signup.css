@@ -12,17 +12,20 @@
   font-size: 0.8rem;
 }
 .register-form {
-  padding-left: 7px;
-  padding-bottom: 12px;
+  margin-top: 5vh;
+}
+.register-img-div {
+  border-right: 1px solid green;
 }
 .input-fields {
-  width: 50vw;
-  height: 6.2vh;
+  width: 35vw;
+  height: 5vh;
 }
 .signup-btn {
-  font-size: 1.5rem;
-  height: 8.5vh;
-  width: 50.5vw;
+  font-size: 1.2rem;
+  height: 6.3vh;
+  padding-left: 15.5vw;
+  padding-right: 15.5vw;
   border: 1px solid white;
   border-radius: 6px;
   color: white;
@@ -69,7 +72,6 @@ hr {
   }
   .input-fields {
     width: 80%;
-    /* height: 6vh; */
   }
   .signup-btn {
     width: 82%;

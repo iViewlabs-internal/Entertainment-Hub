@@ -4,6 +4,10 @@
 .info-div-parent {
   display: flex;
 }
+.info-details{
+  /* font-size: 0.9rem; */
+  color: rgb(222, 222, 197);
+}
 .info-div-btn {
   display: flex;
   justify-content: space-between;
