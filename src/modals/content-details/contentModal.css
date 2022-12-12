@@ -25,7 +25,7 @@
   font-weight: 600;
 }
 .btn-video {
-  background-color: #f50057;
+  background-color: #0a325a;
   border: 1px solid white;
   border-radius: 8px;
   padding-top: 1vh;
@@ -38,7 +38,7 @@
 }
 .btn-video:hover {
   cursor: pointer;
-  background-color: #db1d5f;
+  background-color: #184878;
 }
 .youtube-icon {
   color: white;

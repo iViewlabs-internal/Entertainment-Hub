@@ -28,6 +28,16 @@
 .submit-btn:hover {
   background-color: #1a4167;
 }
+.back-profile{
+  color: rgb(0, 0, 0);
+  margin-bottom: 0px;
+  font-weight: bold;
+  padding-bottom: 0px;
+}
+.back-profile:hover{
+  color: rgb(141, 141, 141);
+  cursor: pointer;
+}
 @media screen and (min-width: 300px) and (max-width: 800px) {
   .submit-btn {
     margin-bottom: 4vh;

@@ -58,7 +58,7 @@
 }
 .style-containt:hover {
   background-color: #2d313a;;
-  border: 3px solid rgb(32, 103, 82);
+  border: 1.7px solid rgb(32, 103, 82);
   border-radius: 12px;
 }
 .style-containt:hover .para-content-title {

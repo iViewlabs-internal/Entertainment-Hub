@@ -55,6 +55,7 @@ const EditProfile: React.FC<stateHandleSecond> = (props) => {
   return (
     <>
       <ToastContainer autoClose={3000} />
+      <p className="back-profile" onClick={props.handleState}><i className="fa-solid fa-arrow-left"></i> Back to Profile</p>
       <div>
         <h2 className="user-profile-h">Edit User Profile</h2>
       </div>

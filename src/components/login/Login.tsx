@@ -72,14 +72,15 @@ const Login = (props: any) => {
               alt="login pic"
             />
           </div>
-          <div>
+          <div className="login-form-container">
+          
             <form onSubmit={handleSubmit(onSubmit)} className="form-class">
               <div>
                 <input
                   type="text"
                   placeholder="Your Email"
                   {...register("email")}
-                  className="input-fields"
+                  className="login-input"
                 />
                 <div className="invalid-feedback">{errors.email?.message}</div>
 
@@ -90,7 +91,7 @@ const Login = (props: any) => {
                   type="password"
                   placeholder="Your Password"
                   {...register("password")}
-                  className="input-fields-login"
+                  className="login-input"
                 />
 
                 <div className="invalid-feedback">
